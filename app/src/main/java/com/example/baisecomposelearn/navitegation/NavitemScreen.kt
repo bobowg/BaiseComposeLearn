@@ -13,4 +13,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object AnimatedScreen:NavitemScreen("animatedVisibility",R.string.animatedvisibility)
     object AnimationContentSizeScreen:NavitemScreen("animationcontentsize",R.string.animationcontentsize)
     object CrossFadeScreen:NavitemScreen("crossfadescreen",R.string.crossfade)
+    object UpdateTransition:NavitemScreen("updatetransition",R.string.updatetransition)
 }

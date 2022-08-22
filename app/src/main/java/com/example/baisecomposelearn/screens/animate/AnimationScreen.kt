@@ -55,9 +55,9 @@ fun AnimationScreen(navController: NavController) {
                 )
             }
             Button(modifier = modo,
-                onClick = { /*TODO*/ }) {
+                onClick = { navController.navigate(NavitemScreen.UpdateTransition.route) }) {
                 Text(
-                    text = stringResource(id = R.string.animation),
+                    text = stringResource(id = R.string.updatetransition,"动画项"),
                     fontWeight = FontWeight.Bold,
                     fontSize = 24.sp,
                     color = Color.White

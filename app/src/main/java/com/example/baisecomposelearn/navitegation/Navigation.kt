@@ -32,8 +32,8 @@ fun Navigation(
         composable(NavitemScreen.LanunScreen3.route) {
             googleMap(navController = navController)
         }
-        composable(NavitemScreen.AnimatedVisibility.route) {
-            AnimatedVisibilityScreen(navController = navController)
+        composable(NavitemScreen.AnimatedScreen.route) {
+            AnimatedScreen(navController = navController)
         }
     }
 

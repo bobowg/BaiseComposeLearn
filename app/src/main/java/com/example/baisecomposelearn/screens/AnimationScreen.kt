@@ -28,9 +28,9 @@ fun AnimationScreen(navController: NavController) {
         isGoBack = false,
         content = {
             Button(modifier = modo,
-                onClick = { navController.navigate(NavitemScreen.AnimatedVisibility.route) }) {
+                onClick = { navController.navigate(NavitemScreen.AnimatedScreen.route) }) {
                 Text(
-                    text = stringResource(id = R.string.animatedvisibility),
+                    text = stringResource(id = R.string.animation1),
                     fontWeight = FontWeight.Bold,
                     fontSize = 24.sp,
                     color = Color.White

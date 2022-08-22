@@ -60,7 +60,7 @@ fun AnimatedScreen(navController: NavController) {
                 .padding(16.dp)
         ) {
             Text(
-                text = stringResource(id = R.string.animated),
+                text = stringResource(id = R.string.animation1),
                 fontWeight = FontWeight.Bold,
                 fontSize = 24.sp,
                 color = Color.White

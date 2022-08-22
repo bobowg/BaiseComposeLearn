@@ -2,6 +2,7 @@
     <string name="app_name">Basi Compose Learn</string>
     <string name="activate">Activate</string>
     <string name="animation">动画</string>
+    <string name="animation1">animation 动画</string>
     <string name="backhandler">Backhandler</string>
     <string name="backhandlers">Backhandlers</string>
     <string name="launch1">拍照</string>
@@ -15,4 +16,5 @@
     <string name="contact_not_found">没有找到联系人</string>
     <string name="googlemap">Google地图</string>
     <string name="animatedvisibility">AnimatedVisibility 动画</string>
+    <string name="animated">Animated 动画</string>
 </resources>

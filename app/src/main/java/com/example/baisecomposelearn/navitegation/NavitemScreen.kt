@@ -10,5 +10,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object LanunScreen1:NavitemScreen("launch1",R.string.launch1)
     object LanunScreen2:NavitemScreen("launch2",R.string.launch2)
     object LanunScreen3:NavitemScreen("googlmap",R.string.googlemap)
-    object AnimatedVisibility:NavitemScreen("animatedVisibility",R.string.animatedvisibility)
+    object AnimatedScreen:NavitemScreen("animatedVisibility",R.string.animatedvisibility)
 }

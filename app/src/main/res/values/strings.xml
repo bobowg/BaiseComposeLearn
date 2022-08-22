@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Basi Compose Learn</string>
+    <string name="activate">Activate</string>
+    <string name="animation">动画</string>
+    <string name="backhandler">Backhandler</string>
+    <string name="backhandlers">Backhandlers</string>
+    <string name="launch1">拍照</string>
+    <string name="launch2">获取联系人</string>
+    <string name="backhandler_count">数量 %1$d</string>
+    <string name="backhandler_msg">"最大数量为 %1$d 之后退出！"</string>
+    <string name="goback">返回</string>
+    <string name="activity_not_found">没有找到启动项</string>
+    <string name="permission_not_granted">没有打开相应权限</string>
+    <string name="name_args">联系人： %1$s</string>
+    <string name="contact_not_found">没有找到联系人</string>
+    <string name="googlemap">Google地图</string>
+    <string name="animatedvisibility">AnimatedVisibility 动画</string>
+</resources>

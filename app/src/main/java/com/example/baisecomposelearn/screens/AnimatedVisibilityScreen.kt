@@ -1,5 +1,7 @@
 package com.example.baisecomposelearn.screens
 
+import androidx.compose.animation.animateColor
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
@@ -22,32 +24,43 @@ private enum class BoxSate {
 }
 
 @Composable
-fun AnimatedVisibilityScreen(navController: NavController) {
+fun AnimatedScreen(navController: NavController) {
     var boxState by remember { mutableStateOf(BoxSate.Small) }
+    val transition = updateTransition(targetState = boxState, label = "")
+    val color by transition.animateColor(label = "") { state ->
+        when (state) {
+            BoxSate.Small -> Color.Blue
+            BoxSate.Large -> Color.Yellow
+        }
 
-    val color = when (boxState) {
-        BoxSate.Small -> Color.Blue
-        BoxSate.Large -> Color.Yellow
     }
-    val size = when (boxState) {
-        BoxSate.Small -> 64.dp
-        BoxSate.Large -> 128.dp
+    val size by transition.animateDp(transitionSpec = {
+        if (targetState == BoxSate.Large) {
+            tween(durationMillis = 1000, delayMillis = 50, easing = FastOutSlowInEasing)
+        } else {
+            tween(durationMillis = 1000, delayMillis = 50, easing = LinearOutSlowInEasing)
+        }
+    }, label = "") { state ->
+        when (state) {
+            BoxSate.Small -> 64.dp
+            BoxSate.Large -> 128.dp
+        }
     }
 
     ScreenModel(navController = navController, content = {
         Button(
             onClick = {
-                      boxState = when(boxState){
-                          BoxSate.Large -> BoxSate.Small
-                          BoxSate.Small -> BoxSate.Large
-                      }
+                boxState = when (boxState) {
+                    BoxSate.Large -> BoxSate.Small
+                    BoxSate.Small -> BoxSate.Large
+                }
             },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp)
         ) {
             Text(
-                text = stringResource(id = R.string.animatedvisibility),
+                text = stringResource(id = R.string.animated),
                 fontWeight = FontWeight.Bold,
                 fontSize = 24.sp,
                 color = Color.White
@@ -64,6 +77,6 @@ fun AnimatedVisibilityScreen(navController: NavController) {
 
 @Preview
 @Composable
-fun AnimatedVisibilityScreenPreview() {
-    AnimatedVisibilityScreen(navController = rememberNavController())
+fun AnimatedScreenPreview() {
+    AnimatedScreen(navController = rememberNavController())
 }

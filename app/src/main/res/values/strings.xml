@@ -15,6 +15,6 @@
     <string name="name_args">联系人： %1$s</string>
     <string name="contact_not_found">没有找到联系人</string>
     <string name="googlemap">Google地图</string>
-    <string name="animatedvisibility">AnimatedVisibility 动画</string>
+    <string name="animatedvisibility">AnimatedVisibility %1$s</string>
     <string name="animated">Animated 动画</string>
 </resources>

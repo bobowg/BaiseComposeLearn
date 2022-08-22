@@ -1,5 +1,6 @@
 package com.example.baisecomposelearn.screens
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColor
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
@@ -34,6 +35,7 @@ fun AnimatedScreen(navController: NavController) {
         }
 
     }
+    var visble by remember{ mutableStateOf(true)}
     val size by transition.animateDp(transitionSpec = {
         if (targetState == BoxSate.Large) {
             tween(durationMillis = 1000, delayMillis = 50, easing = FastOutSlowInEasing)
@@ -72,6 +74,34 @@ fun AnimatedScreen(navController: NavController) {
                 .size(size)
                 .background(color)
         )
+
+        Button(
+            onClick = {
+                visble = !visble
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+          
+            Text(
+                text = if (visble) stringResource(id = R.string.animatedvisibility,"显示") else stringResource(
+                    id = R.string.animatedvisibility, "隐藏"
+                ),
+                fontWeight = FontWeight.Bold,
+                fontSize = 24.sp,
+                color = Color.White
+            )
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+        AnimatedVisibility(visble) {
+            Box(
+                modifier = Modifier
+                    .size(128.dp)
+                    .background(color)
+            )
+        }
+
     })
 }
 
@@ -80,3 +110,5 @@ fun AnimatedScreen(navController: NavController) {
 fun AnimatedScreenPreview() {
     AnimatedScreen(navController = rememberNavController())
 }
+
+

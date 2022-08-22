@@ -37,18 +37,18 @@ fun AnimationScreen(navController: NavController) {
                 )
             }
             Button(modifier = modo,
-                onClick = { /*TODO*/ }) {
+                onClick = { navController.navigate(NavitemScreen.AnimationContentSizeScreen.route) }) {
                 Text(
-                    text = stringResource(id = R.string.animation),
+                    text = stringResource(id = R.string.animationcontentsize, "动画"),
                     fontWeight = FontWeight.Bold,
                     fontSize = 24.sp,
                     color = Color.White
                 )
             }
             Button(modifier = modo,
-                onClick = { /*TODO*/ }) {
+                onClick = { navController.navigate(NavitemScreen.CrossFadeScreen.route) }) {
                 Text(
-                    text = stringResource(id = R.string.animation),
+                    text = stringResource(id = R.string.crossfade, "动画"),
                     fontWeight = FontWeight.Bold,
                     fontSize = 24.sp,
                     color = Color.White

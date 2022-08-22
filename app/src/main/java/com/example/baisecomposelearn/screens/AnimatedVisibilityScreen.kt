@@ -98,7 +98,7 @@ fun AnimatedScreen(navController: NavController) {
             Box(
                 modifier = Modifier
                     .size(128.dp)
-                    .background(Color.Gray)
+                    .background(Color.Cyan)
             )
         }
 

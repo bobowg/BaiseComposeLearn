@@ -17,4 +17,8 @@
     <string name="googlemap">Google地图</string>
     <string name="animatedvisibility">AnimatedVisibility %1$s</string>
     <string name="animated">Animated 动画</string>
+    <string name="animationcontentsize">AnimationContentSize %1$s</string>
+    <string name="content">对于简单的用例，在与界面相同的可组合项中定义过渡动画是一种非常有效的选择方案。但是，在处理具有大量动画值的复杂组件时，您可能会希望将动画实现与可组合界面分开。  为此，您可以创建一个类来保存所有动画值，同时创建一个“update”函数来返回该类的实例。过渡实现可提取到新的独立函数中。当您需要集中处理动画逻辑或使复杂动画可重复使用时，这种模式很有用。</string>
+    <string name="crossfade">Crossfade %1$s</string>
+    <string name="phone">手机</string>
 </resources>

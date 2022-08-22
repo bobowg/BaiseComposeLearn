@@ -1,5 +1,6 @@
 package com.example.baisecomposelearn.navitegation
 
+import androidx.compose.animation.Crossfade
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -12,28 +13,34 @@ fun Navigation(
 ) {
     NavHost(navController = navController, startDestination = NavitemScreen.Activate.route) {
         composable(NavitemScreen.Activate.route) {
-            ActivateScreen(navController = navController)
+            ActivateScreen(navController)
         }
         composable(NavitemScreen.Animation.route) {
-            AnimationScreen(navController = navController)
+            AnimationScreen(navController)
         }
         composable(NavitemScreen.Backhandlers.route) {
-            BackHandlersScreen(navController = navController)
+            BackHandlersScreen(navController)
         }
         composable(NavitemScreen.Backhandler.route) {
-            BackHandlerScreen(navController = navController)
+            BackHandlerScreen(navController)
         }
         composable(NavitemScreen.LanunScreen1.route) {
-            LanunScreen1(navController = navController)
+            LanunScreen1(navController)
         }
         composable(NavitemScreen.LanunScreen2.route) {
-            LanunScreen2(navController = navController)
+            LanunScreen2(navController)
         }
         composable(NavitemScreen.LanunScreen3.route) {
-            googleMap(navController = navController)
+            googleMap(navController)
         }
         composable(NavitemScreen.AnimatedScreen.route) {
-            AnimatedScreen(navController = navController)
+            AnimatedScreen(navController)
+        }
+        composable(NavitemScreen.AnimationContentSizeScreen.route) {
+            AnimationContentSizeScreen(navController)
+        }
+        composable(NavitemScreen.CrossFadeScreen.route){
+           CrossFadeScreen(navController)
         }
     }
 

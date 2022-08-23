@@ -20,4 +20,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object ConstraintLayoutScreen:NavitemScreen("constraintlayout",R.string.constraintlayout)
     object BarrierScreen:NavitemScreen("barrierscreen",R.string.barrier)
     object DecoupledScreen:NavitemScreen("decoupled",R.string.decoupled)
+    object CircularScreen:NavitemScreen("circularscreen",R.string.circularscreen)
 }

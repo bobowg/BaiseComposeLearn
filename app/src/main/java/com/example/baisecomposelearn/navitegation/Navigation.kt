@@ -69,6 +69,9 @@ fun Navigation(
         composable(NavitemScreen.DecoupledScreen.route){
             DecoupledScreen(navController)
         }
+        composable(NavitemScreen.CircularScreen.route){
+            CircularScreen(navController)
+        }
     }
 
 }

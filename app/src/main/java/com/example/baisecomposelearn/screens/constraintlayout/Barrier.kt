@@ -37,12 +37,12 @@ fun ConstraintLayoutContent() {
                 top.linkTo(parent.top, margin = 16.dp)
             }
         ) {
-            Text("Button")
+            Text(text = stringResource(id = R.string.barrier), fontSize = 24.sp)
         }
 
-        Text("Text", Modifier.constrainAs(text) {
+        Text(text = stringResource(id = R.string.barrier), Modifier.constrainAs(text) {
             top.linkTo(button.bottom, margin = 16.dp)
-        })
+        }, fontSize = 24.sp, color = Color.White)
     }
 }
 

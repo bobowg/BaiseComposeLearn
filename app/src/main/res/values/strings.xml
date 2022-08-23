@@ -28,4 +28,5 @@
     <string name="randownmsg">随机打乱</string>
     <string name="constraintlayout">Constraintlayout 布局</string>
     <string name="barrier">Barrier 屏障</string>
+    <string name="decoupled">Decoupled布局</string>
 </resources>

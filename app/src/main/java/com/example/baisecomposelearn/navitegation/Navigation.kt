@@ -66,6 +66,9 @@ fun Navigation(
         composable(NavitemScreen.BarrierScreen.route){
             BrrierScreen(navController)
         }
+        composable(NavitemScreen.DecoupledScreen.route){
+            DecoupledScreen(navController)
+        }
     }
 
 }

@@ -35,10 +35,12 @@ fun ScreenModel(
             .background(colorResource(id = R.color.colorPrimary))
             .wrapContentSize(Alignment.Center)
             .verticalScroll(rememberScrollState()),
-        verticalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.Bottom,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        content()
+        content(
+
+        )
         if (isGoBack){
             goBack(navController = navController)
         }

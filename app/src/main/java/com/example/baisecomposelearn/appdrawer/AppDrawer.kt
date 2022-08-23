@@ -67,6 +67,7 @@ fun Drawer(
     val items = listOf(
         NavitemScreen.Activate,
         NavitemScreen.Animation,
+        NavitemScreen.ConstraintLayoutScreen,
     )
     Column(modifier = Modifier.background(colorResource(id = R.color.colorPrimary))) {
         Row {

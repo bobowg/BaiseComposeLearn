@@ -6,6 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.baisecomposelearn.screens.activate.*
 import com.example.baisecomposelearn.screens.animate.*
+import com.example.baisecomposelearn.screens.constraintlayout.*
+import com.example.baisecomposelearn.screens.constraintlayout.ConstraintLayoutScreen
 
 
 @Composable
@@ -57,6 +59,12 @@ fun Navigation(
         }
         composable(NavitemScreen.AnimatePlacementScreen.route){
             AnimatePlacementScreen(navController)
+        }
+        composable(NavitemScreen.ConstraintLayoutScreen.route){
+            ConstraintLayoutScreen(navController)
+        }
+        composable(NavitemScreen.BarrierScreen.route){
+            BrrierScreen(navController)
         }
     }
 

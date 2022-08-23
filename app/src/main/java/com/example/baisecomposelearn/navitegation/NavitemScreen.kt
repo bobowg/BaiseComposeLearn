@@ -17,4 +17,6 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object AnimationSpecScreen:NavitemScreen("animationspec",R.string.animationspec)
     object AnimatedVectorDrawableScreen:NavitemScreen("animatedvectordrawable",R.string.animatedvector)
     object AnimatePlacementScreen:NavitemScreen("animateplacementscreen",R.string.animateitemplacement)
+    object ConstraintLayoutScreen:NavitemScreen("constraintlayout",R.string.constraintlayout)
+    object BarrierScreen:NavitemScreen("barrierscreen",R.string.barrier)
 }

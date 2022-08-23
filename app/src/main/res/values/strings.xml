@@ -26,4 +26,6 @@
     <string name="animatedvector">动画形式的矢量资源</string>
     <string name="animateitemplacement">列表项动画</string>
     <string name="randownmsg">随机打乱</string>
+    <string name="constraintlayout">Constraintlayout 布局</string>
+    <string name="barrier">Barrier 屏障</string>
 </resources>

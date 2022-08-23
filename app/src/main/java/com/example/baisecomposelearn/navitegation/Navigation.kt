@@ -49,6 +49,9 @@ fun Navigation(
         composable(NavitemScreen.AnimationSpecScreen.route){
             AnimationSpecScreen(navController)
         }
+        composable(NavitemScreen.AnimatedVectorDrawableScreen.route){
+            AnimatedVectorDrawableScreen(navController)
+        }
     }
 
 }

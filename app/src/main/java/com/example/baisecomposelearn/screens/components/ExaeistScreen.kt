@@ -66,7 +66,7 @@ fun goBack(navController: NavController) {
 
 @Preview
 @Composable
-fun ScreenModelPreview() {
+private fun ScreenModelPreview() {
     ScreenModel(navController = rememberNavController(), content = {
         Button(onClick = { /*TODO*/ }, modifier = Modifier
             .fillMaxWidth()

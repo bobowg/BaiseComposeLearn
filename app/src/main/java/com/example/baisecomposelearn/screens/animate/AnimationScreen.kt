@@ -57,14 +57,14 @@ fun AnimationScreen(navController: NavController) {
             Button(modifier = modo,
                 onClick = { navController.navigate(NavitemScreen.UpdateTransition.route) }) {
                 Text(
-                    text = stringResource(id = R.string.updatetransition,"动画项"),
+                    text = stringResource(id = R.string.updatetransition, "动画项"),
                     fontWeight = FontWeight.Bold,
                     fontSize = 24.sp,
                     color = Color.White
                 )
             }
             Button(modifier = modo,
-                onClick = { navController.navigate(NavitemScreen.AnimationSpecScreen.route)}) {
+                onClick = { navController.navigate(NavitemScreen.AnimationSpecScreen.route) }) {
                 Text(
                     text = stringResource(id = R.string.animationspec),
                     fontWeight = FontWeight.Bold,
@@ -73,9 +73,9 @@ fun AnimationScreen(navController: NavController) {
                 )
             }
             Button(modifier = modo,
-                onClick = { /*TODO*/ }) {
+                onClick = { navController.navigate(NavitemScreen.AnimatedVectorDrawableScreen.route) }) {
                 Text(
-                    text = stringResource(id = R.string.animation),
+                    text = stringResource(id = R.string.animatedvector),
                     fontWeight = FontWeight.Bold,
                     fontSize = 24.sp,
                     color = Color.White

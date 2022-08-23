@@ -46,7 +46,7 @@ fun Navigation(
             AnimationContentSizeScreen(navController)
         }
         composable(NavitemScreen.CrossFadeScreen.route){
-           CrossFadeScreen(navController)
+            CrossFadeScreen(navController)
         }
         composable(NavitemScreen.UpdateTransition.route){
             UpdateTransition(navController)

@@ -32,12 +32,12 @@ fun UpdateTransition(navController: NavController) {
     val color by transition.animateColor(label = "") { sate ->
         when (sate) {
             BoxState.Expanded -> Color.Red
-            BoxState.Collapsed -> MaterialTheme.colors.primary
+            BoxState.Collapsed -> Color.Transparent
         }
     }
     val size by transition.animateDp(label = "") { state ->
         when (state) {
-            BoxState.Collapsed -> 0.dp
+            BoxState.Collapsed -> 100.dp
             BoxState.Expanded -> 230.dp
         }
     }

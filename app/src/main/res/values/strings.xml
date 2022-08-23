@@ -22,4 +22,5 @@
     <string name="crossfade">Crossfade %1$s</string>
     <string name="phone">手机</string>
     <string name="updatetransition">animate*  %1$s</string>
+    <string name="animationspec">自定义动画</string>
 </resources>

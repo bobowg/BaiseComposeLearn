@@ -64,9 +64,9 @@ fun AnimationScreen(navController: NavController) {
                 )
             }
             Button(modifier = modo,
-                onClick = { /*TODO*/ }) {
+                onClick = { navController.navigate(NavitemScreen.AnimationSpecScreen.route)}) {
                 Text(
-                    text = stringResource(id = R.string.animation),
+                    text = stringResource(id = R.string.animationspec),
                     fontWeight = FontWeight.Bold,
                     fontSize = 24.sp,
                     color = Color.White

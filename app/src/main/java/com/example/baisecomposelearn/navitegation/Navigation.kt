@@ -46,6 +46,9 @@ fun Navigation(
         composable(NavitemScreen.UpdateTransition.route){
             UpdateTransition(navController)
         }
+        composable(NavitemScreen.AnimationSpecScreen.route){
+            AnimationSpecScreen(navController)
+        }
     }
 
 }

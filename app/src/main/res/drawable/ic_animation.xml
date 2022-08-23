@@ -13,7 +13,7 @@
                 android:rotation="45.0" >
                 <path
                     android:name="v"
-                    android:fillColor="#000000"
+                    android:fillColor="#FFFFFF"
                     android:pathData="M300,70 l 0,-70 70,70 0,0 -70,70z" />
             </group>
         </vector>

@@ -24,4 +24,6 @@
     <string name="updatetransition">animate*  %1$s</string>
     <string name="animationspec">自定义动画</string>
     <string name="animatedvector">动画形式的矢量资源</string>
+    <string name="animateitemplacement">列表项动画</string>
+    <string name="randownmsg">随机打乱</string>
 </resources>

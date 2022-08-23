@@ -12,7 +12,10 @@ import com.example.baisecomposelearn.screens.animate.*
 fun Navigation(
     navController: NavHostController
 ) {
-    NavHost(navController = navController, startDestination = NavitemScreen.Activate.route) {
+    NavHost(
+        navController = navController,
+        startDestination = NavitemScreen.Activate.route
+    ) {
         composable(NavitemScreen.Activate.route) {
             ActivateScreen(navController)
         }
@@ -51,6 +54,9 @@ fun Navigation(
         }
         composable(NavitemScreen.AnimatedVectorDrawableScreen.route){
             AnimatedVectorDrawableScreen(navController)
+        }
+        composable(NavitemScreen.AnimatePlacementScreen.route){
+            AnimatePlacementScreen(navController)
         }
     }
 

@@ -82,54 +82,11 @@ fun AnimationScreen(navController: NavController) {
                 )
             }
             Button(modifier = modo,
-                onClick = { /*TODO*/ }) {
+                onClick = {
+                    navController.navigate(NavitemScreen.AnimatePlacementScreen.route)
+                }) {
                 Text(
-                    text = stringResource(id = R.string.animation),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 24.sp,
-                    color = Color.White
-                )
-            }
-            Button(modifier = modo,
-                onClick = { /*TODO*/ }) {
-                Text(
-                    text = stringResource(id = R.string.animation),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 24.sp,
-                    color = Color.White
-                )
-            }
-            Button(modifier = modo,
-                onClick = { /*TODO*/ }) {
-                Text(
-                    text = stringResource(id = R.string.animation),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 24.sp,
-                    color = Color.White
-                )
-            }
-            Button(modifier = modo,
-                onClick = { /*TODO*/ }) {
-                Text(
-                    text = stringResource(id = R.string.animation),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 24.sp,
-                    color = Color.White
-                )
-            }
-            Button(modifier = modo,
-                onClick = { /*TODO*/ }) {
-                Text(
-                    text = stringResource(id = R.string.animation),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 24.sp,
-                    color = Color.White
-                )
-            }
-            Button(modifier = modo,
-                onClick = { /*TODO*/ }) {
-                Text(
-                    text = stringResource(id = R.string.animation),
+                    text = stringResource(id = R.string.animateitemplacement),
                     fontWeight = FontWeight.Bold,
                     fontSize = 24.sp,
                     color = Color.White

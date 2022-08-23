@@ -30,4 +30,5 @@
     <string name="barrier">Barrier 屏障</string>
     <string name="decoupled">Decoupled布局</string>
     <string name="circularscreen">圆屏</string>
+    <string name="jsonconstraint">Json布局</string>
 </resources>

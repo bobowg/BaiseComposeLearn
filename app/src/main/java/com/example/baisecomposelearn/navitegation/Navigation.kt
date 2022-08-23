@@ -72,6 +72,9 @@ fun Navigation(
         composable(NavitemScreen.CircularScreen.route){
             CircularScreen(navController)
         }
+        composable(NavitemScreen.JsonConstraintScreen.route){
+            JsonConstraintScreen(navController)
+        }
     }
 
 }

@@ -1,7 +1,6 @@
 package com.example.baisecomposelearn.screens.components
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -50,7 +49,7 @@ fun ScreenModel(
 }
 
 @Composable
-fun goBack(navController: NavController) {
+fun goBack(navController: NavController, modifier: Modifier = Modifier) {
     Button(
         onClick = { navController.navigateUp() },
         modifier = Modifier

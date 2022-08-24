@@ -32,4 +32,6 @@
     <string name="circularscreen">圆屏</string>
     <string name="jsonconstraint">Json布局</string>
     <string name="motionlayout">运动布局</string>
+    <string name="light">白</string>
+    <string name="dark">暗</string>
 </resources>

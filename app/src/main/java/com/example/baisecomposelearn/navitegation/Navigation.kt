@@ -75,6 +75,9 @@ fun Navigation(
         composable(NavitemScreen.JsonConstraintScreen.route){
             JsonConstraintScreen(navController)
         }
+        composable(NavitemScreen.MotionLayoutScreen.route){
+            MotionLayoutScreen(navController)
+        }
     }
 
 }

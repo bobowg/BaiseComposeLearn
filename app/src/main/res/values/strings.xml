@@ -31,4 +31,5 @@
     <string name="decoupled">Decoupled布局</string>
     <string name="circularscreen">圆屏</string>
     <string name="jsonconstraint">Json布局</string>
+    <string name="motionlayout">运动布局</string>
 </resources>

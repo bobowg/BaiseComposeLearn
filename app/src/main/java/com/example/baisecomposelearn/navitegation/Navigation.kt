@@ -78,6 +78,9 @@ fun Navigation(
         composable(NavitemScreen.MotionLayoutScreen.route){
             MotionLayoutScreen(navController)
         }
+        composable(NavitemScreen.AuthenticationScreen.route){
+            AuthenticationScreen(navController)
+        }
     }
 
 }

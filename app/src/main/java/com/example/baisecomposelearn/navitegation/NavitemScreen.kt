@@ -23,4 +23,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object CircularScreen:NavitemScreen("circularscreen",R.string.circularscreen)
     object JsonConstraintScreen:NavitemScreen("jsonconstraint",R.string.jsonconstraint)
     object MotionLayoutScreen:NavitemScreen("motionlayout",R.string.motionlayout)
+    object AuthenticationScreen:NavitemScreen("authentication",R.string.notication)
 }

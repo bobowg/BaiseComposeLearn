@@ -1,5 +1,7 @@
 package com.example.baisecomposelearn.navitegation
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -8,8 +10,10 @@ import com.example.baisecomposelearn.screens.activate.*
 import com.example.baisecomposelearn.screens.animate.*
 import com.example.baisecomposelearn.screens.constraintlayout.*
 import com.example.baisecomposelearn.screens.constraintlayout.ConstraintLayoutScreen
+import com.example.baisecomposelearn.screens.viewmodel.ViewModelScreen
 
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun Navigation(
     navController: NavHostController
@@ -80,6 +84,9 @@ fun Navigation(
         }
         composable(NavitemScreen.AuthenticationScreen.route){
             AuthenticationScreen(navController)
+        }
+        composable(NavitemScreen.ViewModelScreen.route){
+            ViewModelScreen(navController)
         }
     }
 

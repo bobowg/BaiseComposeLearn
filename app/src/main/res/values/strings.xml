@@ -35,4 +35,6 @@
     <string name="light">白</string>
     <string name="dark">暗</string>
     <string name="notication">通知 %1$s</string>
+    <string name="viewmodel">ViewModel</string>
+    <string name="flow">Flow</string>
 </resources>

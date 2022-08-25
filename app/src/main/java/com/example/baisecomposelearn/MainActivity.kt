@@ -12,6 +12,7 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
+import com.example.baisecomposelearn.utils.setNotification
 
 class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.O)

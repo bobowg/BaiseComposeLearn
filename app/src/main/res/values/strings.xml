@@ -34,5 +34,5 @@
     <string name="motionlayout">运动布局</string>
     <string name="light">白</string>
     <string name="dark">暗</string>
-    <string name="notication">通知</string>
+    <string name="notication">通知 %1$s</string>
 </resources>

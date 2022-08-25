@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -49,13 +50,39 @@ fun TopAppBar(
         contentColor = Color.White,
     )
 }
-
 @Preview
 @Composable
 fun AppBarPreview() {
     val scope = rememberCoroutineScope()
     val scoffoldState = rememberScaffoldState()
     TopAppBar(scope, scoffoldState)
+}
+
+@Composable
+fun DefaultTopAppBar(
+    navController: NavController,
+    title:String,
+    modifier: Modifier = Modifier,
+) {
+    TopAppBar(
+        title = {
+            Text(text = title, fontSize = 18.sp)
+        },
+        modifier = modifier,
+        navigationIcon = {
+            IconButton(onClick = { navController.navigateUp() }) {
+                Icon(imageVector = Icons.Default.ArrowBack, contentDescription = stringResource(id = R.string.goback))
+            }
+        },
+        backgroundColor = colorResource(id = R.color.colorPrimary),
+        contentColor = Color.White,
+    )
+}
+
+@Preview
+@Composable
+fun DefaultTopAppBarPreview() {
+    DefaultTopAppBar(navController = rememberNavController(), title = "test" )
 }
 
 @Composable

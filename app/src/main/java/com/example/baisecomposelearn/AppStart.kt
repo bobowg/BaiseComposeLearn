@@ -1,5 +1,7 @@
 package com.example.baisecomposelearn
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
@@ -13,6 +15,7 @@ import com.example.baisecomposelearn.appdrawer.Drawer
 import com.example.baisecomposelearn.appdrawer.TopAppBar
 import com.example.baisecomposelearn.navitegation.Navigation
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun StartApp() {
     val scaffoldState = rememberScaffoldState(rememberDrawerState(initialValue = DrawerValue.Closed))

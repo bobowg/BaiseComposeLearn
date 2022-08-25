@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -19,22 +20,36 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.baisecomposelearn.R
+import com.example.baisecomposelearn.appdrawer.DefaultTopAppBar
 import com.example.baisecomposelearn.model.WellnessViewModel
 
 @Composable
 fun WellnessScreen(navController: NavController) {
     val wellnessViewModel: WellnessViewModel = viewModel()
-
-        StatefulCounter()
-        WellnessTasksList(
-            list = wellnessViewModel.tasks,
-            onCheckedTask = {task,checked->
-                wellnessViewModel.changeTaskChecked(task,checked)
-            },
-            onCloseTask = {task ->
-                wellnessViewModel.remove(task)
-            }
-        )
+    Scaffold(
+        topBar = {
+            DefaultTopAppBar(
+                navController = navController,
+                title = stringResource(id = R.string.app_name)
+            )
+        },
+        content = { paddingValues ->
+            WellnessTasksList(
+                list = wellnessViewModel.tasks,
+                onCheckedTask = { task, checked ->
+                    wellnessViewModel.changeTaskChecked(task, checked)
+                },
+                onCloseTask = { task ->
+                    wellnessViewModel.remove(task)
+                },
+                modifier = Modifier.padding(top = 72.dp)
+            )
+            StatefulCounter(
+                modifier = Modifier
+                    .padding(paddingValues)
+            )
+        }
+    )
 
 }
 
@@ -43,6 +58,7 @@ fun WellnessScreen(navController: NavController) {
 fun StatefulCounter(modifier: Modifier = Modifier) {
     var count by rememberSaveable { mutableStateOf(0) }
     StatelessCounter(count = count, onInCrement = { count++ }, modifier = modifier)
+
 }
 
 @Composable
@@ -54,7 +70,9 @@ fun StatelessCounter(count: Int, onInCrement: () -> Unit, modifier: Modifier = M
         Button(
             onClick = onInCrement,
             enabled = count < 10,
-            modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 8.dp)
         ) {
             Text(text = stringResource(id = R.string.add), fontSize = 24.sp)
         }

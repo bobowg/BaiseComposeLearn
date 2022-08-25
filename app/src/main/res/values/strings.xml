@@ -37,4 +37,8 @@
     <string name="notication">通知 %1$s</string>
     <string name="viewmodel">ViewModel</string>
     <string name="flow">Flow</string>
+    <string name="wellness">Wellness 状态</string>
+    <string name="wellnessglass">你有戴过 %1$d 种眼镜</string>
+    <string name="add">添加</string>
+    <string name="close">关闭</string>
 </resources>

@@ -11,6 +11,7 @@ import com.example.baisecomposelearn.screens.animate.*
 import com.example.baisecomposelearn.screens.constraintlayout.*
 import com.example.baisecomposelearn.screens.constraintlayout.ConstraintLayoutScreen
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelScreen
+import com.example.baisecomposelearn.screens.viewmodel.WellnessScreen
 
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -87,6 +88,9 @@ fun Navigation(
         }
         composable(NavitemScreen.ViewModelScreen.route){
             ViewModelScreen(navController)
+        }
+        composable(NavitemScreen.WellnessScreen.route){
+            WellnessScreen(navController)
         }
     }
 

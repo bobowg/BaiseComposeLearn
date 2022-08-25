@@ -10,7 +10,10 @@ import com.example.baisecomposelearn.screens.activate.*
 import com.example.baisecomposelearn.screens.animate.*
 import com.example.baisecomposelearn.screens.constraintlayout.*
 import com.example.baisecomposelearn.screens.constraintlayout.ConstraintLayoutScreen
+import com.example.baisecomposelearn.screens.media.Media3ExoplayerScreen
+import com.example.baisecomposelearn.screens.media.MediaextensionScreen
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelFlowScreen
+import com.example.baisecomposelearn.screens.viewmodel.ViewModelLiveDataScreen
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelScreen
 import com.example.baisecomposelearn.screens.viewmodel.WellnessScreen
 
@@ -95,6 +98,15 @@ fun Navigation(
         }
         composable(NavitemScreen.ViewModelFlowScreen.route){
             ViewModelFlowScreen(navController)
+        }
+        composable(NavitemScreen.ViewModelLiveDataScreen.route){
+            ViewModelLiveDataScreen(navController)
+        }
+        composable(NavitemScreen.MediaextensionScreen.route){
+            MediaextensionScreen(navController)
+        }
+        composable(NavitemScreen.Media3ExoplayerScreen.route){
+            Media3ExoplayerScreen(navController)
         }
     }
 

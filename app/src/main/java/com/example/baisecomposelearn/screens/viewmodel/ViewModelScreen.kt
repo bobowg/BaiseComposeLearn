@@ -18,7 +18,7 @@ import com.example.baisecomposelearn.screens.components.ScreenModel
 
 @Composable
 fun ViewModelScreen(navController: NavController) {
-    ScreenModel(navController = navController, content = {
+    ScreenModel(navController = navController,  content = {
         val modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp)
@@ -34,7 +34,13 @@ fun ViewModelScreen(navController: NavController) {
                 fontSize = 24.sp
             )
         }
-    })
+        Button(onClick = { navController.navigate(NavitemScreen.ViewModelLiveDataScreen.route) }, modifier = modifier) {
+            Text(
+                text = stringResource(id = R.string.livedata),
+                fontSize = 24.sp
+            )
+        }
+    }, isGoBack = false)
 }
 
 @Preview

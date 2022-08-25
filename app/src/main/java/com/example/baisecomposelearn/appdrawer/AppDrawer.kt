@@ -96,6 +96,7 @@ fun Drawer(
         NavitemScreen.Animation,
         NavitemScreen.ConstraintLayoutScreen,
         NavitemScreen.ViewModelScreen,
+        NavitemScreen.MediaextensionScreen,
     )
     Column(modifier = Modifier.background(colorResource(id = R.color.colorPrimary))) {
         Row {

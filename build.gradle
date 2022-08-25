@@ -1,7 +1,7 @@
 buildscript {
     ext {
         compose_version = '1.2.0'
-        compose_nav_version = '2.5.1'
+        lifecycle_version = '2.5.1'
         google_graphics = '1.2.1'
     }
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.

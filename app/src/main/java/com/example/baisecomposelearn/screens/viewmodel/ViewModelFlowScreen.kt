@@ -19,12 +19,12 @@ import com.example.baisecomposelearn.screens.components.ScreenModel
 fun ViewModelFlowScreen(navController: NavController, viewModel: FlowViewModel = viewModel()) {
     ScreenModel(navController = navController, content = {
         val name: String by viewModel.name.collectAsState()
-        HellContent(name) { viewModel.onNameChange(it) }
+        HellContent(name, stringResource(id = R.string.flow)) { viewModel.onNameChange(it) }
     })
 }
 
 @Composable
-internal fun HellContent(name: String, onNameChange: (String) -> Unit) {
+internal fun HellContent(name: String, label:String, onNameChange: (String) -> Unit) {
     Text(
         text = stringResource(id = R.string.hello_with_args, name),
         modifier = Modifier.padding(bottom = 8.dp),
@@ -34,7 +34,7 @@ internal fun HellContent(name: String, onNameChange: (String) -> Unit) {
     OutlinedTextField(
         value = name,
         onValueChange = { onNameChange(it) },
-        label = { Text(text = stringResource(id = R.string.flow))},
+        label = { Text(text = label)},
         colors = TextFieldDefaults.outlinedTextFieldColors()
     )
 }

@@ -10,6 +10,7 @@ import com.example.baisecomposelearn.screens.activate.*
 import com.example.baisecomposelearn.screens.animate.*
 import com.example.baisecomposelearn.screens.constraintlayout.*
 import com.example.baisecomposelearn.screens.constraintlayout.ConstraintLayoutScreen
+import com.example.baisecomposelearn.screens.viewmodel.ViewModelFlowScreen
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelScreen
 import com.example.baisecomposelearn.screens.viewmodel.WellnessScreen
 
@@ -91,6 +92,9 @@ fun Navigation(
         }
         composable(NavitemScreen.WellnessScreen.route){
             WellnessScreen(navController)
+        }
+        composable(NavitemScreen.ViewModelFlowScreen.route){
+            ViewModelFlowScreen(navController)
         }
     }
 

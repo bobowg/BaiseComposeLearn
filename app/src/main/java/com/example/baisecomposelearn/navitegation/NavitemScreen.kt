@@ -26,4 +26,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object AuthenticationScreen:NavitemScreen("authentication",R.string.notication)
     object ViewModelScreen:NavitemScreen("viewmodelscreen",R.string.viewmodel)
     object WellnessScreen:NavitemScreen("wellnessscreen",R.string.wellness)
+    object ViewModelFlowScreen:NavitemScreen("viewmodelflowscreen",R.string.flow)
 }

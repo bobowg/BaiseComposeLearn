@@ -32,7 +32,7 @@ fun MediaextensionScreen(navController: NavController) {
                 .fillMaxWidth()
                 .padding(16.dp)
         ) {
-            Text(text = stringResource(id = R.string.coilimage), fontSize = 24.sp)
+            Text(text = stringResource(id = R.string.coilimage,1), fontSize = 24.sp)
         }
         Button(
             onClick = { navController.navigate(NavitemScreen.CoilLandscapistScreen.route) },
@@ -40,7 +40,7 @@ fun MediaextensionScreen(navController: NavController) {
                 .fillMaxWidth()
                 .padding(16.dp)
         ) {
-            Text(text = stringResource(id = R.string.coilimage), fontSize = 24.sp)
+            Text(text = stringResource(id = R.string.coilimage,2), fontSize = 24.sp)
         }
     })
 }

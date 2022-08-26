@@ -15,3 +15,20 @@ data class Medios(
         )
     }
 }
+
+data class ImagePitrue(
+    val id:Int,
+    val getImgUrl:String
+){
+    companion object {
+        val getImageUrl = listOf(
+            ImagePitrue(1,"https://images.pexels.com/photos/247297/pexels-photo-247297.jpeg"),
+            ImagePitrue(2,"https://images.pexels.com/photos/85773/pexels-photo-85773.jpeg"),
+            ImagePitrue(3,"https://images.pexels.com/photos/371589/pexels-photo-371589.jpeg"),
+            ImagePitrue(4,"https://images.pexels.com/photos/815996/pexels-photo-815996.jpeg"),
+            ImagePitrue(5,"https://images.pexels.com/photos/1767434/pexels-photo-1767434.jpeg"),
+            ImagePitrue(6,"https://images.pexels.com/photos/245388/pexels-photo-245388.jpeg"),
+            ImagePitrue(7,"https://images.pexels.com/photos/1406766/pexels-photo-1406766.jpeg")
+        )
+    }
+}

@@ -1,19 +1,18 @@
 package com.example.baisecomposelearn.screens.media
 
 import android.content.ContentValues.TAG
+import android.net.Uri
 import android.util.Log
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
 import coil.compose.AsyncImagePainter
 import coil.compose.SubcomposeAsyncImage
@@ -27,13 +26,13 @@ fun CoilImageScreen(navController: NavController) {
     ScreenModel(navController = navController, content = {
         val context = LocalContext.current
         AsyncImage(
-            model = "https://i.pinimg.com/564x/2a/91/ca/2a91ca75ed9296ea93b23b189584b231.jpg",
+            model = imgUrl(),
             contentDescription = stringResource(id = R.string.coilimage)
         )
         Divider()
         AsyncImage(
             model = ImageRequest.Builder(context)
-                .data("https://i.pinimg.com/564x/2a/91/ca/2a91ca75ed9296ea93b23b189584b231.jpg")
+                .data(imgUrl())
                 .crossfade(true).build(),
             contentDescription = stringResource(
                 id = R.string.coilimage
@@ -46,8 +45,9 @@ fun CoilImageScreen(navController: NavController) {
         )
         Divider()
         SubcomposeAsyncImage(
-            model = "https://i.pinimg.com/564x/2a/91/ca/2a91ca75ed9296ea93b23b189584b231.jpg",
-            contentDescription = stringResource(R.string.coilimage)
+            model = Uri.parse(imgUrl()),
+            contentDescription = stringResource(R.string.coilimage),
+            modifier = Modifier.clip(CircleShape)
         ) {
             if (painter.state is AsyncImagePainter.State.Loading || painter.state is AsyncImagePainter.State.Error) {
                 CircularProgressIndicator()
@@ -58,3 +58,5 @@ fun CoilImageScreen(navController: NavController) {
 
     })
 }
+
+fun imgUrl():String = ImagePitrue.getImageUrl.random().getImgUrl

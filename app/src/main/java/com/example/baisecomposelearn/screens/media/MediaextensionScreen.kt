@@ -42,5 +42,13 @@ fun MediaextensionScreen(navController: NavController) {
         ) {
             Text(text = stringResource(id = R.string.coilimage,2), fontSize = 24.sp)
         }
-    })
+        Button(
+            onClick = { navController.navigate(NavitemScreen.QrcodeScreen.route) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+            Text(text = stringResource(id = R.string.qrcode,2), fontSize = 24.sp)
+        }
+    }, isGoBack = false)
 }

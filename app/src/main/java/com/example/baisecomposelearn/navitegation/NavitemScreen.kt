@@ -32,5 +32,6 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object Media3ExoplayerScreen:NavitemScreen("media3exoplayerscreen",R.string.media3exoplayer)
     object CoilImageScreen:NavitemScreen("coilimagescreen",R.string.coilimage)
     object CoilLandscapistScreen:NavitemScreen("coilLandscapistscreen",R.string.coilimage)
+    object QrcodeScreen:NavitemScreen("qrcodescreen",R.string.qrcode)
 
 }

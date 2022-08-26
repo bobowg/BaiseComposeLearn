@@ -30,4 +30,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object ViewModelLiveDataScreen:NavitemScreen("viewmodellivedatascreen",R.string.livedata)
     object MediaextensionScreen:NavitemScreen("mediaextensionscreen",R.string.mediaextension)
     object Media3ExoplayerScreen:NavitemScreen("media3exoplayerscreen",R.string.media3exoplayer)
+    object CoilImageScreen:NavitemScreen("coilimagescreen",R.string.coilimage)
 }

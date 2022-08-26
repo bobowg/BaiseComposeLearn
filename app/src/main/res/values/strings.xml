@@ -45,4 +45,5 @@
     <string name="livedata">LiveData</string>
     <string name="mediaextension">媒体扩展</string>
     <string name="media3exoplayer">Media3 播放器</string>
+    <string name="coilimage">图片加载器</string>
 </resources>

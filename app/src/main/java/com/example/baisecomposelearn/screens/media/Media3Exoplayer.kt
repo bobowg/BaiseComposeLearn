@@ -32,9 +32,7 @@ import com.example.baisecomposelearn.navitegation.NavitemScreen
 
 @Composable
 fun Media3ExoplayerScreen(navController: NavController) {
-    var spolist by remember {
-        mutableStateOf(Medios.getvideoUri)
-    }
+    val spolist = Medios.getvideoUri
     Box(
         modifier = Modifier
             .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart = 10.dp))
@@ -42,32 +40,26 @@ fun Media3ExoplayerScreen(navController: NavController) {
                 Color.Black
             )
     ) {
-        LazyColumn {
-            items(spolist.size) {
-                Box(modifier = Modifier.fillMaxSize()) {
-                    Videoplayer(uri = Uri.parse(spolist.random().getVideoUrl))
-                    Column(modifier = Modifier.align(Alignment.BottomStart)) {
-                        Divider()
+        Box(modifier = Modifier.fillMaxSize()) {
+            LazyColumn(modifier = Modifier.fillMaxHeight().align(Alignment.BottomStart)) {
+                item {
+                    Videoplayer(uri = Uri.parse(spolist.random().getVideoUrl.toString()))
+                    Divider()
+                    Button(
+                        onClick = { navController.navigate(NavitemScreen.Media3ExoplayerScreen.route) },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(start = 16.dp, end = 16.dp)
+                    ) {
+                        Text(text = "随机播放")
                     }
                 }
-            }
-            item {
-                Button(
-                    onClick = { navController.navigate(NavitemScreen.Media3ExoplayerScreen.route) },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 16.dp, end = 16.dp)
-                        .align(Alignment.BottomCenter)
-                ) {
-                    Text(text = "随机播放")
-                }
-            }
 
-
+            }
         }
-
-
     }
+
+
 
 }
 

@@ -59,4 +59,4 @@ fun CoilImageScreen(navController: NavController) {
     })
 }
 
-fun imgUrl():String = ImagePitrue.getImageUrl.random().getImgUrl
+internal fun imgUrl():String = ImagePitrue.getImageUrl.random().getImgUrl

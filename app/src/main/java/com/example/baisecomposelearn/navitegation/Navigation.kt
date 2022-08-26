@@ -11,6 +11,7 @@ import com.example.baisecomposelearn.screens.animate.*
 import com.example.baisecomposelearn.screens.constraintlayout.*
 import com.example.baisecomposelearn.screens.constraintlayout.ConstraintLayoutScreen
 import com.example.baisecomposelearn.screens.media.CoilImageScreen
+import com.example.baisecomposelearn.screens.media.CoilLandscapistScreen
 import com.example.baisecomposelearn.screens.media.Media3ExoplayerScreen
 import com.example.baisecomposelearn.screens.media.MediaextensionScreen
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelFlowScreen
@@ -111,6 +112,9 @@ fun Navigation(
         }
         composable(NavitemScreen.CoilImageScreen.route){
             CoilImageScreen(navController)
+        }
+        composable(NavitemScreen.CoilLandscapistScreen.route){
+            CoilLandscapistScreen(navController)
         }
     }
 

@@ -116,6 +116,12 @@ fun Navigation(
         composable(NavitemScreen.QrcodeScreen.route){
             QrcodeScreen(navController)
         }
+        composable(NavitemScreen.DownFontScreen.route){
+            DownFontScreen(navController)
+        }
+        composable(NavitemScreen.TabsScreen.route){
+            TabsScreen(navController)
+        }
     }
 
 }

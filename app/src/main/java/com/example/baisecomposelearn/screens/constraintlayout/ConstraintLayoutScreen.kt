@@ -78,6 +78,15 @@ fun ConstraintLayoutScreen(navController: NavController) {
                 color = Color.White
             )
         }
+        Button(modifier = modo,
+            onClick = { navController.navigate(NavitemScreen.TabsScreen.route) }) {
+            Text(
+                text = stringResource(id = R.string.tabs,""),
+                fontWeight = FontWeight.Bold,
+                fontSize = 24.sp,
+                color = Color.White
+            )
+        }
     })
 }
 

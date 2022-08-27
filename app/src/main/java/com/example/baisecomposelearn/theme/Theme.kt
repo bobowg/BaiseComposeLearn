@@ -31,7 +31,7 @@ fun BaiseComposeLearnTheme(content: @Composable () -> Unit) {
     val isDarkThemeEnabled = isSystemInDarkTheme() || BaiseComposeLearnThemeSettings.isDarkThemeEnabled
     val colors = if (isDarkThemeEnabled) DarkThemeColors else LightThemeColors
 
-    MaterialTheme(colors = colors, content = content)
+    MaterialTheme(colors = colors, content = content, typography = Typography)
 }
 
 /**
@@ -39,4 +39,5 @@ fun BaiseComposeLearnTheme(content: @Composable () -> Unit) {
  */
 object BaiseComposeLearnThemeSettings {
     var isDarkThemeEnabled by mutableStateOf(false)
+
 }

@@ -48,7 +48,7 @@ fun MediaextensionScreen(navController: NavController) {
                 .fillMaxWidth()
                 .padding(16.dp)
         ) {
-            Text(text = stringResource(id = R.string.qrcode,2), fontSize = 24.sp)
+            Text(text = stringResource(id = R.string.qrcode,""), fontSize = 24.sp)
         }
     }, isGoBack = false)
 }

@@ -92,6 +92,17 @@ fun AnimationScreen(navController: NavController) {
                     color = Color.White
                 )
             }
+            Button(modifier = modo,
+                onClick = {
+                    navController.navigate(NavitemScreen.CurtainEffectScreen.route)
+                }) {
+                Text(
+                    text = stringResource(id = R.string.curtaineffect),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 24.sp,
+                    color = Color.White
+                )
+            }
         }
     )
 }

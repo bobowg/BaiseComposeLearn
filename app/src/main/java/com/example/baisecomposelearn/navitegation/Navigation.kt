@@ -122,6 +122,9 @@ fun Navigation(
         composable(NavitemScreen.TabsScreen.route){
             TabsScreen(navController)
         }
+        composable(NavitemScreen.CurtainEffectScreen.route){
+            CurtainEffectScreen(navController)
+        }
     }
 
 }

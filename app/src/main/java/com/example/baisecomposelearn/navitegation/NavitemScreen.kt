@@ -35,5 +35,6 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object QrcodeScreen:NavitemScreen("qrcodescreen",R.string.qrcode)
     object DownFontScreen:NavitemScreen("downfontscreen",R.string.font)
     object TabsScreen:NavitemScreen("tabsScreen",R.string.tabs)
+    object CurtainEffectScreen:NavitemScreen("curtaineffectscreen",R.string.curtaineffect)
 
 }

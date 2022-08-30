@@ -32,7 +32,7 @@ fun CurtainEffectScreen(navController: NavController) {
             foldingDuration = 400,
             mainCell = {
                 Card(
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().padding(16.dp),
                     backgroundColor = Color.DarkGray,
                 ) {
                     Box(
@@ -48,7 +48,7 @@ fun CurtainEffectScreen(navController: NavController) {
                 {
                     Card(
                         modifier = Modifier
-                            .fillMaxWidth()
+                            .fillMaxWidth().padding(start = 16.dp, end = 16.dp)
                             .height(128.dp),
                         backgroundColor = Color.DarkGray,
                         shape = RectangleShape
@@ -65,7 +65,7 @@ fun CurtainEffectScreen(navController: NavController) {
                 {
                     Card(
                         modifier = Modifier
-                            .fillMaxWidth()
+                            .fillMaxWidth().padding(start = 16.dp, end = 16.dp)
                             .height(128.dp),
                         backgroundColor = Color.DarkGray,
                         shape = RectangleShape
@@ -82,7 +82,7 @@ fun CurtainEffectScreen(navController: NavController) {
                 {
                     Card(
                         modifier = Modifier
-                            .fillMaxWidth()
+                            .fillMaxWidth().padding(start = 16.dp, end = 16.dp)
                             .height(128.dp),
                         backgroundColor = Color.DarkGray,
                         shape = RectangleShape
@@ -99,7 +99,7 @@ fun CurtainEffectScreen(navController: NavController) {
                 {
                     Card(
                         modifier = Modifier
-                            .fillMaxWidth()
+                            .fillMaxWidth().padding(start = 16.dp, end = 16.dp)
                             .height(128.dp),
                         backgroundColor = Color.DarkGray,
                         shape = RectangleShape

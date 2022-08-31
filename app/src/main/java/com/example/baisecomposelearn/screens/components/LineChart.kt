@@ -5,11 +5,13 @@ import android.graphics.PointF
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
@@ -62,6 +64,7 @@ fun LineChart(
         var key = 1
         Canvas(modifier = Modifier
             .fillMaxSize()
+            .clip(CutCornerShape(10))
             .pointerInput(Unit) {
                 detectTapGestures(onPress = { offset ->
                     val handle = key + 1

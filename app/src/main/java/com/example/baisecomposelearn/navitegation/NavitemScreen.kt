@@ -36,5 +36,6 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object DownFontScreen:NavitemScreen("downfontscreen",R.string.font)
     object TabsScreen:NavitemScreen("tabsScreen",R.string.tabs)
     object CurtainEffectScreen:NavitemScreen("curtaineffectscreen",R.string.curtaineffect)
+    object LineChartScreen:NavitemScreen("linechartscreen",R.string.linechart)
 
 }

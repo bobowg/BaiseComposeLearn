@@ -125,6 +125,9 @@ fun Navigation(
         composable(NavitemScreen.CurtainEffectScreen.route){
             CurtainEffectScreen(navController)
         }
+        composable(NavitemScreen.LineChartScreen.route){
+            LineChartScreen(navController)
+        }
     }
 
 }

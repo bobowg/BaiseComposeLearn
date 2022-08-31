@@ -58,5 +58,14 @@ fun MediaextensionScreen(navController: NavController) {
         ) {
             Text(text = stringResource(id = R.string.font,""), fontSize = 24.sp)
         }
+        Button(
+            onClick = { navController.navigate(NavitemScreen.LineChartScreen.route) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+            Text(text = stringResource(id = R.string.linechart,""), fontSize = 24.sp)
+        }
+
     }, isGoBack = false)
 }

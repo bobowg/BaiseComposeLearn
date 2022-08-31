@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -78,6 +79,7 @@ dependencies {
     implementation "com.github.skydoves:landscapist-glide:$landscapist_vision"
     implementation "com.github.skydoves:landscapist-coil:$landscapist_vision"
     implementation "com.simonsickle:composed-barcodes:1.1.1"
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

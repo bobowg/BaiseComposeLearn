@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "946421202867",
+    "project_id": "neon-citizen-350411",
+    "storage_bucket": "neon-citizen-350411.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946421202867:android:63e112841adcafbaf595c6",
+        "android_client_info": {
+          "package_name": "com.example.baisecomposelearn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946421202867-3013gvtuvies62t335jsrjvn7nccasq8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwz6PqnrSGWniixP5xN_eoN69BGy_jlBs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "946421202867-3013gvtuvies62t335jsrjvn7nccasq8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

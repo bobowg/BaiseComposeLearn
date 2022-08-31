@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -29,7 +30,7 @@ fun ScreenModel(
     isGoBack:Boolean = true
 ) {
     Column(
-        modifier = modifier
+        modifier = modifier.testTag("Counter Display")
             .fillMaxSize()
             .background(colorResource(id = R.color.colorPrimary))
             .wrapContentSize(Alignment.Center)
@@ -52,7 +53,7 @@ fun ScreenModel(
 fun goBack(navController: NavController, modifier: Modifier = Modifier) {
     Button(
         onClick = { navController.navigateUp() },
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .padding(16.dp)
     ) {

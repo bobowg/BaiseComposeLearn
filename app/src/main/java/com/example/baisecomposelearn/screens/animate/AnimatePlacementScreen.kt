@@ -19,6 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.media3.extractor.MpegAudioUtil
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.baisecomposelearn.R
@@ -57,6 +58,7 @@ fun AnimatePlacementScreen(navController: NavController) {
         "kiwi"
     )
     var list by remember { mutableStateOf(items) }
+    val route = list.groupBy { it.first().toString() }
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -76,23 +78,39 @@ fun AnimatePlacementScreen(navController: NavController) {
                 )
             }
         }
-        items(list, key = { it }) {
-            Text(
-                text = "$it",
-                modifier = Modifier
-                    .padding(16.dp)
-                    .animateItemPlacement(tween(250)),
-                fontSize = 24.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.White
-            )
-        }
+        route.forEach { (inital, ru) ->
+            stickyHeader {
+                Text(
+                    text = inital,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(color = colorResource(id = R.color.colorPrimaryDark))
+                        .padding(16.dp),
+                    color = Color.White,
+                    fontSize = 28.sp
+                )
+            }
 
+
+
+            items(ru) { r ->
+                Text(
+                    text = r,
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .animateItemPlacement(tween(250)),
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White
+                )
+            }
+
+
+        }
         item {
             goBack(navController = navController)
         }
     }
-
 }
 
 @Preview

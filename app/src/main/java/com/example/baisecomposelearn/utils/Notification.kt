@@ -80,10 +80,13 @@ fun showNotification(context: Context, photo: photoType) {
 
 fun setNotification(context: Context) {
     // Create an explicit intent for an Activity in your app
-    val intent = Intent(context, ResultActivity::class.java).apply {
-        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+    val intent = Intent(context, ResultActivity::class.java)
+    val pendingIntent: PendingIntent
+    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+        pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+    } else {
+        pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_ONE_SHOT)
     }
-    val pendingIntent: PendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
 
     val builder = NotificationCompat.Builder(context, "CHANNEL_ID")
         .setSmallIcon(R.drawable.logo)
@@ -95,7 +98,7 @@ fun setNotification(context: Context) {
         .setAutoCancel(true)
     with(NotificationManagerCompat.from(context)) {
         // notificationId is a unique int for each notification that you must define
-        notify(1, builder.build())
+        notify(2, builder.build())
     }
 
 

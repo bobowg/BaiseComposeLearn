@@ -21,6 +21,9 @@
         <activity
             android:name=".ResultActivity"
             android:parentActivityName=".MainActivity"
+            android:launchMode="singleTask"
+            android:excludeFromRecents="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

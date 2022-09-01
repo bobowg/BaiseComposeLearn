@@ -54,4 +54,5 @@
     <string name="books">电子书</string>
     <string name="curtaineffect">窗帘效果</string>
     <string name="linechart">图表效果</string>
+    <string name="composeparticlescreen">组合粒子系统示例</string>
 </resources>

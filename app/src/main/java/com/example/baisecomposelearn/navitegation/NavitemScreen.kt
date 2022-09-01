@@ -37,5 +37,6 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object TabsScreen:NavitemScreen("tabsScreen",R.string.tabs)
     object CurtainEffectScreen:NavitemScreen("curtaineffectscreen",R.string.curtaineffect)
     object LineChartScreen:NavitemScreen("linechartscreen",R.string.linechart)
+    object ComposeParticleScreen:NavitemScreen("composeparticlescreen",R.string.composeparticlescreen)
 
 }

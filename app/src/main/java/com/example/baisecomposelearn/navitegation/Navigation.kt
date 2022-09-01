@@ -128,6 +128,9 @@ fun Navigation(
         composable(NavitemScreen.LineChartScreen.route){
             LineChartScreen(navController)
         }
+        composable(NavitemScreen.ComposeParticleScreen.route){
+            ComposeParticleScreen(navController)
+        }
     }
 
 }

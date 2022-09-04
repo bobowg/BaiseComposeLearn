@@ -5,6 +5,7 @@ buildscript {
         google_graphics = '1.2.1'
         coli_vision = '2.2.0'
         landscapist_vision = '1.6.1'
+        richtext_version = '0.13.0'
     }
     dependencies {
         classpath 'com.google.gms:google-services:4.3.13'

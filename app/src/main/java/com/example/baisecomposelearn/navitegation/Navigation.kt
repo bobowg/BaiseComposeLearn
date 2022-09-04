@@ -131,6 +131,9 @@ fun Navigation(
         composable(NavitemScreen.ComposeParticleScreen.route){
             ComposeParticleScreen(navController)
         }
+        composable(NavitemScreen.DocumentScreen.route){
+            DocumentScreen(navController)
+        }
     }
 
 }

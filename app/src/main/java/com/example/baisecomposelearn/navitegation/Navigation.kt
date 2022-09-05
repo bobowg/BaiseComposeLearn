@@ -3,6 +3,7 @@ package com.example.baisecomposelearn.navitegation
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -133,6 +134,9 @@ fun Navigation(
         }
         composable(NavitemScreen.DocumentScreen.route){
             DocumentScreen(navController)
+        }
+        composable(NavitemScreen.MaterialRichTextScreen.route){
+            MaterialRichTextScreen(navController)
         }
     }
 

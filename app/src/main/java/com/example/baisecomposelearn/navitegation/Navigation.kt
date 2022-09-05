@@ -138,6 +138,9 @@ fun Navigation(
         composable(NavitemScreen.MaterialRichTextScreen.route){
             MaterialRichTextScreen(navController)
         }
+        composable(NavitemScreen.FrescoLandscapistScreen.route){
+            FrescoLandscapistScreen(navController)
+        }
     }
 
 }

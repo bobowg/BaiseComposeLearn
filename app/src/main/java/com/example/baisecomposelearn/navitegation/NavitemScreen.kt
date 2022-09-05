@@ -40,5 +40,6 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object ComposeParticleScreen:NavitemScreen("composeparticlescreen",R.string.composeparticlescreen)
     object DocumentScreen:NavitemScreen("documentscreen",R.string.document)
     object MaterialRichTextScreen:NavitemScreen("materialrichtextscreen",R.string.materialrichtextscreen)
+    object FrescoLandscapistScreen:NavitemScreen("frescolandscapistscreen",R.string.frescolandscapist)
 
 }

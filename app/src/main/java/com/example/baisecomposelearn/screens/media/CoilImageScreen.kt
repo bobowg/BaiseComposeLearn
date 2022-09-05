@@ -20,6 +20,7 @@ import coil.compose.SubcomposeAsyncImageContent
 import coil.request.ImageRequest
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.screens.components.ScreenModel
+import com.example.baisecomposelearn.screens.components.imgUrl
 
 @Composable
 fun CoilImageScreen(navController: NavController) {
@@ -59,4 +60,3 @@ fun CoilImageScreen(navController: NavController) {
     })
 }
 
-internal fun imgUrl():String = ImagePitrue.getImageUrl.random().getImgUrl

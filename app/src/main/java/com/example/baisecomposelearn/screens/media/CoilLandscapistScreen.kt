@@ -20,6 +20,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.navigation.NavController
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.screens.components.goBack
+import com.example.baisecomposelearn.screens.components.imgUrl
 import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.ShimmerParams
 import com.skydoves.landscapist.coil.CoilImage

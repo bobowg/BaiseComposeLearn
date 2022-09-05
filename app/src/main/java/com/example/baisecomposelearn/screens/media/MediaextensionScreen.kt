@@ -83,12 +83,12 @@ fun MediaextensionScreen(navController: NavController) {
             Text(text = stringResource(id = R.string.document,), fontSize = 24.sp)
         }
         Button(
-            onClick = { navController.navigate(NavitemScreen.DocumentScreen.route) },
+            onClick = { navController.navigate(NavitemScreen.FrescoLandscapistScreen.route) },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp)
         ) {
-            Text(text = stringResource(id = R.string.document,), fontSize = 24.sp)
+            Text(text = stringResource(id = R.string.frescolandscapist,), fontSize = 24.sp)
         }
 
     }, isGoBack = false)

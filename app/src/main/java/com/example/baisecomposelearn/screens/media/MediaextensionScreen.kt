@@ -80,7 +80,15 @@ fun MediaextensionScreen(navController: NavController) {
                 .fillMaxWidth()
                 .padding(16.dp)
         ) {
-            Text(text = stringResource(id = R.string.document,), fontSize = 24.sp)
+            Text(text = stringResource(id = R.string.document,"文档1"), fontSize = 24.sp)
+        }
+        Button(
+            onClick = { navController.navigate(NavitemScreen.MaterialRichTextScreen.route) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+            Text(text = stringResource(id = R.string.document, "文档2"), fontSize = 24.sp)
         }
         Button(
             onClick = { navController.navigate(NavitemScreen.FrescoLandscapistScreen.route) },

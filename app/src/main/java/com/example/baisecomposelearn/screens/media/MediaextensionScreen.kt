@@ -98,6 +98,14 @@ fun MediaextensionScreen(navController: NavController) {
         ) {
             Text(text = stringResource(id = R.string.frescolandscapist,), fontSize = 24.sp)
         }
+        Button(
+            onClick = { navController.navigate(NavitemScreen.FontAwesomeScreen.route) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+            Text(text = stringResource(id = R.string.fontawesomescreen,), fontSize = 24.sp)
+        }
 
     }, isGoBack = false)
 }

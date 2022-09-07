@@ -3,14 +3,12 @@ package com.example.baisecomposelearn.navitegation
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.baisecomposelearn.screens.activate.*
 import com.example.baisecomposelearn.screens.animate.*
 import com.example.baisecomposelearn.screens.constraintlayout.*
-import com.example.baisecomposelearn.screens.constraintlayout.ConstraintLayoutScreen
 import com.example.baisecomposelearn.screens.media.*
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelFlowScreen
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelLiveDataScreen
@@ -132,14 +130,17 @@ fun Navigation(
         composable(NavitemScreen.ComposeParticleScreen.route){
             ComposeParticleScreen(navController)
         }
-        composable(NavitemScreen.DocumentScreen.route){
+        composable(NavitemScreen.DocumentScreen.route) {
             DocumentScreen(navController)
         }
-        composable(NavitemScreen.MaterialRichTextScreen.route){
+        composable(NavitemScreen.MaterialRichTextScreen.route) {
             MaterialRichTextScreen(navController)
         }
-        composable(NavitemScreen.FrescoLandscapistScreen.route){
+        composable(NavitemScreen.FrescoLandscapistScreen.route) {
             FrescoLandscapistScreen(navController)
+        }
+        composable(NavitemScreen.FontAwesomeScreen.route) {
+            FontAwesomeScreen(navController)
         }
     }
 

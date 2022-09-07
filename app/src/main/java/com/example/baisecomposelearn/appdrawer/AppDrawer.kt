@@ -7,10 +7,9 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Menu
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -27,6 +26,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.navitegation.NavitemScreen
+import com.example.baisecomposelearn.theme.rwGreen
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -35,7 +35,6 @@ fun TopAppBar(
     scope: CoroutineScope,
     scoffoldState: ScaffoldState
 ) {
-
 
     TopAppBar(
         title = {
@@ -84,6 +83,7 @@ fun DefaultTopAppBar(
 fun DefaultTopAppBarPreview() {
     DefaultTopAppBar(navController = rememberNavController(), title = "test" )
 }
+
 
 @Composable
 fun Drawer(
@@ -135,18 +135,40 @@ fun Drawer(
                     scope.launch {
                         scoffoldState.drawerState.close()
                     }
-            })
+                })
         }
         Spacer(modifier = Modifier.weight(1f))
-        Text(
-            text = stringResource(id = R.string.app_name),
-            color = Color.White,
-            textAlign = TextAlign.Center,
-            fontWeight = FontWeight.Bold,
+        Row(
             modifier = Modifier
                 .padding(12.dp)
                 .align(Alignment.CenterHorizontally)
-        )
+        ) {
+            val openDialog = remember { mutableStateOf(false) }
+            if (openDialog.value){
+                dilog(openDialog)
+            }
+            Button(
+                onClick = {
+                    openDialog.value = true
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(color = rwGreen)
+            ) {
+                Icon(
+                    imageVector = Icons.Default.ExitToApp,
+                    contentDescription = stringResource(id = R.string.app_name)
+                )
+                Text(
+                    text = stringResource(id = R.string.app_name),
+                    color = Color.White,
+                    textAlign = TextAlign.Center,
+                    fontWeight = FontWeight.Bold,
+                )
+
+            }
+
+        }
     }
 }
 
@@ -191,3 +213,52 @@ fun DrawerItem(
 fun DrawerItemPreview() {
     DrawerItem(item = NavitemScreen.Activate, selected = false, onItemClick = {})
 }
+
+@Composable
+fun dilog(openDialog:MutableState<Boolean>) {
+    if (openDialog.value) {
+        AlertDialog(
+            onDismissRequest = {
+                openDialog.value = false
+            },
+            title = {
+                Text(text = stringResource(id = R.string.exit))
+            },
+            text = {
+                Text(
+                    text = stringResource(id = R.string.exit_content)
+                )
+            },
+            confirmButton = {
+                Row(
+
+                    modifier = Modifier.padding(all = 8.dp),
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    Button(
+                        onClick = {
+                            android.os.Process.killProcess(android.os.Process.myPid())
+                        }
+                    ) {
+                        Text(text = stringResource(id = R.string.ok))
+                    }
+                }
+            }
+            ,
+            dismissButton = {
+                Row(
+                    modifier = Modifier.padding(all = 8.dp),
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    Button(
+                        onClick = { openDialog.value = false }
+                    ) {
+                        Text(text = stringResource(id = R.string.cancel))
+                    }
+                }
+            },
+            backgroundColor = colorResource(id = R.color.colorPrimary)
+        )
+    }
+}
+

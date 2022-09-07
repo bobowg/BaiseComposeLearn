@@ -61,4 +61,8 @@
     <string name="materialrichtextscreen">MaterialRichText</string>
     <string name="frescolandscapist">壁画风景画屏</string>
     <string name="fontawesomescreen">亚馬逊图标</string>
+    <string name="exit">退出</string>
+    <string name="exit_content">可以杀死当前应用活动的进程，这一操作将会把所有该进程内的资源（包括线程全部清理掉）。当然，由于ActivityManager时刻监听着进程，一旦发现进程被非正常Kill，它将会试图去重启这个进程。</string>
+    <string name="cancel">取消</string>
+    <string name="ok">确定</string>
 </resources>

@@ -2,20 +2,13 @@ package com.example.baisecomposelearn
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.app.PendingIntent
-import android.app.TaskStackBuilder
 import android.content.Context
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
-import com.example.baisecomposelearn.utils.setNotification
 
 class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.O)

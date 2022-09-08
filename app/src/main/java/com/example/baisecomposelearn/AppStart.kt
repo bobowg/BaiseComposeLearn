@@ -1,9 +1,7 @@
 package com.example.baisecomposelearn
 
-import android.app.Application
 import android.os.Build
 import androidx.annotation.RequiresApi
-import dagger.hilt.android.HiltAndroidApp
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -15,13 +13,15 @@ import androidx.navigation.compose.rememberNavController
 import com.example.baisecomposelearn.appdrawer.Drawer
 import com.example.baisecomposelearn.appdrawer.TopAppBar
 import com.example.baisecomposelearn.navitegation.Navigation
+import android.app.Application
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.baisecomposelearn.screens.room.NotesViewModel
+import dagger.hilt.android.HiltAndroidApp
 
 
 
 @HiltAndroidApp
-class AppStart :Application(){
-
-}
+class AppStart :Application()
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable

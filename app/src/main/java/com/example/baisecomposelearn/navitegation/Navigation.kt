@@ -144,7 +144,7 @@ fun Navigation(
             FontAwesomeScreen(navController)
         }
         composable(NavitemScreen.RoomDatabaseScreen.route){
-            RoomDatabaseScreen(navController)
+            RoomDatabaseScreen()
         }
     }
 

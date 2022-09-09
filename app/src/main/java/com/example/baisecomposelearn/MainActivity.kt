@@ -5,9 +5,11 @@ import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
+import androidx.core.view.WindowCompat
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,9 +22,8 @@ class MainActivity : ComponentActivity() {
                 StartApp()
             }
         }
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
     }
-
-
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun createNotificationChannel(){

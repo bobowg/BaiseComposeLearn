@@ -3,22 +3,10 @@ package com.example.baisecomposelearn.screens.media
 import android.net.Uri
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.widget.FrameLayout
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Button
-import androidx.compose.material.Divider
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
@@ -30,39 +18,21 @@ import androidx.media3.exoplayer.source.ProgressiveMediaSource
 import androidx.media3.ui.AspectRatioFrameLayout
 import androidx.media3.ui.PlayerView
 import androidx.navigation.NavController
-import com.example.baisecomposelearn.navitegation.NavitemScreen
-import com.example.baisecomposelearn.screens.components.Medios
+import com.example.baisecomposelearn.model.playviewmodel.PlayViewModel
+import com.example.baisecomposelearn.utils.NormalVideoListScreen
+import com.example.baisecomposelearn.utils.RefreshVideoListScreen
+
 
 @Composable
-fun Media3ExoplayerScreen(navController: NavController) {
-    val spolist = Medios.getvideoUri
-    Box(
-        modifier = Modifier
-            .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart = 10.dp))
-            .background(
-                Color.Black
-            )
-    ) {
-        Box(modifier = Modifier.fillMaxSize()) {
-            LazyColumn(modifier = Modifier.fillMaxHeight().align(Alignment.BottomStart)) {
-                item {
-                    Videoplayer(uri = Uri.parse(spolist.random().getVideoUrl.toString()))
-                    Divider()
-                    Button(
-                        onClick = { navController.navigate(NavitemScreen.Media3ExoplayerScreen.route) },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(start = 16.dp, end = 16.dp)
-                    ) {
-                        Text(text = "随机播放")
-                    }
-                }
-
-            }
-        }
+fun Media3ExoplayerScreen() {
+    val viewModel:PlayViewModel = PlayViewModel()
+    val loadModeRefresh = false
+    val context = LocalContext.current
+    if (loadModeRefresh){
+        RefreshVideoListScreen(viewModel = viewModel, context = context)
+    }else{
+        NormalVideoListScreen(viewModel = viewModel, context = context)
     }
-
-
 
 }
 

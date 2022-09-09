@@ -105,7 +105,7 @@ fun Navigation(
             MediaextensionScreen(navController)
         }
         composable(NavitemScreen.Media3ExoplayerScreen.route){
-            Media3ExoplayerScreen(navController)
+            Media3ExoplayerScreen()
         }
         composable(NavitemScreen.CoilImageScreen.route){
             CoilImageScreen(navController)

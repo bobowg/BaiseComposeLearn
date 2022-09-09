@@ -8,7 +8,7 @@ interface DbMapper {
         noteDbModels:List<NoteDbModel>
     ):List<NoteModel>
 
-    fun mapNote(noteModel: NoteModel):NoteModel
+    fun mapNote(noteDbModel: NoteDbModel): NoteModel
 
-    fun mapDbNote(noteModel: NoteModel):NoteDbModel
+    fun mapDbNote(note: NoteModel): NoteDbModel
 }

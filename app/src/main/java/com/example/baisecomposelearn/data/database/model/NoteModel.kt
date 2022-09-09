@@ -6,5 +6,4 @@ data class NoteModel(
     val id: Long = NEW_NOTE_ID,
     val title: String = "",
     val content:String ="",
-    val isInTrash: Boolean,
 )

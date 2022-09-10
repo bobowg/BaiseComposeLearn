@@ -13,12 +13,22 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import com.example.baisecomposelearn.appdrawer.Drawer
 import com.example.baisecomposelearn.appdrawer.TopAppBar
+import com.example.baisecomposelearn.dependencyinjector.DependencyInjector
 import com.example.baisecomposelearn.navitegation.Navigation
 import dagger.hilt.android.HiltAndroidApp
 
 
 @HiltAndroidApp
-class AppStart :Application()
+class AppStart :Application(){
+    lateinit var dependencyInjector: DependencyInjector
+    override fun onCreate() {
+        super.onCreate()
+        initDependencyInjector()
+    }
+    private fun initDependencyInjector(){
+        dependencyInjector = DependencyInjector(this)
+    }
+}
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable

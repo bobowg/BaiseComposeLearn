@@ -13,7 +13,7 @@ class DbMapperImpl:DbMapper {
 
     override fun mapNote(noteDbModel: NoteDbModel): NoteModel {
         return with(noteDbModel){
-            NoteModel(id,title,content,isInTrash)
+            NoteModel(id,title,content,)
         }
     }
 

@@ -8,8 +8,11 @@ import android.os.Bundle
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.core.view.WindowCompat
+import com.example.baisecomposelearn.model.noteviewmodel.NoteViewModel
+import com.example.baisecomposelearn.model.noteviewmodel.NoteViewModelFactory
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
 
 class MainActivity : ComponentActivity() {

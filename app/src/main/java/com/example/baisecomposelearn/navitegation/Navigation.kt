@@ -1,20 +1,26 @@
 package com.example.baisecomposelearn.navitegation
 
+import android.app.PendingIntent
+import android.content.Intent
 import android.os.Build
+import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
+import androidx.core.content.ContextCompat.startActivity
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.baisecomposelearn.ResultActivity
 import com.example.baisecomposelearn.screens.activate.*
 import com.example.baisecomposelearn.screens.animate.*
 import com.example.baisecomposelearn.screens.constraintlayout.*
 import com.example.baisecomposelearn.screens.media.*
-import com.example.baisecomposelearn.screens.room.RoomDatabaseScreen
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelFlowScreen
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelLiveDataScreen
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelScreen
 import com.example.baisecomposelearn.screens.viewmodel.WellnessScreen
+import com.example.baisecomposelearn.utils.startActivitySafe
 
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -143,8 +149,10 @@ fun Navigation(
         composable(NavitemScreen.FontAwesomeScreen.route) {
             FontAwesomeScreen(navController)
         }
-        composable(NavitemScreen.RoomDatabaseScreen.route){
-            RoomDatabaseScreen()
+        composable(NavitemScreen.RoomDatabaseScreen.route) {
+            val context = LocalContext.current
+            val sendIntent = Intent(context, ResultActivity::class.java)
+            startActivity(context,sendIntent, Bundle.EMPTY)
         }
     }
 

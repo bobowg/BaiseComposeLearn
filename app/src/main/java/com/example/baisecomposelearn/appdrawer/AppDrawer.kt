@@ -211,7 +211,7 @@ fun DrawerItem(
 
 @Preview
 @Composable
-fun DrawerItemPreview() {
+private fun DrawerItemPreview() {
     DrawerItem(item = NavitemScreen.Activate, selected = false, onItemClick = {})
 }
 

@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.baisecomposelearn.data.database.model.NoteModel
 import com.example.baisecomposelearn.data.repository.Repository
+import com.example.baisecomposelearn.navitegation.JetNotesRouter
+import com.example.baisecomposelearn.navitegation.NoteScreen
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -30,12 +32,12 @@ class NoteViewModel(
 
     fun onCreateNewNoteClick() {
         _noteEntry.value = NoteModel()
-//        JetNotesRouter.navigateTo(Screen.SaveNote)
+        JetNotesRouter.navigateTo(NoteScreen.SaveNote)
     }
 
     fun onNoteClick(note: NoteModel) {
         _noteEntry.value = note
-//        JetNotesRouter.navigateTo(Screen.SaveNote)
+        JetNotesRouter.navigateTo(NoteScreen.SaveNote)
     }
 
     fun onNoteCheckedChange(note: NoteModel) {
@@ -76,7 +78,7 @@ class NoteViewModel(
         viewModelScope.launch(Dispatchers.Default) {
             repository.insertNote(note)
             withContext(Dispatchers.Main) {
-//                JetNotesRouter.navigateTo(Screen.Notes)
+                JetNotesRouter.navigateTo(NoteScreen.RoomDatabaseScreen)
                 _noteEntry.value = NoteModel()
             }
         }
@@ -87,7 +89,7 @@ class NoteViewModel(
             repository.moveNoteToTrash(note.id)
 
             withContext(Dispatchers.Main) {
-//                JetNotesRouter.navigateTo(Screen.Notes)
+                JetNotesRouter.navigateTo(NoteScreen.RoomDatabaseScreen)
             }
         }
     }

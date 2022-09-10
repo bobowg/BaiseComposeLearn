@@ -1,5 +1,7 @@
 package com.example.baisecomposelearn.NoteScreens.room
 
+import android.content.Intent
+import android.os.Bundle
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -8,6 +10,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.TabRowDefaults.Divider
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.BlurOff
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Menu
@@ -16,8 +19,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat
+import com.example.baisecomposelearn.MainActivity
+import com.example.baisecomposelearn.ResultActivity
 import com.example.baisecomposelearn.navitegation.JetNotesRouter
 import com.example.baisecomposelearn.navitegation.NoteScreen
 
@@ -26,6 +33,7 @@ fun AppDrawer(
     currentScreen: NoteScreen,
     closeDrawerAction: () -> Unit
 ) {
+    val context = LocalContext.current
     Column(modifier = Modifier.fillMaxSize()) {
         AppDrawerHeader()
         Divider(color = MaterialTheme.colors.onSurface.copy(alpha = 0.2f))
@@ -45,6 +53,14 @@ fun AppDrawer(
             onClick = {
                 JetNotesRouter.navigateTo(NoteScreen.Trash)
                 closeDrawerAction()
+            })
+        NoteScreenNavigationButton(
+            icon = Icons.Default.BlurOff,
+            label = "返回",
+            false,
+            onClick = {
+                val sendIntent = Intent(context, MainActivity::class.java)
+                ContextCompat.startActivity(context, sendIntent, Bundle.EMPTY)
             })
 
     }

@@ -23,7 +23,7 @@ fun GoogleMapsScreen() {
 @Composable
 fun GooglMapsExplame() {
     var isMapLoaded by remember { mutableStateOf(false) }
-    val athens = LatLng(109.508268, 18.247872)
+    val athens = LatLng(18.247872,109.508268 )
     val cameraPositionState = rememberCameraPositionState {
         position = CameraPosition.fromLatLngZoom(athens, 8f)
     }
@@ -41,7 +41,7 @@ fun GooglMapsExplame() {
         ) {
             Marker(state = rememberMarkerState(position = athens), title = "三亚")
             Marker(
-                state = rememberMarkerState(position = LatLng(109.651045, 18.247872)),
+                state = rememberMarkerState(position = LatLng(20.247872,109.651045)),
                 title = "乐东"
             )
         }

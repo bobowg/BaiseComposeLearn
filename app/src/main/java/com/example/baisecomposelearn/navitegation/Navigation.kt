@@ -157,6 +157,9 @@ fun Navigation(
         composable(NavitemScreen.GoogleMapsScreen.route){
             GoogleMapsScreen()
         }
+        composable(NavitemScreen.GlideLandscapistScreen.route){
+            GlideLandscapistScreen(navController)
+        }
     }
 
 }

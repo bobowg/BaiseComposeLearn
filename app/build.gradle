@@ -4,15 +4,17 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
+apply plugin: 'kotlin-android'
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.baisecomposelearn"
         minSdk 23
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
         manifestPlaceholders = [ SCREEN_ORIENTATION: "portrait"]
@@ -91,6 +93,7 @@ dependencies {
     implementation "com.github.Gurupreet:FontAwesomeCompose:1.0.0"
     // Room
     implementation "androidx.room:room-runtime:$room_version"
+    implementation 'com.google.android.gms:play-services-maps:17.0.1'
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
     // Kotlin Extensions and Coroutines support for Room
@@ -115,11 +118,17 @@ dependencies {
     implementation 'androidx.paging:paging-compose:1.0.0-alpha14'
     implementation "androidx.paging:paging-runtime-ktx:3.1.0-rc01"
     implementation "com.google.accompanist:accompanist-swiperefresh:0.21.2-beta"
+
+    //GoogMap
+    implementation 'com.google.maps.android:maps-compose:2.7.0'
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 }

@@ -154,6 +154,9 @@ fun Navigation(
             val sendIntent = Intent(context, ResultActivity::class.java)
             startActivity(context,sendIntent, Bundle.EMPTY)
         }
+        composable(NavitemScreen.GoogleMapsScreen.route){
+            GoogleMapsScreen()
+        }
     }
 
 }

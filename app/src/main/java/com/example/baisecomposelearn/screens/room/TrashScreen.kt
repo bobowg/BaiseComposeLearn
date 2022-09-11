@@ -12,7 +12,6 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
-import com.example.baisecomposelearn.NoteScreens.room.AppDrawer
 import com.example.baisecomposelearn.data.database.model.NoteModel
 import com.example.baisecomposelearn.model.noteviewmodel.NoteViewModel
 import com.example.baisecomposelearn.navitegation.NoteScreen

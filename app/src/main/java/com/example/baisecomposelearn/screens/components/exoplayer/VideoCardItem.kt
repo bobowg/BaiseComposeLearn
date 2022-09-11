@@ -52,17 +52,6 @@ fun VideoCardItem(
         Column(
             modifier = Modifier.padding(16.dp)
         ) {
-
-            Text(
-                text = "$index: ${videoInfo?.description}",
-                style = MaterialTheme.typography.h6
-            )
-            Text(
-                modifier = Modifier.padding(top = 8.dp),
-                text = videoInfo?.title ?: "",
-                style = MaterialTheme.typography.body1,
-                color = rwGreenDark
-            )
             var width = 1280
             var height = 720
             videoInfo?.playInfo?.let {
@@ -83,6 +72,16 @@ fun VideoCardItem(
                         .fillMaxWidth()
                 )
             }
+            Text(
+                text = "${index + 1}: ${videoInfo?.description}",
+                style = MaterialTheme.typography.h6
+            )
+            Text(
+                modifier = Modifier.padding(top = 8.dp),
+                text = videoInfo?.title ?: "",
+                style = MaterialTheme.typography.body1,
+                color = rwGreenDark
+            )
         }
     }
 }
@@ -141,6 +140,8 @@ fun ExoPlayerView(isFocused: Boolean, videoInfo: VideoInfo?, viewModel: PlayView
                     PlayerViewManager.currentPlayerView = playerView
 
                     playerView?.apply {
+                        hideController()
+                        useController = false
                         player?.playWhenReady = true
                     }
 

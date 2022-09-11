@@ -1,5 +1,6 @@
 package com.example.baisecomposelearn.screens.room
 
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
@@ -12,7 +13,6 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.baisecomposelearn.NoteScreens.room.AppDrawer
 import com.example.baisecomposelearn.data.database.model.NoteModel
 import com.example.baisecomposelearn.model.noteviewmodel.NoteViewModel
 import com.example.baisecomposelearn.navitegation.NoteScreen
@@ -91,6 +91,7 @@ private fun NotesList(
         items(count = notes.size) { noteIndex ->
             val note = notes[noteIndex]
             Note(
+                modifier =modifier.fillMaxWidth() ,
                 note = note,
                 onNoteClick = onNoteClick,
                 onNoteCheckedChange = onNoteCheckedChange,

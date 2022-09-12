@@ -122,6 +122,14 @@ fun MediaextensionScreen(navController: NavController) {
         ) {
             Text(text = stringResource(id = R.string.googlemap), fontSize = 24.sp)
         }
+        Button(
+            onClick = { navController.navigate(NavitemScreen.LottieScreen.route) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+            Text(text = stringResource(id = R.string.lottiescreen), fontSize = 24.sp)
+        }
 
     }, isGoBack = false)
 }

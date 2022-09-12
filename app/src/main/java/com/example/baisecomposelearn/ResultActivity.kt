@@ -14,7 +14,6 @@ import com.example.baisecomposelearn.screens.room.RoomDatabaseScreen
 import com.example.baisecomposelearn.screens.room.SaveNoteScreen
 import com.example.baisecomposelearn.screens.room.TrashScreen
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
-import com.example.baisecomposelearn.utils.setNotification
 
 class ResultActivity : AppCompatActivity() {
     val viewModel: NoteViewModel by viewModels(factoryProducer = {

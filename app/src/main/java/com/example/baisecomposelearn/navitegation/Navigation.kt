@@ -160,6 +160,9 @@ fun Navigation(
         composable(NavitemScreen.GlideLandscapistScreen.route){
             GlideLandscapistScreen(navController)
         }
+        composable(NavitemScreen.LottieScreen.route){
+            LottieScreen(navController)
+        }
     }
 
 }

@@ -45,5 +45,6 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object RoomDatabaseScreen:NavitemScreen("roomdatabasescreen",R.string.roomdatbase)
     object GoogleMapsScreen:NavitemScreen("googlemapsscreen",R.string.googlemap)
     object GlideLandscapistScreen:NavitemScreen("glidelandscapistscreen",R.string.glidelandscapist)
+    object LottieScreen:NavitemScreen("lottiescreen",R.string.lottiescreen)
 
 }

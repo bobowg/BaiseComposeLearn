@@ -163,6 +163,9 @@ fun Navigation(
         composable(NavitemScreen.LottieScreen.route){
             LottieScreen(navController)
         }
+        composable(NavitemScreen.WebViewScreen.route){
+            WebViewScreen(navController)
+        }
     }
 
 }

@@ -67,5 +67,6 @@
     <string name="ok">确定</string>
     <string name="roomdatbase">Room数据库</string>
     <string name="glidelandscapist">滑行风景画屏</string>
-    <string name="lottiescreen">乐天屏幕</string>
+    <string name="lottiescreen">动画屏幕</string>
+    <string name="webview">网页加载器</string>
 </resources>

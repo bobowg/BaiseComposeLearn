@@ -166,6 +166,9 @@ fun Navigation(
         composable(NavitemScreen.WebViewScreen.route){
             WebViewScreen(navController)
         }
+        composable(NavitemScreen.SwipeRefreshAccompanistScreen.route){
+            SwipeRefreshAccompanistScreen(navController)
+        }
     }
 
 }

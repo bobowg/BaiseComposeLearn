@@ -47,5 +47,6 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object GlideLandscapistScreen:NavitemScreen("glidelandscapistscreen",R.string.glidelandscapist)
     object LottieScreen:NavitemScreen("lottiescreen",R.string.lottiescreen)
     object WebViewScreen:NavitemScreen("webviewscreen",R.string.webview)
+    object SwipeRefreshAccompanistScreen:NavitemScreen("swiperefreshaccompanistscreen",R.string.swiperefreshaccompanist)
 
 }

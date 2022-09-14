@@ -7,9 +7,11 @@ import com.example.baisecomposelearn.data.database.dao.NoteDao
 import com.example.baisecomposelearn.data.database.dpmapper.DbMapper
 import com.example.baisecomposelearn.data.database.model.NoteDbModel
 import com.example.baisecomposelearn.data.database.model.NoteModel
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
+@DelicateCoroutinesApi
 class RepositoryImpl(
     private val noteDao: NoteDao,
     private val dbMapper: DbMapper,
@@ -35,11 +37,12 @@ class RepositoryImpl(
             noteDao.getAllSync().filter { it.isInTrash == inTrash }
         return dbMapper.mapNotes(dbNotesNotInTrash)
     }
+    @DelicateCoroutinesApi
     private fun initDatabase(postInitAction:()-> Unit){
         GlobalScope.launch {
             val notes = NoteDbModel.DEFAULT_NOTES.toTypedArray()
             val dbNotes = noteDao.getAllSync()
-            if (dbNotes.isNullOrEmpty()){
+            if (dbNotes.isEmpty()){
                 noteDao.insertAll(*notes)
             }
             postInitAction.invoke()
@@ -78,7 +81,7 @@ class RepositoryImpl(
 
     override fun restoreNotesFromTrash(noteIds: List<Long>) {
        val dbNotesInTrash = noteDao.getNotesByIdsSync(noteIds)
-        dbNotesInTrash.forEach {
+        dbNotesInTrash.forEach { _ ->
             val dbNotesInTrash = noteDao.getNotesByIdsSync(noteIds)
             dbNotesInTrash.forEach {
                 val newDbNote = it.copy(isInTrash = false)

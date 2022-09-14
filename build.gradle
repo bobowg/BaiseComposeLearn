@@ -1,6 +1,5 @@
 buildscript {
     ext {
-        kotlin_version = '1.7.0'
         compose_version = '1.2.0'
         lifecycle_version = '2.5.1'
         google_graphics = '1.2.1'
@@ -13,7 +12,6 @@ buildscript {
     }
     dependencies {
         classpath 'com.google.gms:google-services:4.3.13'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
     repositories {
         mavenCentral()

@@ -70,4 +70,5 @@
     <string name="lottiescreen">动画屏幕</string>
     <string name="webview">网页加载器</string>
     <string name="swiperefreshaccompanist">滑动刷新伴奏屏幕</string>
+    <string name="plotscreen">绘图 %1$s</string>
 </resources>

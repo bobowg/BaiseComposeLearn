@@ -169,6 +169,9 @@ fun Navigation(
         composable(NavitemScreen.SwipeRefreshAccompanistScreen.route){
             SwipeRefreshAccompanistScreen(navController)
         }
+        composable(NavitemScreen.PlotScreen.route){
+            PlotScreen(navController)
+        }
     }
 
 }

@@ -220,6 +220,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1105" />
         <entry key="app/src/main/res/layout/exoplayer_texture_view.xml" value="0.2857789855072464" />
+        <entry key="app/src/main/res/layout/simple_widget.xml" value="0.14682139253279516" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1105" />
       </map>
     </option>

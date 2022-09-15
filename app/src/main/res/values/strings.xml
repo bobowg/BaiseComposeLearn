@@ -72,4 +72,10 @@
     <string name="swiperefreshaccompanist">滑动刷新伴奏屏幕</string>
     <string name="plotscreen">绘图 %1$s</string>
     <string name="widget_loading">正在加载中。。。</string>
+    <string name="appwidgetscreen">应用微件</string>
+    <string name="button_title">项目列表</string>
+    <string name="radio_button1">单选按钮 1</string>
+    <string name="radio_button2">单选按钮 2</string>
+    <string name="switch_element">Switch</string>
+    <string name="check_box">复选框</string>
 </resources>

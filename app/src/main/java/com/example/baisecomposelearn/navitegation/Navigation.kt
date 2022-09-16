@@ -16,6 +16,7 @@ import com.example.baisecomposelearn.screens.animate.*
 import com.example.baisecomposelearn.screens.constraintlayout.*
 import com.example.baisecomposelearn.screens.customexamples.AnimatableDeleteScreen
 import com.example.baisecomposelearn.screens.customexamples.CustomExamplesScreen
+import com.example.baisecomposelearn.screens.customexamples.PickDateScreen
 import com.example.baisecomposelearn.screens.media.*
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelFlowScreen
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelLiveDataScreen
@@ -181,6 +182,9 @@ fun Navigation(
         }
         composable(NavitemScreen.AnimatableDeleteScreen.route){
             AnimatableDeleteScreen(navController)
+        }
+        composable(NavitemScreen.PickDateScreen.route){
+            PickDateScreen(navController)
         }
     }
 

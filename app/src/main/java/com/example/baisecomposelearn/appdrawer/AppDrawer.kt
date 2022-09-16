@@ -93,11 +93,11 @@ fun Drawer(
 ) {
     val items = listOf(
         NavitemScreen.Activate,
-        NavitemScreen.Animation,
-        NavitemScreen.ConstraintLayoutScreen,
         NavitemScreen.ViewModelScreen,
-        NavitemScreen.MediaextensionScreen,
+        NavitemScreen.ConstraintLayoutScreen,
         NavitemScreen.RoomDatabaseScreen,
+        NavitemScreen.Animation,
+        NavitemScreen.MediaextensionScreen,
         NavitemScreen.AppWidgetScreen,
         NavitemScreen.CustomExamplesScreen,
     )

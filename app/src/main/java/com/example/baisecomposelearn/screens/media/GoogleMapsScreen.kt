@@ -41,7 +41,7 @@ fun GooglMapsExplame() {
         ) {
             Marker(state = rememberMarkerState(position = athens), title = "三亚")
             Marker(
-                state = rememberMarkerState(position = LatLng(20.247872,109.651045)),
+                state = rememberMarkerState(position = LatLng(18.8607505,109.0371354)),
                 title = "乐东"
             )
         }

@@ -99,6 +99,7 @@ fun Drawer(
         NavitemScreen.MediaextensionScreen,
         NavitemScreen.RoomDatabaseScreen,
         NavitemScreen.AppWidgetScreen,
+        NavitemScreen.CustomExamplesScreen,
     )
     Column(modifier = Modifier.background(colorResource(id = R.color.colorPrimary))) {
         Row {

@@ -50,4 +50,6 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object SwipeRefreshAccompanistScreen:NavitemScreen("swiperefreshaccompanistscreen",R.string.swiperefreshaccompanist)
     object PlotScreen:NavitemScreen("plotscreen",R.string.plotscreen)
     object AppWidgetScreen:NavitemScreen("appwidgetscreen",R.string.appwidgetscreen)
+    object CustomExamplesScreen:NavitemScreen("customexamplescreen",R.string.customexamplescreen)
+    object AnimatableDeleteScreen:NavitemScreen("animatabledeletescreen",R.string.animatabledeletescreen)
 }

@@ -1,6 +1,5 @@
 package com.example.baisecomposelearn.navitegation
 
-import android.app.PendingIntent
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -15,13 +14,14 @@ import com.example.baisecomposelearn.ResultActivity
 import com.example.baisecomposelearn.screens.activate.*
 import com.example.baisecomposelearn.screens.animate.*
 import com.example.baisecomposelearn.screens.constraintlayout.*
+import com.example.baisecomposelearn.screens.customexamples.AnimatableDeleteScreen
+import com.example.baisecomposelearn.screens.customexamples.CustomExamplesScreen
 import com.example.baisecomposelearn.screens.media.*
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelFlowScreen
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelLiveDataScreen
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelScreen
 import com.example.baisecomposelearn.screens.viewmodel.WellnessScreen
 import com.example.baisecomposelearn.screens.widget.AppWidgetScreen
-import com.example.baisecomposelearn.utils.startActivitySafe
 
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -175,6 +175,12 @@ fun Navigation(
         }
         composable(NavitemScreen.AppWidgetScreen.route){
             AppWidgetScreen()
+        }
+        composable(NavitemScreen.CustomExamplesScreen.route){
+            CustomExamplesScreen(navController)
+        }
+        composable(NavitemScreen.AnimatableDeleteScreen.route){
+            AnimatableDeleteScreen(navController)
         }
     }
 

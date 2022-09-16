@@ -1,5 +1,6 @@
 package com.example.baisecomposelearn.utils
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
@@ -24,9 +25,7 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.translate
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
@@ -37,7 +36,6 @@ import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.model.playviewmodel.PlayViewModel
 import com.example.baisecomposelearn.model.playviewmodel.VideoItem
 import com.example.baisecomposelearn.screens.components.exoplayer.VideoCardItem
-import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
 import com.example.baisecomposelearn.theme.rwGreen
 import com.example.baisecomposelearn.theme.rwGreenDark
 import com.example.baisecomposelearn.theme.rwRed
@@ -70,6 +68,7 @@ fun NormalVideoListScreen(
     }
 }
 
+@SuppressLint("UnrememberedMutableState")
 @ExperimentalCoilApi
 @Composable
 fun ContentInfoList(

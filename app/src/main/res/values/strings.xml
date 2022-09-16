@@ -80,4 +80,8 @@
     <string name="check_box">复选框</string>
     <string name="placeholder_main_activate">示例活动演示如何获取应用程序的 appwidgets 信息并请求用户将它们固定在启动器中。点击以下任何项目以请求启动器固定它们：</string>
     <string name="placeholder_main_activity_pin_unavailable">默认启动器不支持固定</string>
+    <string name="customexamplescreen">自定义示例</string>
+    <string name="animatabledeletescreen">动画删除屏幕</string>
+    <string name="tap_anywhere">随处点击</string>
+    <string name="delete">删除</string>
 </resources>

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Build
 import android.widget.RemoteViews
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
@@ -27,7 +28,7 @@ import androidx.glance.text.FontWeight
 import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
-import com.example.baisecomposelearn.AppWidgetActivity
+import com.example.baisecomposelearn.MainActivity
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
 import com.example.baisecomposelearn.utils.appWidgetBackgroundCornerRadius
@@ -41,7 +42,7 @@ class ButtonsGlanceWidget : GlanceAppWidget() {
     @SuppressLint("RemoteViewLayout")
     @Composable
     override fun Content() {
-        BaiseComposeLearnTheme {
+        MaterialTheme {
             Column(
                 modifier = GlanceModifier.fillMaxSize().padding(16.dp).appWidgetBackground()
                     .background(color = Color.Green).appWidgetBackgroundCornerRadius()
@@ -59,7 +60,7 @@ class ButtonsGlanceWidget : GlanceAppWidget() {
                     item {
                         Button(
                             text = "Button",
-                            onClick = actionStartActivity<AppWidgetActivity>(),
+                            onClick = actionStartActivity<MainActivity>(),
                             modifier = GlanceModifier.fillMaxWidth()
                         )
                     }

@@ -174,7 +174,7 @@ fun Navigation(
             PlotScreen(navController)
         }
         composable(NavitemScreen.AppWidgetScreen.route){
-            AppWidgetScreen(navController)
+            AppWidgetScreen()
         }
     }
 

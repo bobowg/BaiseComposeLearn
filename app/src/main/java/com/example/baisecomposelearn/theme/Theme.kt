@@ -39,5 +39,4 @@ fun BaiseComposeLearnTheme(content: @Composable () -> Unit) {
  */
 object BaiseComposeLearnThemeSettings {
     var isDarkThemeEnabled by mutableStateOf(false)
-
 }

@@ -78,4 +78,6 @@
     <string name="radio_button2">单选按钮 2</string>
     <string name="switch_element">Switch</string>
     <string name="check_box">复选框</string>
+    <string name="placeholder_main_activate">示例活动演示如何获取应用程序的 appwidgets 信息并请求用户将它们固定在启动器中。点击以下任何项目以请求启动器固定它们：</string>
+    <string name="placeholder_main_activity_pin_unavailable">默认启动器不支持固定</string>
 </resources>

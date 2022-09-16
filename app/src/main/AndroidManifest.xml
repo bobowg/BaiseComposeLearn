@@ -24,12 +24,7 @@
         android:theme="@style/Theme.BaiseComposeLearn"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity
-            android:name=".AppWidgetActivity"
-            android:exported="false"
-            android:launchMode="singleTask"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.BaiseComposeLearn.NoActionBar" />
+
         <activity
             android:name=".ResultActivity"
             android:excludeFromRecents="true"
@@ -62,7 +57,7 @@
                 android:resource="@xml/glance_widget_info" />
         </receiver>
         <receiver
-            android:name=".widget.ButtonsGlanceWidget$ButtonsGlanceWidgetReceiver"
+            android:name=".widget.ButtonsGlanceWidgetReceiver"
             android:enabled="@bool/glance_appwidget_available"
             android:exported="false">
             <intent-filter>

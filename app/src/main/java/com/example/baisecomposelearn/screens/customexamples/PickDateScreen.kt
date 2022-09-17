@@ -1,6 +1,7 @@
 package com.example.baisecomposelearn.screens.customexamples
 
 import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.os.Build
 import android.widget.DatePicker
 import androidx.annotation.RequiresApi
@@ -38,14 +39,23 @@ fun PickDateScreen(navController: NavController) {
     val mYear: Int = mCalendar.get(Calendar.YEAR)
     val mMonth: Int = mCalendar.get(Calendar.MONTH)
     val mDay: Int = mCalendar.get(Calendar.DAY_OF_MONTH)
+    val mHour = mCalendar[Calendar.HOUR_OF_DAY]
+    val mMinute = mCalendar[Calendar.MINUTE]
     mCalendar.time = Date()
     val mDate = remember { mutableStateOf("") }
+    val mTime = remember { mutableStateOf("") }
     val mDatePickerDialog = DatePickerDialog(
         context,
         { _: DatePicker, mYear: Int, mMonth: Int, mDayofMonth: Int ->
             mDate.value = "$mYear 年 ${mMonth + 1}月 $mDayofMonth 日"
         },
         mYear, mMonth, mDay
+    )
+    val mTimePickerDialog = TimePickerDialog(
+        context,
+        {_, mHour : Int, mMinute: Int ->
+            mTime.value = "$mHour:$mMinute"
+        }, mHour, mMinute, false
     )
     ScreenModel(navController = navController, content = {
         Button(
@@ -57,11 +67,29 @@ fun PickDateScreen(navController: NavController) {
             },
             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0XFF0F9D58))
         ) {
-            Text(text = stringResource(id = R.string.opendatepicker))
+            Text(text = stringResource(id = R.string.opendatepicker,"日期"))
+        }
+        Button(
+            modifier = Modifier
+                .padding(16.dp)
+                .fillMaxWidth(),
+            onClick = {
+                mTimePickerDialog.show()
+            },
+            colors = ButtonDefaults.buttonColors(backgroundColor = Color(0XFF0F9D58))
+        ) {
+            Text(text = stringResource(id = R.string.opendatepicker,"时间"))
         }
         Spacer(modifier = Modifier.height(100.dp))
         Text(
             text = mDate.value.toString(),
+            fontSize = 30.sp,
+            textAlign = TextAlign.Center,
+            color = MaterialTheme.colors.onPrimary,
+            fontFamily = best
+        )
+        Text(
+            text = mTime.value.toString(),
             fontSize = 30.sp,
             textAlign = TextAlign.Center,
             color = MaterialTheme.colors.onPrimary,

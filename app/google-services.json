@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "946421202867",
-    "project_id": "neon-citizen-350411",
-    "storage_bucket": "neon-citizen-350411.appspot.com"
+    "project_number": "995447011978",
+    "project_id": "first-project-eea32",
+    "storage_bucket": "first-project-eea32.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:946421202867:android:63e112841adcafbaf595c6",
+        "mobilesdk_app_id": "1:995447011978:android:183a3cd413a534f8d6cb73",
         "android_client_info": {
           "package_name": "com.example.baisecomposelearn"
         }
       },
       "oauth_client": [
         {
-          "client_id": "946421202867-3013gvtuvies62t335jsrjvn7nccasq8.apps.googleusercontent.com",
+          "client_id": "995447011978-i4q1kbenlcv0klhsih3cml76knrqad1l.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCwz6PqnrSGWniixP5xN_eoN69BGy_jlBs"
+          "current_key": "AIzaSyBz7AVXgMp4Yk2-D1dOLeZcQ-cN3hHw0wU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "946421202867-3013gvtuvies62t335jsrjvn7nccasq8.apps.googleusercontent.com",
+              "client_id": "995447011978-i4q1kbenlcv0klhsih3cml76knrqad1l.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

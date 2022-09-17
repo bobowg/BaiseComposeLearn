@@ -1,5 +1,6 @@
 package com.example.baisecomposelearn.utils
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.widget.Toast
 import androidx.compose.foundation.Image
@@ -230,6 +231,7 @@ fun LoadingItem() {
 /**
  * 首页列表加载 ---下拉刷新，加载更多动效
  * */
+@SuppressLint("UnrememberedMutableState")
 @Composable
 fun RefreshVideoListScreen(
     viewModel: PlayViewModel,

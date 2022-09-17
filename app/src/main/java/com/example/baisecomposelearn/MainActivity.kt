@@ -1,30 +1,35 @@
 package com.example.baisecomposelearn
 
+import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.appwidget.AppWidgetManager
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
-import androidx.core.view.WindowCompat
-import com.example.baisecomposelearn.model.noteviewmodel.NoteViewModel
-import com.example.baisecomposelearn.model.noteviewmodel.NoteViewModelFactory
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
+import com.google.android.gms.ads.MobileAds
+import com.google.firebase.analytics.FirebaseAnalytics
 
 class MainActivity : ComponentActivity() {
+
+    private var mFirebaseAnalytics: FirebaseAnalytics? = null
+
+    @SuppressLint("MissingPermission")
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         createNotificationChannel()
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
         setContent {
-            BaiseComposeLearnTheme{
+            BaiseComposeLearnTheme {
                 StartApp()
             }
+        }
+        MobileAds.initialize(this) {
         }
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
     }

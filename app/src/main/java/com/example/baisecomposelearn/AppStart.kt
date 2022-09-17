@@ -15,6 +15,7 @@ import com.example.baisecomposelearn.appdrawer.Drawer
 import com.example.baisecomposelearn.appdrawer.TopAppBar
 import com.example.baisecomposelearn.dependencyinjector.DependencyInjector
 import com.example.baisecomposelearn.navitegation.Navigation
+import com.google.firebase.functions.FirebaseFunctions
 import dagger.hilt.android.HiltAndroidApp
 
 
@@ -24,6 +25,7 @@ class AppStart :Application(){
     override fun onCreate() {
         super.onCreate()
         initDependencyInjector()
+
     }
     private fun initDependencyInjector(){
         dependencyInjector = DependencyInjector(this)

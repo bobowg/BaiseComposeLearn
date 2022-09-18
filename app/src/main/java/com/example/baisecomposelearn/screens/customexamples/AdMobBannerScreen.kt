@@ -27,6 +27,7 @@ fun AdMobBannerScreen() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+
         AdViewExample(R.string.ad_mob_banner_id)
     }
 }
@@ -51,6 +52,8 @@ private fun rememberAdMobWithLifecycle(
             setAdSize(AdSize.BANNER)
             adUnitId = context.getString(adStringRes)
         }
+    }
+    MobileAds.initialize(context) {
     }
     adView.loadAd(AdRequest.Builder().build())
     val lifecycle = LocalLifecycleOwner.current.lifecycle

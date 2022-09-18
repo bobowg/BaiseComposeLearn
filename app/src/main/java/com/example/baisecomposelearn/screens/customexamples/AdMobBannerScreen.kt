@@ -36,8 +36,12 @@ fun AdMobBannerScreen() {
 fun AdViewExample(
     @StringRes adStringRes: Int
 ) {
+    val testDeviceIds = Arrays.asList("4D3D9A9D304741AFA49f8B098EE1C576","51C7F1E234B4B284B2E7E0EACC5296AA")
+    val configuration = RequestConfiguration.Builder().setTestDeviceIds(testDeviceIds).build()
+    MobileAds.setRequestConfiguration(configuration)
     val adView = rememberAdMobWithLifecycle(adStringRes)
     AndroidView({ adView })
+
 
 }
 

@@ -13,11 +13,11 @@ import androidx.navigation.compose.composable
 import com.example.baisecomposelearn.ResultActivity
 import com.example.baisecomposelearn.screens.activate.*
 import com.example.baisecomposelearn.screens.animate.*
+import com.example.baisecomposelearn.screens.components.camerax.Route
+import com.example.baisecomposelearn.screens.components.camerax.Route.VIDEO_PREVIEW_ARG
+import com.example.baisecomposelearn.screens.components.camerax.VideoPreviewScreen
 import com.example.baisecomposelearn.screens.constraintlayout.*
-import com.example.baisecomposelearn.screens.customexamples.AdMobBannerScreen
-import com.example.baisecomposelearn.screens.customexamples.AnimatableDeleteScreen
-import com.example.baisecomposelearn.screens.customexamples.CustomExamplesScreen
-import com.example.baisecomposelearn.screens.customexamples.PickDateScreen
+import com.example.baisecomposelearn.screens.customexamples.*
 import com.example.baisecomposelearn.screens.media.*
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelFlowScreen
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelLiveDataScreen
@@ -25,8 +25,7 @@ import com.example.baisecomposelearn.screens.viewmodel.ViewModelScreen
 import com.example.baisecomposelearn.screens.viewmodel.WellnessScreen
 import com.example.baisecomposelearn.screens.widget.AppWidgetScreen
 
-
-@RequiresApi(Build.VERSION_CODES.O)
+@RequiresApi(Build.VERSION_CODES.P)
 @Composable
 fun Navigation(
     navController: NavHostController
@@ -189,6 +188,13 @@ fun Navigation(
         }
         composable(NavitemScreen.AdMobBannerScreen.route){
             AdMobBannerScreen()
+        }
+        composable(NavitemScreen.CameraxScreen.route){
+            CameraxScreen(navController)
+        }
+        composable(Route.VIDEO_PREVIEW_FULL_ROUTE) {
+            val uri = it.arguments?.getString(VIDEO_PREVIEW_ARG) ?: ""
+            VideoPreviewScreen(uri = uri)
         }
     }
 

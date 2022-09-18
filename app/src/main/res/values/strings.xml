@@ -88,4 +88,5 @@
     <string name="opendatepicker">打开%1$s对话框 </string>
     <string name="ad_mob_banner_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
     <string name="admobbannerscreen">AdMob广告</string>
+    <string name="camerax">Camerax相机</string>
 </resources>

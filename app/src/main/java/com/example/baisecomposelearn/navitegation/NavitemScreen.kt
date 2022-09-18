@@ -54,4 +54,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object AnimatableDeleteScreen:NavitemScreen("animatabledeletescreen",R.string.animatabledeletescreen)
     object PickDateScreen:NavitemScreen("pickdatescreen",R.string.pickdatascreen)
     object AdMobBannerScreen:NavitemScreen("admobbannerscreen",R.string.admobbannerscreen)
+    object CameraxScreen:NavitemScreen("cameraxscreen",R.string.camerax)
 }

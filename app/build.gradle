@@ -134,6 +134,13 @@ dependencies {
     implementation "androidx.glance:glance-appwidget:$glance_version"
     implementation "androidx.glance:glance:$glance_version"
     implementation 'com.google.android.material:material:1.7.0-alpha03'
+    //camerax
+    implementation "androidx.camera:camera-lifecycle:$cameraxVersion"
+    implementation "androidx.camera:camera-video:$cameraxVersion"
+    implementation "androidx.camera:camera-view:$cameraxVersion"
+    implementation "androidx.camera:camera-extensions:$cameraxVersion"
+    // Accompanist
+    implementation "com.google.accompanist:accompanist-permissions:$accompanistPermissionsVersion"
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

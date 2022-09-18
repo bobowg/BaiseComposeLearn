@@ -14,6 +14,7 @@ import com.example.baisecomposelearn.ResultActivity
 import com.example.baisecomposelearn.screens.activate.*
 import com.example.baisecomposelearn.screens.animate.*
 import com.example.baisecomposelearn.screens.constraintlayout.*
+import com.example.baisecomposelearn.screens.customexamples.AdMobBannerScreen
 import com.example.baisecomposelearn.screens.customexamples.AnimatableDeleteScreen
 import com.example.baisecomposelearn.screens.customexamples.CustomExamplesScreen
 import com.example.baisecomposelearn.screens.customexamples.PickDateScreen
@@ -185,6 +186,9 @@ fun Navigation(
         }
         composable(NavitemScreen.PickDateScreen.route){
             PickDateScreen(navController)
+        }
+        composable(NavitemScreen.AdMobBannerScreen.route){
+            AdMobBannerScreen()
         }
     }
 

@@ -12,7 +12,7 @@ buildscript {
         glance_version = '1.0.0-alpha04'
     }
     dependencies {
-        classpath 'com.google.gms:google-services:4.3.13'
+        classpath 'com.google.gms:google-services:4.3.3'
     }
     repositories {
         mavenCentral()

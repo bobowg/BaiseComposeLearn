@@ -196,6 +196,9 @@ fun Navigation(
             val uri = it.arguments?.getString(VIDEO_PREVIEW_ARG) ?: ""
             VideoPreviewScreen(uri = uri)
         }
+        composable(NavitemScreen.CircularProgressbar.route){
+            CircularProgressbar(navController)
+        }
     }
 
 }

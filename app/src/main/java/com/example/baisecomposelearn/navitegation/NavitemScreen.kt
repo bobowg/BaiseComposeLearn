@@ -55,4 +55,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object PickDateScreen:NavitemScreen("pickdatescreen",R.string.pickdatascreen)
     object AdMobBannerScreen:NavitemScreen("admobbannerscreen",R.string.admobbannerscreen)
     object CameraxScreen:NavitemScreen("cameraxscreen",R.string.camerax)
+    object CircularProgressbar:NavitemScreen("circularprogressbar",R.string.animate)
 }

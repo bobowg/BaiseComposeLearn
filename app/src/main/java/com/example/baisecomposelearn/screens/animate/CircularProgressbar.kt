@@ -3,10 +3,7 @@ package com.example.baisecomposelearn.screens.animate
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
@@ -28,6 +25,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.screens.components.ScreenModel
+import com.example.baisecomposelearn.theme.rwRed
 
 @Composable
 fun CircularProgressbar(navController: NavController) {
@@ -50,7 +48,7 @@ fun CircularProgressbar1(
     indicatorThickness: Dp = 28.dp,
     animationDuration: Int = 1000,
     animationDelay: Int = 0,
-    foregroundIndicatorColor: Color = Color(0xFF35898f),
+    foregroundIndicatorColor: Color = rwRed,
     backgroundindicatorColor: Color = Color.LightGray.copy(alpha = 0.3f)
 ) {
     var numberR by remember { mutableStateOf(0f) }
@@ -62,7 +60,9 @@ fun CircularProgressbar1(
         numberR = number
     }
     Box(
-        modifier = Modifier.size(size = size),
+        modifier = Modifier
+            .padding(16.dp)
+            .size(size = size),
         contentAlignment = Alignment.Center
     ) {
         Canvas(modifier = Modifier.size(size = size)) {

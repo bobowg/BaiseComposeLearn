@@ -31,7 +31,6 @@ class MainActivity : ComponentActivity() {
                 StartApp()
             }
         }
-
         if (Build.VERSION.SDK_INT > 9) {
             val policy = ThreadPolicy.Builder().permitAll().build()
             StrictMode.setThreadPolicy(policy)

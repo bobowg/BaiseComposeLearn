@@ -1,5 +1,6 @@
 package com.example.baisecomposelearn.screens.customexamples
 
+import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -55,6 +56,7 @@ fun JsonCard() {
         val response = httpsUrlConntion.inputStream.bufferedReader().use { it.readText() }
         val gson = GsonBuilder().setPrettyPrinting().create()
         val prettyJson = gson.toJson(JsonParser.parseString(response))
+        Log.d("Pretty Printed JSON :", prettyJson)
         Card(
             modifier = Modifier
                 .fillMaxWidth()

@@ -199,6 +199,9 @@ fun Navigation(
         composable(NavitemScreen.CircularProgressbar.route){
             CircularProgressbar(navController)
         }
+        composable(NavitemScreen.GetJsonScreen.route){
+            GetJsonScreen(navController)
+        }
     }
 
 }

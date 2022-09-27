@@ -56,4 +56,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object AdMobBannerScreen:NavitemScreen("admobbannerscreen",R.string.admobbannerscreen)
     object CameraxScreen:NavitemScreen("cameraxscreen",R.string.camerax)
     object CircularProgressbar:NavitemScreen("circularprogressbar",R.string.animate)
+    object GetJsonScreen:NavitemScreen("getjsonscreen",R.string.getjson)
 }

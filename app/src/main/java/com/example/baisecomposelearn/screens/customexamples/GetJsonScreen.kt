@@ -44,7 +44,7 @@ fun GetJsonScreen(navController: NavController) {
 @Composable
 fun JsonCard() {
     val url =
-        URL("https://github.com/johncodeos-blog/ParseJSONAndroidExample/blob/main/simple.json")
+        URL("https://github.com/bobowg/BaiseComposeLearn/blob/master/simple.json")
     val httpsUrlConntion = url.openConnection() as HttpsURLConnection
     httpsUrlConntion.setRequestProperty("Accept", "application/json")
     httpsUrlConntion.requestMethod = "GET"

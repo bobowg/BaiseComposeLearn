@@ -71,7 +71,8 @@ fun JsonCard() {
                         .align(
                             Alignment.CenterHorizontally
                         ),
-                    textAlign = TextAlign.Center
+                    textAlign = TextAlign.Center,
+                    color = Color.Black
                 )
                 val jsonObject = JSONTokener(response).nextValue() as JSONObject
                 val id = jsonObject.getString("id")

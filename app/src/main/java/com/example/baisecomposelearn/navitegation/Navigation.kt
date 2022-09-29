@@ -202,6 +202,9 @@ fun Navigation(
         composable(NavitemScreen.GetJsonScreen.route){
             GetJsonScreen(navController)
         }
+        composable(NavitemScreen.FlashLightScreen.route){
+            FlashLightScreen(navController)
+        }
     }
 
 }

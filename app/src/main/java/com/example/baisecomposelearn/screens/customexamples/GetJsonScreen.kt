@@ -20,6 +20,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.baisecomposelearn.screens.components.ScreenModel
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonParser
+import org.json.JSONArray
 import org.json.JSONObject
 import org.json.JSONTokener
 import java.net.URL
@@ -37,6 +38,9 @@ fun GetJsonScreen(navController: NavController) {
         if (isnestedJSON) {
             nestedCard()
         }
+        if(isarrayJSON){
+            arrayCard()
+        }
         Button(
             onClick = {
                 issimple = true
@@ -44,7 +48,7 @@ fun GetJsonScreen(navController: NavController) {
                 isarrayJSON = false
             }, modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 16.dp, end = 16.dp)
+                .padding(16.dp)
         ) {
             Text(text = "简单JSON示例", fontSize = 24.sp)
         }
@@ -55,7 +59,7 @@ fun GetJsonScreen(navController: NavController) {
                 isarrayJSON = false
             }, modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 16.dp, end = 16.dp)
+                .padding(16.dp)
         ) {
             Text(text = "非索引JSON示例", fontSize = 24.sp)
         }
@@ -66,7 +70,7 @@ fun GetJsonScreen(navController: NavController) {
                 isarrayJSON = true
             }, modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 16.dp, end = 16.dp)
+                .padding(16.dp)
         ) {
             Text(text = "组数JSON示例", fontSize = 24.sp)
         }
@@ -74,9 +78,9 @@ fun GetJsonScreen(navController: NavController) {
 }
 
 @Composable
-fun nestedCard() {
+fun arrayCard() {
     Box(modifier = Modifier.fillMaxSize()) {
-        val url = URL("https://bobowg.pythonanywhere.com/static/img/nested.json")
+        val url = URL("https://bobowg.pythonanywhere.com/static/img/array.json")
         val httpsURLConnection = url.openConnection() as HttpsURLConnection
         httpsURLConnection.setRequestProperty("Accept", "application/json")
         httpsURLConnection.requestMethod = "GET"
@@ -98,20 +102,16 @@ fun nestedCard() {
                     textAlign = TextAlign.Center,
                     color = Color.Black
                 )
-                val jsonObject = JSONTokener(response).nextValue() as JSONObject
-                val jsonArray = jsonObject.getJSONArray("data")
-                for (i in 0 until jsonArray.length()) {
-                    Text(text = jsonArray.getJSONObject(i).getString("id") )
-                    val employee = jsonArray.getJSONObject(i).getJSONObject("employee")
-                    Text(text = employee.toString())
-                    Text(text = employee.getString("name") )
-                    val employeeSalary = employee.getJSONObject("salary")
-                    val employeeSalaryUSD = employeeSalary.getInt("usd")
-                    Text(text = employeeSalaryUSD.toString())
-                    val employeeSalaryEUR = employeeSalary.getInt("eur")
-                    Text(text = employeeSalaryEUR.toString())
-                    val employeeAge = employee.getString("age")
-                    Text(text = employeeAge)
+                val jsonArray = JSONTokener(response).nextValue() as JSONArray
+                for (i in 0 until jsonArray.length()){
+                    val id = jsonArray.getJSONObject(i).getString("id")
+                    Text(text = "id:$id")
+                    val employeeName = jsonArray.getJSONObject(i).getString("employee_name")
+                    Text(text = "employeeName:${employeeName}")
+                    val employeeSalary = jsonArray.getJSONObject(i).getString("employee_salary")
+                    Text(text = "employeeSalary:$employeeSalary")
+                    val employeeAge = jsonArray.getJSONObject(i).getString("employee_age")
+                    Text(text = "Age:$employeeAge")
                 }
             }
         }else{
@@ -188,6 +188,52 @@ fun JsonCard() {
     }
 }
 
+@Composable
+fun nestedCard() {
+    Box(modifier = Modifier.fillMaxSize()) {
+        val url = URL("https://bobowg.pythonanywhere.com/static/img/nested.json")
+        val httpsURLConnection = url.openConnection() as HttpsURLConnection
+        httpsURLConnection.setRequestProperty("Accept", "application/json")
+        httpsURLConnection.requestMethod = "GET"
+        httpsURLConnection.doInput = true
+        httpsURLConnection.doOutput = false
+        val responseCode = httpsURLConnection.responseCode
+        if (responseCode == HttpsURLConnection.HTTP_OK) {
+            val response = httpsURLConnection.inputStream.bufferedReader().use { it.readText() }
+            val gson = GsonBuilder().setPrettyPrinting().create()
+            val prettyJson = gson.toJson(JsonParser.parseString(response))
+            Column(modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+                .align(Alignment.Center)) {
+                Text(
+                    text = prettyJson,
+                    modifier = Modifier
+                        .background(color = Color.White),
+                    textAlign = TextAlign.Center,
+                    color = Color.Black
+                )
+                val jsonObject = JSONTokener(response).nextValue() as JSONObject
+                val jsonArray = jsonObject.getJSONArray("data")
+                for (i in 0 until jsonArray.length()) {
+                    Text(text = jsonArray.getJSONObject(i).getString("id") )
+                    val employee = jsonArray.getJSONObject(i).getJSONObject("employee")
+                    Text(text = employee.toString())
+                    Text(text = employee.getString("name") )
+                    val employeeSalary = employee.getJSONObject("salary")
+                    val employeeSalaryUSD = employeeSalary.getInt("usd")
+                    Text(text = employeeSalaryUSD.toString())
+                    val employeeSalaryEUR = employeeSalary.getInt("eur")
+                    Text(text = employeeSalaryEUR.toString())
+                    val employeeAge = employee.getString("age")
+                    Text(text = employeeAge)
+                }
+            }
+        }else{
+            Log.e("HTTPURLCONNECTION_ERROR", responseCode.toString())
+        }
+    }
+}
 @Preview
 @Composable
 fun GetJsonScreenPreview() {

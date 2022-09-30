@@ -1,9 +1,6 @@
 package com.example.baisecomposelearn.screens.activate
 
-import android.content.Context
-import androidx.camera.core.CameraSelector
-import androidx.camera.core.ImageAnalysis
-import androidx.camera.lifecycle.ProcessCameraProvider
+import android.util.Log
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
@@ -23,19 +20,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.core.content.ContextCompat
-import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.screens.components.ScreenModel
 import com.example.baisecomposelearn.theme.best
-import java.util.concurrent.Executor
+import com.example.baisecomposelearn.utils.FlashUtils
 
 @Composable
 fun FlashLightScreen(navController: NavController) {
-    val context = LocalContext.current
     var checked by remember { mutableStateOf(false) }
+    val utils = FlashUtils(LocalContext.current)
     ScreenModel(navController = navController, content = {
         IconToggleButton(
             modifier = Modifier
@@ -44,9 +39,23 @@ fun FlashLightScreen(navController: NavController) {
                 .clip(shape = CircleShape),
             checked = checked,
             onCheckedChange = { checked = it }) {
+            if (checked) {
+                try {
+                    utils.open()
+                } catch (e: Exception) {
+                    Log.d("TAG", "没有闪光灯："+e.toString())
+                }
+
+            } else {
+                try {
+                    utils.close()
+                }catch (e:Exception){
+                    Log.d("TAG", "没有闪光灯："+e.toString())
+                }
+
+            }
             Row {
                 val tint by animateColorAsState(targetValue = if (checked) Color.Red else Color.LightGray)
-                FlashLightOnOrOFF(checked, context)
                 Text(
                     text = stringResource(id = R.string.flashlight),
                     fontFamily = best,
@@ -66,30 +75,8 @@ fun FlashLightScreen(navController: NavController) {
     })
 }
 
-fun FlashLightOnOrOFF(checked: Boolean, context: Context) {
-    val cameraProcessFuture = ProcessCameraProvider.getInstance(context)
-    cameraProcessFuture.addListener(Runnable {
-        val cameraProvider = cameraProcessFuture.get()
-        val lifecycleOwner: LifecycleOwner? = null
-        val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
-        val imageAnalysis = ImageAnalysis.Builder().build().apply {
-            setAnalyzer(Executor { }, ImageAnalysis.Analyzer { it.close() })
-
-        }
-        val camera = lifecycleOwner?.let { cameraProvider.bindToLifecycle(it, cameraSelector) }
-        val cameraControl = camera?.cameraControl
-        if (checked){
-            cameraControl?.enableTorch(true)
-        }else{
-            cameraControl?.enableTorch(false)
-        }
-    },ContextCompat.getMainExecutor(context)
-    )
-}
-
-
 @Preview
 @Composable
-fun FlashLightScreenPreivew() {
+fun FlashLightScreenPreview() {
     FlashLightScreen(navController = rememberNavController())
 }

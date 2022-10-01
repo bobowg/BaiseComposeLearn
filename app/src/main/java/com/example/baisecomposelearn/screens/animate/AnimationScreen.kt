@@ -114,6 +114,17 @@ fun AnimationScreen(navController: NavController) {
                     color = Color.White
                 )
             }
+            Button(modifier = modo,
+                onClick = {
+                    navController.navigate(NavitemScreen.AnimateColorComponent.route)
+                }) {
+                Text(
+                    text = stringResource(id = R.string.animatecolorcomponent),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 24.sp,
+                    color = Color.White
+                )
+            }
         }
     )
 }

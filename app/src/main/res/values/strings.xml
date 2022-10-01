@@ -92,4 +92,5 @@
     <string name="animate">动画随机值</string>
     <string name="getjson">获取JSON属性</string>
     <string name="flashlight">手电筒</string>
+    <string name="animatecolorcomponent">屏幕测试</string>
 </resources>

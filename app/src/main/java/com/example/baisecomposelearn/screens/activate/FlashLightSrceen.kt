@@ -1,6 +1,5 @@
 package com.example.baisecomposelearn.screens.activate
 
-import android.util.Log
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
@@ -26,6 +25,7 @@ import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.screens.components.ScreenModel
 import com.example.baisecomposelearn.theme.best
 import com.example.baisecomposelearn.utils.FlashUtils
+import timber.log.Timber
 
 @Composable
 fun FlashLightScreen(navController: NavController) {
@@ -43,14 +43,14 @@ fun FlashLightScreen(navController: NavController) {
                 try {
                     utils.open()
                 } catch (e: Exception) {
-                    Log.d("TAG", "没有闪光灯："+e.toString())
+                    Timber.d("没有闪光灯：" + e.toString())
                 }
 
             } else {
                 try {
                     utils.close()
-                }catch (e:Exception){
-                    Log.d("TAG", "没有闪光灯："+e.toString())
+                }catch (e:Exception) {
+                    Timber.d("没有闪光灯：" + e.toString())
                 }
 
             }

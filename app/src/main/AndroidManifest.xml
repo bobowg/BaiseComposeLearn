@@ -35,7 +35,11 @@
             android:exported="false"
             android:launchMode="singleTask"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.BaiseComposeLearn.NoActionBar" />
+            android:theme="@style/Theme.BaiseComposeLearn.NoActionBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"

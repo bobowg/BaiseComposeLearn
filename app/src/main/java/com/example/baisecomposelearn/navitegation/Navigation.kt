@@ -205,6 +205,9 @@ fun Navigation(
         composable(NavitemScreen.FlashLightScreen.route){
             FlashLightScreen(navController)
         }
+        composable(NavitemScreen.AnimateColorComponent.route){
+            AnimateColorComponent()
+        }
     }
 
 }

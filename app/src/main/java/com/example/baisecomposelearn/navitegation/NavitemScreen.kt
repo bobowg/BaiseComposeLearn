@@ -59,4 +59,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object GetJsonScreen:NavitemScreen("getjsonscreen",R.string.getjson)
     object FlashLightScreen:NavitemScreen("flashlight",R.string.flashlight)
     object AnimateColorComponent:NavitemScreen("animatecolorcomponent",R.string.animatecolorcomponent)
+    object SingleValueFloatAnimationScreen:NavitemScreen("singlevaluefloatanimation",R.string.singlevaluefloatanimation)
 }

@@ -208,6 +208,9 @@ fun Navigation(
         composable(NavitemScreen.AnimateColorComponent.route){
             AnimateColorComponent()
         }
+        composable(NavitemScreen.SingleValueFloatAnimationScreen.route){
+            SingleValueFloatAnimationScreen(navController)
+        }
     }
 
 }

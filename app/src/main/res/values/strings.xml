@@ -93,4 +93,5 @@
     <string name="getjson">获取JSON属性</string>
     <string name="flashlight">手电筒</string>
     <string name="animatecolorcomponent">屏幕测试</string>
+    <string name="singlevaluefloatanimation">单值浮点动画</string>
 </resources>

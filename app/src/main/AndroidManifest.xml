@@ -32,8 +32,7 @@
         <activity
             android:name=".ResultActivity"
             android:excludeFromRecents="true"
-            android:exported="false"
-            android:launchMode="singleTask"
+            android:exported="true"
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.BaiseComposeLearn.NoActionBar" >
             <intent-filter>
@@ -43,7 +42,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:screenOrientation="${SCREEN_ORIENTATION}"
             android:theme="@style/Theme.BaiseComposeLearn.NoActionBar">
             <intent-filter>
@@ -52,7 +50,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <receiver
             android:name=".widget.SimpleGlanceAppWidgetReceiver"
             android:exported="true">

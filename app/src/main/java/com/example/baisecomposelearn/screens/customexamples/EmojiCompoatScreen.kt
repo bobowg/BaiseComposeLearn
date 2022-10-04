@@ -1,11 +1,11 @@
 package com.example.baisecomposelearn.screens.customexamples
 
 
+import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -30,8 +30,15 @@ fun EmojiCompoatScreen(navController: NavController) {
         TextField(
             value = stringResource(id = R.string.emojicompoat) + textView + man,
             onValueChange = { textView = it },
-            label = { Text(text = man)}
+            label = { Text(text = man) }
         )
+        Button(onClick = { /*TODO*/ }) {
+            Text(
+                text = stringResource(id = R.string.emojicompoat) + man + textView,
+                fontSize = 28.sp,
+                color = MaterialTheme.colors.onPrimary
+            )
+        }
     })
 }
 

@@ -214,6 +214,9 @@ fun Navigation(
         composable(NavitemScreen.ElevationAnimationScreen.route){
             ElevationAnimationScreen(navController)
         }
+        composable(NavitemScreen.BottomSheetScaffoldScreen.route){
+            BottomSheetScaffoldScreen(navController)
+        }
     }
 
 }

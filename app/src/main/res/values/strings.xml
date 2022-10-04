@@ -95,4 +95,6 @@
     <string name="animatecolorcomponent">屏幕测试</string>
     <string name="singlevaluefloatanimation">单值浮点动画</string>
     <string name="elevationanimation">立面动画</string>
+    <string name="bottomsheetscaffold">底板脚手架</string>
+    <string name="modalbottomsheetlayout">%1$s模态底页布局</string>
 </resources>

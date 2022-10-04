@@ -61,4 +61,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object AnimateColorComponent:NavitemScreen("animatecolorcomponent",R.string.animatecolorcomponent)
     object SingleValueFloatAnimationScreen:NavitemScreen("singlevaluefloatanimation",R.string.singlevaluefloatanimation)
     object ElevationAnimationScreen:NavitemScreen("elevationanimationscreen",R.string.elevationanimation)
+    object BottomSheetScaffoldScreen:NavitemScreen("bottomsheetscaffoldscreen",R.string.modalbottomsheetlayout)
 }

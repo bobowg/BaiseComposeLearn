@@ -87,6 +87,15 @@ fun ConstraintLayoutScreen(navController: NavController) {
                 color = Color.White
             )
         }
+        Button(modifier = modo,
+            onClick = { navController.navigate(NavitemScreen.BottomSheetScaffoldScreen.route) }) {
+            Text(
+                text = stringResource(id = R.string.modalbottomsheetlayout,""),
+                fontWeight = FontWeight.Bold,
+                fontSize = 24.sp,
+                color = Color.White
+            )
+        }
     })
 }
 

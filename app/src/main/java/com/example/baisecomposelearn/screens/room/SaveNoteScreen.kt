@@ -10,16 +10,13 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.data.database.model.NEW_NOTE_ID
 import com.example.baisecomposelearn.data.database.model.NoteModel
 import com.example.baisecomposelearn.model.noteviewmodel.NoteViewModel
 import com.example.baisecomposelearn.navitegation.JetNotesRouter
 import com.example.baisecomposelearn.navitegation.NoteScreen
-import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -186,6 +183,7 @@ private fun SaveNoteContent(
     note: NoteModel,
     onNoteChange: (NoteModel) -> Unit
 ) {
+
     Column(modifier = Modifier.fillMaxSize()) {
         ContentTextField(label = "标题", text = note.title, onTextChange = { newTitle ->
             onNoteChange.invoke(note.copy(title = newTitle))
@@ -193,7 +191,6 @@ private fun SaveNoteContent(
         ContentTextField(label = "正文", text = note.content, onTextChange = { newContent ->
             onNoteChange.invoke(note.copy(content = newContent))
         })
-
     }
 }
 

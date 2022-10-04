@@ -2,6 +2,7 @@ package com.example.baisecomposelearn.screens.animate
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
@@ -12,7 +13,8 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.baisecomposelearn.screens.components.ScreenModel
-import com.example.baisecomposelearn.theme.rwGreen
+import com.example.baisecomposelearn.theme.rwOrgen
+import com.example.baisecomposelearn.theme.rwRed
 
 @Composable
 fun ElevationAnimationScreen(navController: NavController) {
@@ -31,8 +33,9 @@ fun ElevationAnimationScreen(navController: NavController) {
                 .shadow(elevation.dp, RectangleShape, clip = false)
                 .size(200.dp)
                 .background(
-                    rwGreen
+                    rwOrgen
                 )
+                .border(width = 3.dp, color = rwRed)
         )
     })
 

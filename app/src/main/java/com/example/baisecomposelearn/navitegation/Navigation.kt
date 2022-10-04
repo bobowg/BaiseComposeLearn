@@ -217,6 +217,9 @@ fun Navigation(
         composable(NavitemScreen.BottomSheetScaffoldScreen.route){
             BottomSheetScaffoldScreen(navController)
         }
+        composable(NavitemScreen.EmojiCompoatScreen.route){
+            EmojiCompoatScreen(navController)
+        }
     }
 
 }

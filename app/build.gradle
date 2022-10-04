@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.baisecomposelearn"
-        minSdk 25
+        minSdk 27
         targetSdk 33
         versionCode 1
         versionName "1.002"
@@ -73,9 +73,15 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
     implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
     implementation "androidx.appcompat:appcompat:1.5.0"
-
+    //EmojiCompat
+    implementation "androidx.emoji2:emoji2:$emoji2_version"
+    implementation "androidx.emoji2:emoji2-bundled:$emoji2_version"
+    implementation "androidx.emoji2:emoji2-views:$emoji2_version"
+    implementation "androidx.emoji2:emoji2-views-helper:$emoji2_version"
+    //Media3Play
     implementation 'androidx.media3:media3-exoplayer:1.0.0-alpha03'
     implementation "androidx.media3:media3-ui:1.0.0-alpha03"
+    //coil
     implementation "io.coil-kt:coil:$coli_vision"
     implementation "io.coil-kt:coil-compose:$coli_vision"
     implementation "com.github.skydoves:landscapist-glide:$landscapist_vision"
@@ -90,9 +96,11 @@ dependencies {
     implementation "com.halilibo.compose-richtext:printing:${richtext_version}"
     implementation "com.github.skydoves:landscapist-fresco:1.6.1"
     implementation "com.github.Gurupreet:FontAwesomeCompose:1.0.0"
+
     // Room
     implementation "androidx.room:room-runtime:$room_version"
     implementation 'com.google.firebase:firebase-functions:20.0.0'
+    implementation 'com.google.firebase:firebase-config:21.0.2'
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
 
@@ -124,16 +132,21 @@ dependencies {
     //GoogMap
     implementation 'com.google.maps.android:maps-compose:2.7.0'
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
+
     //lottieVersion
     implementation "com.airbnb.android:lottie-compose:4.1.0"
+
     //webview
     implementation "com.google.accompanist:accompanist-webview:0.25.1"
+
     //plot
     implementation 'com.github.madrapps:plot:0.1.1'
+
     //appwidget
     implementation "androidx.glance:glance-appwidget:$glance_version"
     implementation "androidx.glance:glance:$glance_version"
-    implementation 'com.google.android.material:material:1.7.0-alpha03'
+    implementation 'com.google.android.material:material:1.8.0-alpha01'
+
     //camerax
     implementation "androidx.camera:camera-lifecycle:$cameraxVersion"
     implementation "androidx.camera:camera-video:$cameraxVersion"

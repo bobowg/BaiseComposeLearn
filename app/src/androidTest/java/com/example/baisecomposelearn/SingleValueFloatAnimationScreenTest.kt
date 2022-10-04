@@ -6,6 +6,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.baisecomposelearn.screens.animate.ElevationAnimationScreen
 import com.example.baisecomposelearn.screens.animate.SingleValueFloatAnimationScreen
+import com.example.baisecomposelearn.screens.constraintlayout.BottomSheetScaffoldScreen
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
 import org.junit.Rule
 import org.junit.Test
@@ -28,6 +29,13 @@ class SingleValueFloatAnimationScreenTest {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 ElevationAnimationScreen(navController = rememberNavController())
+            }
+        }
+    }
+    fun testBottomSheetScaffoldScreen(){
+        composeTestRule.setContent {
+            BaiseComposeLearnTheme {
+                BottomSheetScaffoldScreen(navController = rememberNavController())
             }
         }
     }

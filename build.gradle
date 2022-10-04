@@ -12,6 +12,7 @@ buildscript {
         glance_version = '1.0.0-alpha04'
         cameraxVersion = '1.2.0-beta01'
         accompanistPermissionsVersion = '0.23.1'
+        emoji2_version = "1.2.0"
     }
     dependencies {
         classpath 'com.google.gms:google-services:4.3.13'

@@ -39,14 +39,17 @@ class MainActivity : ComponentActivity() {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun createNotificationChannel(){
-            val name = getString(R.string.app_name)
-            val descriptionText = getString(R.string.content)
-            // 提醒式通知(横幅显示)，不过大部分需要手动授权
-            val importance = NotificationManager.IMPORTANCE_HIGH
-            val channel = NotificationChannel("CHANNEL_ID", name, importance).apply {description = descriptionText}
-            // 注册通道(频道)
-            val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            notificationManager.createNotificationChannel(channel)
+    private fun createNotificationChannel() {
+        val name = getString(R.string.app_name)
+        val descriptionText = getString(R.string.content)
+        // 提醒式通知(横幅显示)，不过大部分需要手动授权
+        val importance = NotificationManager.IMPORTANCE_HIGH
+        val channel = NotificationChannel("CHANNEL_ID", name, importance).apply {
+            description = descriptionText
+        }
+        // 注册通道(频道)
+        val notificationManager: NotificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.createNotificationChannel(channel)
     }
 }

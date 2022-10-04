@@ -97,4 +97,5 @@
     <string name="elevationanimation">立面动画</string>
     <string name="bottomsheetscaffold">底板脚手架</string>
     <string name="modalbottomsheetlayout">%1$s模态底页布局</string>
+    <string name="emojicompoat">emoji</string>
 </resources>

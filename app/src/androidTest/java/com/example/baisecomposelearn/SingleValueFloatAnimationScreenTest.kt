@@ -1,8 +1,10 @@
 package com.example.baisecomposelearn
 
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.example.baisecomposelearn.screens.animate.ElevationAnimationScreen
 import com.example.baisecomposelearn.screens.animate.SingleValueFloatAnimationScreen
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
 import org.junit.Rule
@@ -13,12 +15,19 @@ import org.junit.runner.RunWith
 class SingleValueFloatAnimationScreenTest {
     @get:Rule
     val composeTestRule = createComposeRule()
-
     @Test
     fun testSingleValueFloatAnimationScreen() {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 SingleValueFloatAnimationScreen(navController = rememberNavController())
+            }
+        }
+    }
+    @Test
+    fun testElevationAnimationScreen(){
+        composeTestRule.setContent {
+            BaiseComposeLearnTheme {
+                ElevationAnimationScreen(navController = rememberNavController())
             }
         }
     }

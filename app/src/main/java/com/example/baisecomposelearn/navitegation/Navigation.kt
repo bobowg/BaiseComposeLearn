@@ -211,6 +211,9 @@ fun Navigation(
         composable(NavitemScreen.SingleValueFloatAnimationScreen.route){
             SingleValueFloatAnimationScreen(navController)
         }
+        composable(NavitemScreen.ElevationAnimationScreen.route){
+            ElevationAnimationScreen(navController)
+        }
     }
 
 }

@@ -26,10 +26,10 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.navitegation.NavitemScreen
-import com.example.baisecomposelearn.screens.components.exoplayer.PlayerViewManager.activity
 import com.example.baisecomposelearn.theme.rwGreen
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+
 
 @Composable
 fun TopAppBar(
@@ -244,7 +244,6 @@ fun Dilog(openDialog: MutableState<Boolean>) {
                 ) {
                     Button(
                         onClick = {
-                            activity?.finish()
                             System.exit(0)
                             android.os.Process.killProcess(android.os.Process.myPid())
                         }

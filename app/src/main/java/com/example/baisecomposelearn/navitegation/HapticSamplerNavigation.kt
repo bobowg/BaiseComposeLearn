@@ -1,6 +1,8 @@
 package com.example.baisecomposelearn.navitegation
 
 import android.app.Application
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.ScrollState
 import androidx.compose.material.ScaffoldState
 import androidx.compose.runtime.Composable
@@ -12,11 +14,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.baisecomposelearn.screens.vibration.home.HomeRoute
+import com.example.baisecomposelearn.screens.vibration.resist.ResistRoute
+import com.example.baisecomposelearn.vibration.viewmodel.ResistViewModel
 import com.example.baisecomposelearn.vibration.viewmodel.VibraionViewModel
 
 object HapticSamplerDestinations {
     const val HOME_ROUTE = "首页"
-    const val RESIST_ROUTE = "反"
+    const val RESIST_ROUTE = "抵抗"
     const val EXPAND_ROUTE = "扩张"
     const val BOUNCE_ROUTE = "弹跳"
     const val WOBBLE_ROUTE = "摇晃"
@@ -70,6 +74,7 @@ class HapticSamplerNavigation(navController: NavHostController) {
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.Q)
 @Composable
 fun HapticSamplerNavGraph(
     application: Application,
@@ -90,5 +95,12 @@ fun HapticSamplerNavGraph(
             )
             HomeRoute(vibraionViewModel)
         }
+        composable(HapticSamplerDestinations.RESIST_ROUTE){
+            val resistViewModel: ResistViewModel = viewModel(
+                factory = ResistViewModel.provideFactory(application)
+            )
+            ResistRoute(resistViewModel)
+        }
+
     }
 }

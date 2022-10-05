@@ -14,11 +14,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.android.haptics.samples.ui.theme.DrawerShape
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.navitegation.HapticSamplerDestinations
 import com.example.baisecomposelearn.navitegation.HapticSamplerNavGraph
 import com.example.baisecomposelearn.navitegation.HapticSamplerNavigation
+import com.example.baisecomposelearn.theme.DrawerShape
 import com.example.baisecomposelearn.theme.HapticSamplerTheme
 import com.example.baisecomposelearn.vibration.appdraw.AppDrawer
 import com.google.accompanist.systemuicontroller.rememberSystemUiController

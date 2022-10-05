@@ -10,8 +10,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.android.haptics.samples.ui.theme.Shapes
 
 private val LightThemeColors = lightColors(
     primary = rwGreen,

@@ -120,4 +120,8 @@
     <string name="bounce">弹跳</string>
     <string name="wobble">摇晃</string>
     <string name="drawer_content_description">菜单</string>
+    <string name="message_not_supported">您当前的设备不支持.</string>
+    <string name="message_degraded_experience">您当前的设备不完全支持。</string>
+    <string name="resist_screen_drag_down">向下拖动</string>
+    <string name="resist_screen_and_release">并且重置</string>
 </resources>

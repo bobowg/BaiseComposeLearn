@@ -12,9 +12,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.android.haptics.samples.ui.theme.DrawerButtonShape
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.navitegation.HapticSamplerDestinations
+import com.example.baisecomposelearn.theme.DrawerButtonShape
 import com.example.baisecomposelearn.theme.HapticSamplerTheme
 
 

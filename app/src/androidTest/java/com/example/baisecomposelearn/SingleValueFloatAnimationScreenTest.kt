@@ -7,6 +7,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.baisecomposelearn.screens.animate.ElevationAnimationScreen
 import com.example.baisecomposelearn.screens.animate.SingleValueFloatAnimationScreen
 import com.example.baisecomposelearn.screens.constraintlayout.BottomSheetScaffoldScreen
+import com.example.baisecomposelearn.screens.customexamples.EmojiCompoatScreen
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
 import org.junit.Rule
 import org.junit.Test
@@ -16,6 +17,7 @@ import org.junit.runner.RunWith
 class SingleValueFloatAnimationScreenTest {
     @get:Rule
     val composeTestRule = createComposeRule()
+
     @Test
     fun testSingleValueFloatAnimationScreen() {
         composeTestRule.setContent {
@@ -24,18 +26,30 @@ class SingleValueFloatAnimationScreenTest {
             }
         }
     }
+
     @Test
-    fun testElevationAnimationScreen(){
+    fun testElevationAnimationScreen() {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 ElevationAnimationScreen(navController = rememberNavController())
             }
         }
     }
-    fun testBottomSheetScaffoldScreen(){
+
+    @Test
+    fun testBottomSheetScaffoldScreen() {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 BottomSheetScaffoldScreen(navController = rememberNavController())
+            }
+        }
+    }
+
+    @Test
+    fun testEmojiCompoatScreen() {
+        composeTestRule.setContent {
+            BaiseComposeLearnTheme {
+                EmojiCompoatScreen(navController = rememberNavController())
             }
         }
     }

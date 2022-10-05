@@ -1,7 +1,9 @@
 package com.example.baisecomposelearn.screens.vibration.home
 
+import android.os.Build
 import android.os.VibrationEffect
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -26,6 +28,7 @@ import com.example.baisecomposelearn.theme.buttonSurfaceDisabled
 import com.example.baisecomposelearn.vibration.viewmodel.*
 import kotlinx.coroutines.launch
 
+@RequiresApi(Build.VERSION_CODES.Q)
 @Composable
 fun HomeRoute(viewModel: VibraionViewModel) {
     HomeScreen(

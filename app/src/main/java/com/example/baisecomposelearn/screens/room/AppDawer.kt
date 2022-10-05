@@ -10,7 +10,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.TabRowDefaults.Divider
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.BlurOff
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Menu
@@ -26,6 +26,7 @@ import androidx.core.content.ContextCompat
 import com.example.baisecomposelearn.MainActivity
 import com.example.baisecomposelearn.navitegation.JetNotesRouter
 import com.example.baisecomposelearn.navitegation.NoteScreen
+import com.example.baisecomposelearn.screens.components.exoplayer.PlayerViewManager
 
 @Composable
 fun AppDrawer(
@@ -54,12 +55,15 @@ fun AppDrawer(
                 closeDrawerAction()
             })
         NoteScreenNavigationButton(
-            icon = Icons.Default.BlurOff,
+            icon = Icons.Default.ArrowBack,
             label = "返回",
             false,
             onClick = {
                 val sendIntent = Intent(context, MainActivity::class.java)
                 ContextCompat.startActivity(context, sendIntent, Bundle.EMPTY)
+                PlayerViewManager.activity?.finish()
+                System.exit(0)
+                android.os.Process.killProcess(android.os.Process.myPid())
             })
 
     }

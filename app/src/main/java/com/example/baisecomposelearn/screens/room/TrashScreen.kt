@@ -5,9 +5,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.List
-import androidx.compose.material.icons.filled.Restore
 import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -119,7 +119,7 @@ private fun TrashTopAppBar(
                 IconButton(onClick = onRestoreNotesClick) {
 
                     Icon(
-                        imageVector = Icons.Default.Restore,
+                        imageVector = Icons.Default.ArrowBack,
                         contentDescription = "Restore Notes Trash",
                         tint = MaterialTheme.colors.onPrimary
                     )

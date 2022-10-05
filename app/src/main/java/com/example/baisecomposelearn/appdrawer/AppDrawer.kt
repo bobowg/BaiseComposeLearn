@@ -26,6 +26,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.navitegation.NavitemScreen
+import com.example.baisecomposelearn.screens.components.exoplayer.PlayerViewManager.activity
 import com.example.baisecomposelearn.theme.rwGreen
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -49,6 +50,7 @@ fun TopAppBar(
         contentColor = Color.White,
     )
 }
+
 @Preview
 @Composable
 fun AppBarPreview() {
@@ -60,7 +62,7 @@ fun AppBarPreview() {
 @Composable
 fun DefaultTopAppBar(
     navController: NavController,
-    title:String,
+    title: String,
     modifier: Modifier = Modifier,
 ) {
     TopAppBar(
@@ -70,7 +72,10 @@ fun DefaultTopAppBar(
         modifier = modifier,
         navigationIcon = {
             IconButton(onClick = { navController.navigateUp() }) {
-                Icon(imageVector = Icons.Default.ArrowBack, contentDescription = stringResource(id = R.string.goback))
+                Icon(
+                    imageVector = Icons.Default.ArrowBack,
+                    contentDescription = stringResource(id = R.string.goback)
+                )
             }
         },
         backgroundColor = colorResource(id = R.color.colorPrimary),
@@ -81,7 +86,7 @@ fun DefaultTopAppBar(
 @Preview
 @Composable
 fun DefaultTopAppBarPreview() {
-    DefaultTopAppBar(navController = rememberNavController(), title = "test" )
+    DefaultTopAppBar(navController = rememberNavController(), title = "test")
 }
 
 
@@ -146,8 +151,8 @@ fun Drawer(
                 .align(Alignment.CenterHorizontally)
         ) {
             val openDialog = remember { mutableStateOf(false) }
-            if (openDialog.value){
-                dilog(openDialog)
+            if (openDialog.value) {
+                Dilog(openDialog)
             }
             Button(
                 onClick = {
@@ -217,7 +222,7 @@ private fun DrawerItemPreview() {
 }
 
 @Composable
-fun dilog(openDialog:MutableState<Boolean>) {
+fun Dilog(openDialog: MutableState<Boolean>) {
     if (openDialog.value) {
         AlertDialog(
             onDismissRequest = {
@@ -239,14 +244,15 @@ fun dilog(openDialog:MutableState<Boolean>) {
                 ) {
                     Button(
                         onClick = {
+                            activity?.finish()
+                            System.exit(0)
                             android.os.Process.killProcess(android.os.Process.myPid())
                         }
                     ) {
                         Text(text = stringResource(id = R.string.ok))
                     }
                 }
-            }
-            ,
+            },
             dismissButton = {
                 Row(
                     modifier = Modifier.padding(all = 8.dp),

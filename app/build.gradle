@@ -15,7 +15,7 @@ android {
         minSdk 27
         targetSdk 33
         versionCode 1
-        versionName "1.002"
+        versionName "1.003"
         manifestPlaceholders = [ SCREEN_ORIENTATION: "portrait"]
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -101,6 +101,7 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     implementation 'com.google.firebase:firebase-functions:20.0.0'
     implementation 'com.google.firebase:firebase-config:21.0.2'
+    implementation 'androidx.startup:startup-runtime:1.1.1'
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
 
@@ -137,7 +138,8 @@ dependencies {
     implementation "com.airbnb.android:lottie-compose:4.1.0"
 
     //webview
-    implementation "com.google.accompanist:accompanist-webview:0.25.1"
+    implementation "com.google.accompanist:accompanist-webview:$google_webview"
+    implementation "com.google.accompanist:accompanist-systemuicontroller:$google_webview"
 
     //plot
     implementation 'com.github.madrapps:plot:0.1.1'

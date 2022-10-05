@@ -98,4 +98,26 @@
     <string name="bottomsheetscaffold">底板脚手架</string>
     <string name="modalbottomsheetlayout">%1$s模态底页布局</string>
     <string name="emojicompoat">emoji</string>
+    <string name="home_screen_tick">打钩</string>
+    <string name="home_screen_predefined_effects">预定义效果</string>
+    <string name="home_screen_heavy_click">重度点击</string>
+    <string name="home_screen_double_click">双击</string>
+    <string name="home_screen_haptic_feedback_constants">触觉反馈</string>
+    <string name="home_screen_confirm">确认</string>
+    <string name="home_screen_reject">拒绝</string>
+    <string name="home_screen_composition_primitives">组合原语</string>
+    <string name="home_screen_low_tick">低刻度</string>
+    <string name="home_screen_slow_rise">缓慢上升</string>
+    <string name="home_screen_quick_fall">快速失败</string>
+    <string name="home_screen_spin">旋转</string>
+    <string name="home_screen_thud">轰的一声</string>
+    <string name="home_screen_click">单击</string>
+    <string name="home_screen_quick_rise">快速上升</string>
+    <string name="vibration">震动示例</string>
+    <string name="drawer_content_example_effects">示例效果</string>
+    <string name="resist_screen_title">抵抗</string>
+    <string name="expand_screen_title">扩张</string>
+    <string name="bounce">弹跳</string>
+    <string name="wobble">摇晃</string>
+    <string name="drawer_content_description">菜单</string>
 </resources>

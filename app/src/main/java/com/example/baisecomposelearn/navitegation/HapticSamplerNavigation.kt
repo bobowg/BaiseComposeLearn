@@ -1,0 +1,94 @@
+package com.example.baisecomposelearn.navitegation
+
+import android.app.Application
+import androidx.compose.foundation.ScrollState
+import androidx.compose.material.ScaffoldState
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.baisecomposelearn.screens.vibration.home.HomeRoute
+import com.example.baisecomposelearn.vibration.viewmodel.VibraionViewModel
+
+object HapticSamplerDestinations {
+    const val HOME_ROUTE = "首页"
+    const val RESIST_ROUTE = "反"
+    const val EXPAND_ROUTE = "扩张"
+    const val BOUNCE_ROUTE = "弹跳"
+    const val WOBBLE_ROUTE = "摇晃"
+}
+
+class HapticSamplerNavigation(navController: NavHostController) {
+    val navigateToHome: () -> Unit = {
+        navController.navigate(HapticSamplerDestinations.HOME_ROUTE) {
+            popUpTo(navController.graph.findStartDestination().id) {
+                saveState = true
+            }
+            launchSingleTop = true
+            restoreState = true
+        }
+    }
+    val navigateToResist: () -> Unit = {
+        navController.navigate(HapticSamplerDestinations.RESIST_ROUTE) {
+            popUpTo(navController.graph.findStartDestination().id) {
+                saveState = true
+            }
+            launchSingleTop = true
+            restoreState = true
+        }
+    }
+    val navigateToExpand: () -> Unit = {
+        navController.navigate(HapticSamplerDestinations.EXPAND_ROUTE) {
+            popUpTo(navController.graph.findStartDestination().id) {
+                saveState = true
+            }
+            launchSingleTop = true
+            restoreState = true
+        }
+    }
+    val navigateToBounce: () -> Unit = {
+        navController.navigate(HapticSamplerDestinations.BOUNCE_ROUTE) {
+            popUpTo(navController.graph.findStartDestination().id) {
+                saveState = true
+            }
+            launchSingleTop = true
+            restoreState = true
+        }
+    }
+    val navigateToWobble: () -> Unit = {
+        navController.navigate(HapticSamplerDestinations.WOBBLE_ROUTE) {
+            popUpTo(navController.graph.findStartDestination().id) {
+                saveState = true
+            }
+            launchSingleTop = true
+            restoreState = true
+        }
+    }
+}
+
+@Composable
+fun HapticSamplerNavGraph(
+    application: Application,
+    modifier: Modifier = Modifier,
+    navController: NavHostController = rememberNavController(),
+    startDestination: String = HapticSamplerDestinations.HOME_ROUTE,
+    scaffoldState: ScaffoldState,
+    scrollState: ScrollState,
+) {
+    NavHost(
+        navController = navController,
+        startDestination = startDestination,
+        modifier = modifier
+    ) {
+        composable(HapticSamplerDestinations.HOME_ROUTE){
+            val vibraionViewModel:VibraionViewModel = viewModel(
+                factory = VibraionViewModel.provideFactory(application,scaffoldState,scrollState)
+            )
+            HomeRoute(vibraionViewModel)
+        }
+    }
+}

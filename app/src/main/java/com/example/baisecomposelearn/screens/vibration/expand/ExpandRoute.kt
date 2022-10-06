@@ -1,7 +1,6 @@
 package com.example.baisecomposelearn.screens.vibration.expand
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.os.Build
 import android.os.VibrationEffect
 import android.os.Vibrator
@@ -56,22 +55,30 @@ private val EXPAND_SHAPE_EXPANDED_THICKNESS = EXPAND_SHAPE_COLLAPSED_SIZE / 4
 
 // Representation of the primitive composition to be played by the vibrator when the indicator is
 // expanding.
-private val VIBRATION_DATA_FOR_EXPANDING = PrimitiveComposition(
-    arrayOf(
-        PrimitiveEffect(VibrationEffect.Composition.PRIMITIVE_SLOW_RISE, 0.3f),
-        PrimitiveEffect(VibrationEffect.Composition.PRIMITIVE_QUICK_FALL, 0.3f),
-        PrimitiveEffect(VibrationEffect.Composition.PRIMITIVE_TICK, 0.6f, ANIMATION_COMPLETE_TICK_DELAY_MS)
+private val VIBRATION_DATA_FOR_EXPANDING = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+    PrimitiveComposition(
+        arrayOf(
+            PrimitiveEffect(VibrationEffect.Composition.PRIMITIVE_SLOW_RISE, 0.3f),
+            PrimitiveEffect(VibrationEffect.Composition.PRIMITIVE_QUICK_FALL, 0.3f),
+            PrimitiveEffect(VibrationEffect.Composition.PRIMITIVE_TICK, 0.6f, ANIMATION_COMPLETE_TICK_DELAY_MS)
+        )
     )
-)
+} else {
+    TODO("VERSION.SDK_INT < R")
+}
 
 // Representation of the primitive composition to be played by the vibrator when the indicator is
 // collapsing.
-private val VIBRATION_DATA_FOR_COLLAPSING = PrimitiveComposition(
-    arrayOf(
-        PrimitiveEffect(VibrationEffect.Composition.PRIMITIVE_SLOW_RISE),
-        PrimitiveEffect(VibrationEffect.Composition.PRIMITIVE_TICK, 1f, ANIMATION_COMPLETE_TICK_DELAY_MS)
+private val VIBRATION_DATA_FOR_COLLAPSING = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+    PrimitiveComposition(
+        arrayOf(
+            PrimitiveEffect(VibrationEffect.Composition.PRIMITIVE_SLOW_RISE),
+            PrimitiveEffect(VibrationEffect.Composition.PRIMITIVE_TICK, 1f, ANIMATION_COMPLETE_TICK_DELAY_MS)
+        )
     )
-)
+} else {
+    TODO("VERSION.SDK_INT < R")
+}
 
 @Composable
 fun ExpandRoute(viewModel: ExpandViewModel) {

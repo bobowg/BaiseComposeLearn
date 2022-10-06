@@ -13,8 +13,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.baisecomposelearn.screens.vibration.expand.ExpandRoute
 import com.example.baisecomposelearn.screens.vibration.home.HomeRoute
 import com.example.baisecomposelearn.screens.vibration.resist.ResistRoute
+import com.example.baisecomposelearn.vibration.viewmodel.ExpandViewModel
 import com.example.baisecomposelearn.vibration.viewmodel.ResistViewModel
 import com.example.baisecomposelearn.vibration.viewmodel.VibraionViewModel
 
@@ -100,6 +102,12 @@ fun HapticSamplerNavGraph(
                 factory = ResistViewModel.provideFactory(application)
             )
             ResistRoute(resistViewModel)
+        }
+        composable(HapticSamplerDestinations.EXPAND_ROUTE){
+            val expandViewModel: ExpandViewModel = viewModel(
+                factory = ExpandViewModel.provideFactory(application)
+            )
+            ExpandRoute(expandViewModel)
         }
 
     }

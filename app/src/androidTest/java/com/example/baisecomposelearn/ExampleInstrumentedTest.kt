@@ -7,6 +7,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.example.baisecomposelearn.navitegation.HapticSamplerDestinations
+import com.example.baisecomposelearn.screens.vibration.expand.ExpandExampleScreen
 import com.example.baisecomposelearn.screens.vibration.resist.ResistRoute
 import com.example.baisecomposelearn.theme.HapticSamplerTheme
 import com.example.baisecomposelearn.vibration.appdraw.AppDrawer
@@ -39,6 +40,16 @@ class ExampleInstrumentedTest {
                     navigateToBounce = {},
                     navigateToWobble = {},
                     closeDrawer = {},
+                )
+            }
+        }
+    }
+    @Test
+    fun testExpandExampleScreen(){
+        composeTestRule.setContent {
+            HapticSamplerTheme {
+                ExpandExampleScreen(
+                    messageToUser = "A message to display to user."
                 )
             }
         }

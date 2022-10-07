@@ -13,6 +13,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -29,6 +30,7 @@ import com.example.baisecomposelearn.navitegation.NavitemScreen
 import com.example.baisecomposelearn.theme.rwGreen
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import kotlin.system.exitProcess
 
 
 @Composable
@@ -244,8 +246,8 @@ fun Dilog(openDialog: MutableState<Boolean>) {
                 ) {
                     Button(
                         onClick = {
-                            System.exit(0)
                             android.os.Process.killProcess(android.os.Process.myPid())
+                            exitProcess(0)
                         }
                     ) {
                         Text(text = stringResource(id = R.string.ok))

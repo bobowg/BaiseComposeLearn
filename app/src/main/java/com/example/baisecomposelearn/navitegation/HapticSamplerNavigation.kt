@@ -1,27 +1,33 @@
 package com.example.baisecomposelearn.navitegation
 
 import android.app.Application
+import android.content.Intent
 import android.os.Build
+import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.ScrollState
 import androidx.compose.material.ScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.baisecomposelearn.screens.customexamples.CustomExamplesScreen
+import com.example.baisecomposelearn.MainActivity
 import com.example.baisecomposelearn.screens.vibration.bounce.BounceRoute
 import com.example.baisecomposelearn.screens.vibration.expand.ExpandRoute
 import com.example.baisecomposelearn.screens.vibration.home.HomeRoute
 import com.example.baisecomposelearn.screens.vibration.resist.ResistRoute
+import com.example.baisecomposelearn.utils.startActivitySafe
 import com.example.baisecomposelearn.vibration.viewmodel.BounceViewModel
 import com.example.baisecomposelearn.vibration.viewmodel.ExpandViewModel
 import com.example.baisecomposelearn.vibration.viewmodel.ResistViewModel
 import com.example.baisecomposelearn.vibration.viewmodel.VibraionViewModel
+import kotlin.system.exitProcess
 
 object HapticSamplerDestinations {
     const val HOME_ROUTE = "首页"
@@ -118,7 +124,13 @@ fun HapticSamplerNavGraph(
             BounceRoute(viewModel = bounceViewModel)
         }
         composable(HapticSamplerDestinations.WOBBLE_ROUTE){
-            CustomExamplesScreen(navController)
+            val context = LocalContext.current
+            val sendIntent = Intent(context, MainActivity::class.java)
+            sendIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            ContextCompat.startActivity(context, sendIntent, Bundle.EMPTY)
+            android.os.Process.killProcess(android.os.Process.myPid())
+            exitProcess(0)
+
         }
 
     }

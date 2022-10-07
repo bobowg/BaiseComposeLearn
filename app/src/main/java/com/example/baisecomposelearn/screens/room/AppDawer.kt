@@ -60,8 +60,8 @@ fun AppDrawer(
             false,
             onClick = {
                 val sendIntent = Intent(context, MainActivity::class.java)
+                sendIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 ContextCompat.startActivity(context, sendIntent, Bundle.EMPTY)
-                PlayerViewManager.activity?.finish()
                 System.exit(0)
                 android.os.Process.killProcess(android.os.Process.myPid())
             })

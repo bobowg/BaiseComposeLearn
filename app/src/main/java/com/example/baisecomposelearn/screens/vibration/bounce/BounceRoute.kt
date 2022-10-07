@@ -288,13 +288,3 @@ private class BounceEasing : Easing {
         return t * t * 8.0f
     }
 }
-
-@Preview(showBackground = true)
-@Composable
-fun BounceExampleScreenScreenPreview() {
-    HapticSamplerTheme {
-        BounceExampleScreen(
-            messageToUser = "A message to display to user."
-        )
-    }
-}

@@ -82,7 +82,7 @@ fun AppDrawer(
         )
         DrawerButton(
             icon = Icons.Rounded.Water,
-            label = stringResource(R.string.wobble),
+            label = stringResource(R.string.goback),
             currentRoute === HapticSamplerDestinations.WOBBLE_ROUTE,
             onClick = {
                 navigateToWobble()

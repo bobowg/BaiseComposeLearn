@@ -13,6 +13,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.baisecomposelearn.screens.customexamples.CustomExamplesScreen
 import com.example.baisecomposelearn.screens.vibration.bounce.BounceRoute
 import com.example.baisecomposelearn.screens.vibration.expand.ExpandRoute
 import com.example.baisecomposelearn.screens.vibration.home.HomeRoute
@@ -27,7 +28,7 @@ object HapticSamplerDestinations {
     const val RESIST_ROUTE = "抵抗"
     const val EXPAND_ROUTE = "扩张"
     const val BOUNCE_ROUTE = "弹跳"
-    const val WOBBLE_ROUTE = "摇晃"
+    const val WOBBLE_ROUTE = "退出"
 }
 
 class HapticSamplerNavigation(navController: NavHostController) {
@@ -115,6 +116,9 @@ fun HapticSamplerNavGraph(
             val bounceViewModel: BounceViewModel =
                 viewModel(factory = BounceViewModel.provideFactory(application))
             BounceRoute(viewModel = bounceViewModel)
+        }
+        composable(HapticSamplerDestinations.WOBBLE_ROUTE){
+            CustomExamplesScreen(navController)
         }
 
     }

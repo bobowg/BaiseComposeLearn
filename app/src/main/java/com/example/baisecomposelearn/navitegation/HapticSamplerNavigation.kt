@@ -13,9 +13,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.baisecomposelearn.screens.vibration.bounce.BounceRoute
 import com.example.baisecomposelearn.screens.vibration.expand.ExpandRoute
 import com.example.baisecomposelearn.screens.vibration.home.HomeRoute
 import com.example.baisecomposelearn.screens.vibration.resist.ResistRoute
+import com.example.baisecomposelearn.vibration.viewmodel.BounceViewModel
 import com.example.baisecomposelearn.vibration.viewmodel.ExpandViewModel
 import com.example.baisecomposelearn.vibration.viewmodel.ResistViewModel
 import com.example.baisecomposelearn.vibration.viewmodel.VibraionViewModel
@@ -91,23 +93,28 @@ fun HapticSamplerNavGraph(
         startDestination = startDestination,
         modifier = modifier
     ) {
-        composable(HapticSamplerDestinations.HOME_ROUTE){
-            val vibraionViewModel:VibraionViewModel = viewModel(
-                factory = VibraionViewModel.provideFactory(application,scaffoldState,scrollState)
+        composable(HapticSamplerDestinations.HOME_ROUTE) {
+            val vibraionViewModel: VibraionViewModel = viewModel(
+                factory = VibraionViewModel.provideFactory(application, scaffoldState, scrollState)
             )
             HomeRoute(vibraionViewModel)
         }
-        composable(HapticSamplerDestinations.RESIST_ROUTE){
+        composable(HapticSamplerDestinations.RESIST_ROUTE) {
             val resistViewModel: ResistViewModel = viewModel(
                 factory = ResistViewModel.provideFactory(application)
             )
             ResistRoute(resistViewModel)
         }
-        composable(HapticSamplerDestinations.EXPAND_ROUTE){
+        composable(HapticSamplerDestinations.EXPAND_ROUTE) {
             val expandViewModel: ExpandViewModel = viewModel(
                 factory = ExpandViewModel.provideFactory(application)
             )
             ExpandRoute(expandViewModel)
+        }
+        composable(HapticSamplerDestinations.BOUNCE_ROUTE) {
+            val bounceViewModel: BounceViewModel =
+                viewModel(factory = BounceViewModel.provideFactory(application))
+            BounceRoute(viewModel = bounceViewModel)
         }
 
     }

@@ -1,17 +1,13 @@
 package com.example.baisecomposelearn
 
-import android.app.Application
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.test.junit4.createComposeRule
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.example.baisecomposelearn.navitegation.HapticSamplerDestinations
+import com.example.baisecomposelearn.screens.vibration.bounce.BounceExampleScreen
 import com.example.baisecomposelearn.screens.vibration.expand.ExpandExampleScreen
-import com.example.baisecomposelearn.screens.vibration.resist.ResistRoute
 import com.example.baisecomposelearn.theme.HapticSamplerTheme
 import com.example.baisecomposelearn.vibration.appdraw.AppDrawer
-import com.example.baisecomposelearn.vibration.viewmodel.ResistViewModel
 import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
@@ -44,11 +40,23 @@ class ExampleInstrumentedTest {
             }
         }
     }
+
     @Test
-    fun testExpandExampleScreen(){
+    fun testExpandExampleScreen() {
         composeTestRule.setContent {
             HapticSamplerTheme {
                 ExpandExampleScreen(
+                    messageToUser = "A message to display to user."
+                )
+            }
+        }
+    }
+
+    @Test
+    fun testBounceExampleScreen() {
+        composeTestRule.setContent {
+            HapticSamplerTheme {
+                BounceExampleScreen(
                     messageToUser = "A message to display to user."
                 )
             }

@@ -1,7 +1,6 @@
 package com.example.baisecomposelearn
 
 import androidx.compose.ui.test.junit4.createComposeRule
-import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.baisecomposelearn.screens.animate.ElevationAnimationScreen

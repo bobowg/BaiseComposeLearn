@@ -126,4 +126,6 @@
     <string name="resist_screen_and_release">并且重置</string>
     <string name="expand_screen_tap_to_expand">点击展开</string>
     <string name="expand_screen_tap_to_minimize">点击以最小化</string>
+    <string name="bounce_tap_to_drop">弹跳点击下降</string>
+    <string name="bounce_tap_to_reset">弹跳点击重置</string>
 </resources>

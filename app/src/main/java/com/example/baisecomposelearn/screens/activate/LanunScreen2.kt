@@ -65,7 +65,10 @@ fun LanunScreen2(navController: NavController) {
         )
 
         result.value?.let { uri ->
-            val projection = arrayOf(ContactsContract.Contacts.DISPLAY_NAME)
+            val projection = arrayOf(
+                ContactsContract.Contacts.DISPLAY_NAME,
+                ContactsContract.Contacts.HAS_PHONE_NUMBER
+            )
             val cursor = LocalContext.current.contentResolver.query(
                 uri, projection,
                 null, null, null
@@ -74,9 +77,17 @@ fun LanunScreen2(navController: NavController) {
                 cursor.moveToFirst()
                 val nameIndex = cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)
                 val name = cursor.getString(nameIndex)
+                val number = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)
+
                 Text(
                     text = stringResource(id = R.string.name_args, name),
                     fontWeight = FontWeight.Bold,
+                    fontSize = 28.sp,
+                    color = Color.White
+                )
+                Text(
+                    text = "电话号码:$number",
+                 fontWeight = FontWeight.Bold,
                     fontSize = 28.sp,
                     color = Color.White
                 )

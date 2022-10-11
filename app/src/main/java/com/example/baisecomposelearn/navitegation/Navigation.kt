@@ -220,6 +220,9 @@ fun Navigation(
         composable(NavitemScreen.EmojiCompoatScreen.route){
             EmojiCompoatScreen(navController)
         }
+        composable(NavitemScreen.RatingBarScreen.route){
+            RatingBarScreen(navController)
+        }
     }
 
 }

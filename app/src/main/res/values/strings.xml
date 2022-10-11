@@ -128,4 +128,5 @@
     <string name="expand_screen_tap_to_minimize">点击以最小化</string>
     <string name="bounce_tap_to_drop">弹跳点击下降</string>
     <string name="bounce_tap_to_reset">弹跳点击重置</string>
+    <string name="ratingbar">评级</string>
 </resources>

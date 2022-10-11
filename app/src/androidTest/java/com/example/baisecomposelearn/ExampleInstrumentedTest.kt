@@ -1,11 +1,14 @@
 package com.example.baisecomposelearn
 
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.navigation.compose.rememberNavController
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.example.baisecomposelearn.navitegation.HapticSamplerDestinations
+import com.example.baisecomposelearn.screens.customexamples.RatingBarScreen
 import com.example.baisecomposelearn.screens.vibration.bounce.BounceExampleScreen
 import com.example.baisecomposelearn.screens.vibration.expand.ExpandExampleScreen
+import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
 import com.example.baisecomposelearn.theme.HapticSamplerTheme
 import com.example.baisecomposelearn.vibration.appdraw.AppDrawer
 import org.junit.Assert.assertEquals
@@ -59,6 +62,14 @@ class ExampleInstrumentedTest {
                 BounceExampleScreen(
                     messageToUser = "A message to display to user."
                 )
+            }
+        }
+    }
+    @Test
+    fun testRatingBarScreen(){
+        composeTestRule.setContent {
+            BaiseComposeLearnTheme {
+                RatingBarScreen(navController = rememberNavController())
             }
         }
     }

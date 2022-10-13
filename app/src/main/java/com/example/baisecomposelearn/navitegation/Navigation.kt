@@ -223,6 +223,9 @@ fun Navigation(
         composable(NavitemScreen.RatingBarScreen.route){
             RatingBarScreen(navController)
         }
+        composable(NavitemScreen.CollapsingToolbar.route){
+            CollapsingToolbar()
+        }
     }
 
 }

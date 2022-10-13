@@ -6,6 +6,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.baisecomposelearn.screens.animate.ElevationAnimationScreen
 import com.example.baisecomposelearn.screens.animate.SingleValueFloatAnimationScreen
 import com.example.baisecomposelearn.screens.constraintlayout.BottomSheetScaffoldScreen
+import com.example.baisecomposelearn.screens.customexamples.CollapsingToolbar
 import com.example.baisecomposelearn.screens.customexamples.EmojiCompoatScreen
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
 import org.junit.Rule
@@ -49,6 +50,14 @@ class SingleValueFloatAnimationScreenTest {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 EmojiCompoatScreen(navController = rememberNavController())
+            }
+        }
+    }
+    @Test
+    fun testCollapsingToolbar(){
+        composeTestRule.setContent {
+            BaiseComposeLearnTheme {
+                CollapsingToolbar()
             }
         }
     }

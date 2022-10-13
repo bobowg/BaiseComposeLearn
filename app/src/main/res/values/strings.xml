@@ -129,4 +129,5 @@
     <string name="bounce_tap_to_drop">弹跳点击下降</string>
     <string name="bounce_tap_to_reset">弹跳点击重置</string>
     <string name="ratingbar">评级</string>
+    <string name="collapsingtoolbar">折叠工具栏</string>
 </resources>

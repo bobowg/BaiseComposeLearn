@@ -5,6 +5,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.example.baisecomposelearn.navitegation.HapticSamplerDestinations
+import com.example.baisecomposelearn.screens.customexamples.AdMobBannerScreen
 import com.example.baisecomposelearn.screens.customexamples.RatingBarScreen
 import com.example.baisecomposelearn.screens.vibration.bounce.BounceExampleScreen
 import com.example.baisecomposelearn.screens.vibration.expand.ExpandExampleScreen
@@ -70,6 +71,14 @@ class ExampleInstrumentedTest {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 RatingBarScreen(navController = rememberNavController())
+            }
+        }
+    }
+    @Test
+    fun testAdMobBannerScreen(){
+        composeTestRule.setContent {
+            BaiseComposeLearnTheme {
+                AdMobBannerScreen()
             }
         }
     }

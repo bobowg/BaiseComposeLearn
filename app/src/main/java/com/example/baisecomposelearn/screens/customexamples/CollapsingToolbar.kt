@@ -34,6 +34,8 @@ private val toolbarHeight = 56.dp
 private val paddingMedium = 0.dp
 private val titlePaddingStart = 0.dp
 private val titlePaddingEnd = 0.dp
+private const val titleFontScaleStart = 1f
+private const val titleFontScaleEnd = 0.66f
 
 @Composable
 fun CollapsingToolbar() {
@@ -43,7 +45,7 @@ fun CollapsingToolbar() {
         Header(scroll = scroll, headerHeghtPx = 3f)
         Body(scroll = scroll)
         Toolbar(scroll = scroll, headerHeightPx = 1f, toolbarHeightPx = 1f)
-        Title(scroll = scroll, headerHeightPx = 3f, toolbarHeightPx = 1f)
+        Title(scroll = scroll, headerHeightPx = 3f, toolbarHeightPx = 0f)
     }
 }
 
@@ -51,26 +53,56 @@ fun CollapsingToolbar() {
 private fun Title(scroll: ScrollState,headerHeightPx: Float,toolbarHeightPx: Float) {
     var titleHeightPx by remember { mutableStateOf(0f) }
     val titleHeightDp = with(LocalDensity.current) { titleHeightPx.toDp() }
+    val collapseRange: Float = (headerHeightPx - toolbarHeightPx)
+    val collapseFraction: Float = (scroll.value / collapseRange).coerceIn(0f, 1f)
+
+    val titleYFirstInterpolatedPoint = lerp(
+        headerHeight - titleHeightDp - paddingMedium,
+        headerHeight / 2,
+        collapseFraction
+    )
+    val titleYSecondInterpolatedPoint = lerp(
+        headerHeight / 2,
+        toolbarHeight / 2 - titleHeightDp / 2,
+        collapseFraction
+    )
+    val titleXFirstInterpolatedPoint = lerp(
+        titlePaddingStart,
+        titlePaddingEnd * 5 / 4,
+        collapseFraction
+    )
+    val titleXSecondInterpolatedPoint = lerp(
+        titlePaddingEnd * 5 / 4,
+        titlePaddingEnd,
+        collapseFraction
+    )
+    val titleY = lerp(
+        titleYFirstInterpolatedPoint,
+        titleYSecondInterpolatedPoint,
+        collapseFraction
+    )
+    val titleX = lerp(
+        titleXFirstInterpolatedPoint,
+        titleXSecondInterpolatedPoint,
+        collapseFraction
+    )
+    val scaleXY = lerp(
+        titleFontScaleStart.dp,
+        titleFontScaleEnd.dp,
+        collapseFraction
+    )
     Text(
         text = "New York",
         fontSize = 30.sp,
         fontWeight = FontWeight.Bold,
+        color = MaterialTheme.colors.onPrimary,
         modifier = Modifier
             .graphicsLayer {
-                val collapseRange: Float = (headerHeightPx - toolbarHeightPx)
-                val collapseFraction: Float = (scroll.value / collapseRange).coerceIn(0f, 1f)
-                val titleY = lerp(
-                    headerHeight - titleHeightDp - paddingMedium, // start Y
-                    toolbarHeight / 2 - titleHeightDp / 2, // end Y
-                    collapseFraction
-                )
-                val titleX = lerp(
-                    titlePaddingStart, // start X
-                    titlePaddingEnd, // end X
-                    collapseFraction
-                )
+
+                scaleX = scaleXY.value
+                scaleY = scaleXY.value
                 translationY = titleY.toPx()
-                translationX = titleX.toPx()
+                translationX = titleX.toPx()+ 120
             }
             .onGloballyPositioned {
                 titleHeightPx = it.size.height.toFloat()

@@ -22,7 +22,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.screens.components.ScreenModel
-import com.example.baisecomposelearn.screens.components.imgUrl
+import com.example.baisecomposelearn.screens.components.randomSampleImageUrl
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.ShimmerParams
@@ -34,7 +34,7 @@ fun FrescoLandscapistScreen(navController: NavController) {
     Fresco.initialize(context)
     ScreenModel(navController = navController, content = {
         FrescoImage(
-            imageUrl = imgUrl(),
+            imageUrl = randomSampleImageUrl(),
             modifier = Modifier.fillMaxWidth(),
             contentScale = ContentScale.Crop,
             circularReveal = CircularReveal(duration = 300),
@@ -42,7 +42,7 @@ fun FrescoLandscapistScreen(navController: NavController) {
             error = Icons.Filled.Error
         )
         FrescoImage(
-            imageUrl = imgUrl(),
+            imageUrl = randomSampleImageUrl(),
             modifier = Modifier.fillMaxWidth(),
             loading = {
                 ConstraintLayout(modifier = Modifier.fillMaxSize()) {
@@ -60,7 +60,7 @@ fun FrescoLandscapistScreen(navController: NavController) {
             }
         )
         FrescoImage(
-            imageUrl = imgUrl(),
+            imageUrl = randomSampleImageUrl(),
             modifier = Modifier.fillMaxWidth(),
             shimmerParams = ShimmerParams(
                 baseColor = MaterialTheme.colors.background,

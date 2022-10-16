@@ -20,23 +20,23 @@ import coil.compose.SubcomposeAsyncImageContent
 import coil.request.ImageRequest
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.screens.components.ScreenModel
-import com.example.baisecomposelearn.screens.components.imgUrl
+import com.example.baisecomposelearn.screens.components.randomSampleImageUrl
 
 @Composable
 fun CoilImageScreen(navController: NavController) {
     ScreenModel(navController = navController, content = {
         val context = LocalContext.current
         AsyncImage(
-            model = imgUrl(),
-            contentDescription = stringResource(id = R.string.coilimage)
+            model = randomSampleImageUrl(),
+            contentDescription = stringResource(id = R.string.coilimage,"")
         )
         Divider()
         AsyncImage(
             model = ImageRequest.Builder(context)
-                .data(imgUrl())
+                .data(randomSampleImageUrl())
                 .crossfade(true).build(),
             contentDescription = stringResource(
-                id = R.string.coilimage
+                id = R.string.coilimage,""
             ),
             placeholder = painterResource(id = R.drawable.logo),
             error = painterResource(id = com.google.android.material.R.drawable.mtrl_ic_error),
@@ -46,8 +46,8 @@ fun CoilImageScreen(navController: NavController) {
         )
         Divider()
         SubcomposeAsyncImage(
-            model = Uri.parse(imgUrl()),
-            contentDescription = stringResource(R.string.coilimage),
+            model = Uri.parse(randomSampleImageUrl()),
+            contentDescription = stringResource(R.string.coilimage,""),
             modifier = Modifier.clip(CircleShape)
         ) {
             if (painter.state is AsyncImagePainter.State.Loading || painter.state is AsyncImagePainter.State.Error) {

@@ -5,6 +5,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.example.baisecomposelearn.navitegation.HapticSamplerDestinations
+import com.example.baisecomposelearn.screens.customexamples.OrbitalExampleScreen
 import com.example.baisecomposelearn.screens.customexamples.RatingBarScreen
 import com.example.baisecomposelearn.screens.customexamples.SystemUiControllerAccompanistScreen
 import com.example.baisecomposelearn.screens.vibration.bounce.BounceExampleScreen
@@ -81,5 +82,12 @@ class ExampleInstrumentedTest {
             }
         }
     }
-
+    @Test
+    fun testOrbitalExampleScreen(){
+        composeTestRule.setContent {
+            BaiseComposeLearnTheme {
+                OrbitalExampleScreen(navController = rememberNavController())
+            }
+        }
+    }
 }

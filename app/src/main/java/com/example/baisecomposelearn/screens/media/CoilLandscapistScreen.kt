@@ -20,7 +20,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.navigation.NavController
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.screens.components.goBack
-import com.example.baisecomposelearn.screens.components.imgUrl
+import com.example.baisecomposelearn.screens.components.randomSampleImageUrl
 import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.ShimmerParams
 import com.skydoves.landscapist.coil.CoilImage
@@ -35,7 +35,7 @@ fun CoilLandscapistScreen(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         CoilImage(
-            imageModel = imgUrl(),
+            imageModel = randomSampleImageUrl(),
             modifier = Modifier.fillMaxWidth(),
             circularReveal = CircularReveal(duration = 300),
             placeHolder = Icons.Filled.Image,
@@ -43,7 +43,7 @@ fun CoilLandscapistScreen(navController: NavController) {
         )
         Divider(modifier = Modifier.height(2.dp))
         CoilImage(
-            imageModel = imgUrl(),
+            imageModel = randomSampleImageUrl(),
             modifier = Modifier.fillMaxWidth(),
             loading = {
                 ConstraintLayout(
@@ -61,11 +61,11 @@ fun CoilLandscapistScreen(navController: NavController) {
                 }
             },
             failure = {
-                Text(text = stringResource(id = R.string.coilimage))
+                Text(text = stringResource(id = R.string.coilimage,""))
             })
         Divider(modifier = Modifier.height(2.dp))
         CoilImage(
-            imageModel = imgUrl(),
+            imageModel = randomSampleImageUrl(),
             modifier = Modifier.fillMaxWidth(),
             shimmerParams = ShimmerParams(
                 baseColor = MaterialTheme.colors.background,

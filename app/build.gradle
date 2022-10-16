@@ -15,7 +15,7 @@ android {
         minSdk 27
         targetSdk 33
         versionCode 1
-        versionName "1.003"
+        versionName "1.004"
         manifestPlaceholders = [ SCREEN_ORIENTATION: "portrait"]
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -153,6 +153,8 @@ dependencies {
     implementation "com.google.accompanist:accompanist-permissions:$accompanistPermissionsVersion"
     //RatingBar
     implementation 'com.github.a914-gowtham:compose-ratingbar:1.2.3'
+    //Orbital
+    implementation "com.github.skydoves:orbital:0.2.2"
     //Test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

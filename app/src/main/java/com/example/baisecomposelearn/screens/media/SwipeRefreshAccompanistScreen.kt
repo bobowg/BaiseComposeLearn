@@ -14,8 +14,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import com.example.baisecomposelearn.R
-import com.example.baisecomposelearn.screens.components.ScreenModel
-import com.example.baisecomposelearn.screens.components.imgUrl
+import com.example.baisecomposelearn.screens.components.goBack
+import com.example.baisecomposelearn.screens.components.randomSampleImageUrl
 import com.example.baisecomposelearn.theme.rwGreen
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.SwipeRefreshIndicator
@@ -52,7 +52,7 @@ fun SwipeRefreshAccompanistScreen(navController: NavController) {
                 items(30) { index ->
                     Row(Modifier.padding(16.dp)) {
                         Image(
-                            painter = rememberAsyncImagePainter(model = imgUrl()),
+                            painter = rememberAsyncImagePainter(model = randomSampleImageUrl()),
                             contentDescription = null,
                             modifier = Modifier.size(64.dp)
                         )
@@ -68,5 +68,5 @@ fun SwipeRefreshAccompanistScreen(navController: NavController) {
                 }
             }
         }
-
+    goBack(navController = navController)
 }

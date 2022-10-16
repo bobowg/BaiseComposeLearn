@@ -45,7 +45,7 @@
     <string name="livedata">LiveData</string>
     <string name="mediaextension">媒体扩展</string>
     <string name="media3exoplayer">Media3 播放器</string>
-    <string name="coilimage">图片加载器 %1$d</string>
+    <string name="coilimage">图片加载器 %1$s</string>
     <string name="qrcode">二维码 %1$s</string>
     <string name="font">字体 %1$s</string>
     <string name="tabs">标签布局</string>
@@ -134,4 +134,5 @@
     <string name="restore_system_bar_colors">恢复系统栏颜色</string>
     <string name="change_navigation_bar_colors">更改导航栏颜色</string>
     <string name="restore_navigation_bar_colors">恢复导航栏颜色</string>
+    <string name="orbitalexample">轨道示例</string>
 </resources>

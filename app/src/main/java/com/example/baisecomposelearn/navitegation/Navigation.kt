@@ -223,6 +223,9 @@ fun Navigation(
         composable(NavitemScreen.SystemUiControllerAccompanistScreen.route){
             SystemUiControllerAccompanistScreen(navController)
         }
+        composable(NavitemScreen.OrbitalExampleScreen.route){
+            OrbitalExampleScreen(navController)
+        }
     }
 
 }

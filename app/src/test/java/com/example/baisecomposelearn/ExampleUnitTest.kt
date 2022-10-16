@@ -1,6 +1,7 @@
 package com.example.baisecomposelearn
 
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 /**
@@ -12,5 +13,11 @@ class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
+    }
+
+    @Test
+    fun testRandom() {
+        val rdom = (1000000..9999999).random()
+        assertTrue(rdom > 1000000)
     }
 }

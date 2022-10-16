@@ -16,7 +16,6 @@ import androidx.emoji2.bundled.BundledEmojiCompatConfig
 import androidx.emoji2.text.EmojiCompat
 import androidx.emoji2.text.FontRequestEmojiCompatConfig
 import androidx.navigation.compose.rememberNavController
-import com.example.baisecomposelearn.AppStart.Companion.USE_BUNDLED_EMOJI
 import com.example.baisecomposelearn.appdrawer.Drawer
 import com.example.baisecomposelearn.appdrawer.TopAppBar
 import com.example.baisecomposelearn.dependencyinjector.DependencyInjector
@@ -30,10 +29,10 @@ class AppStart : Application() {
 
     companion object {
 
-        private val TAG = "EmojiCompatApplication"
+        private const val TAG = "EmojiCompatApplication"
 
         /** Change this to `false` when you want to use the downloadable Emoji font.  */
-        private val USE_BUNDLED_EMOJI = true
+        private const val USE_BUNDLED_EMOJI = true
 
     }
 
@@ -41,7 +40,7 @@ class AppStart : Application() {
         super.onCreate()
         initDependencyInjector()
         val config: EmojiCompat.Config
-        if (AppStart.USE_BUNDLED_EMOJI) {
+        if (USE_BUNDLED_EMOJI) {
             // Use the bundled font for EmojiCompat
             config = BundledEmojiCompatConfig(applicationContext)
         } else {
@@ -56,12 +55,12 @@ class AppStart : Application() {
                 .setReplaceAll(true)
                 .registerInitCallback(object : EmojiCompat.InitCallback() {
                     override fun onInitialized() {
-                        Log.i(AppStart.TAG, "EmojiCompat initialized")
+                        Log.i(TAG, "EmojiCompat initialized")
                     }
 
                     override fun onFailed(throwable: Throwable?) {
                         Log.e(
-                            AppStart.TAG,
+                            TAG,
                             "EmojiCompat initialization failed",
                             throwable
                         )

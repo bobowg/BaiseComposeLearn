@@ -156,9 +156,6 @@ fun Navigation(
             val sendIntent = Intent(context, ResultActivity::class.java)
             startActivity(context,sendIntent, Bundle.EMPTY)
         }
-        composable(NavitemScreen.GoogleMapsScreen.route){
-            GoogleMapsScreen()
-        }
         composable(NavitemScreen.GlideLandscapistScreen.route){
             GlideLandscapistScreen(navController)
         }
@@ -185,9 +182,6 @@ fun Navigation(
         }
         composable(NavitemScreen.PickDateScreen.route){
             PickDateScreen(navController)
-        }
-        composable(NavitemScreen.AdMobBannerScreen.route){
-            AdMobBannerScreen()
         }
         composable(NavitemScreen.CameraxScreen.route){
             CameraxScreen(navController)

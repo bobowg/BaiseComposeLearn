@@ -130,10 +130,6 @@ dependencies {
     implementation "androidx.paging:paging-runtime-ktx:3.1.0-rc01"
     implementation "com.google.accompanist:accompanist-swiperefresh:0.21.2-beta"
 
-    //GoogMap
-    implementation 'com.google.maps.android:maps-compose:2.7.0'
-    implementation 'com.google.android.gms:play-services-maps:18.0.2'
-
     //lottieVersion
     implementation "com.airbnb.android:lottie-compose:4.1.0"
 

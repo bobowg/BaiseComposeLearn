@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
     private var mFirebaseAnalytics: FirebaseAnalytics? = null
 
     @SuppressLint("MissingPermission")
-    @RequiresApi(Build.VERSION_CODES.O)
+    @RequiresApi(Build.VERSION_CODES.P)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         createNotificationChannel()

@@ -48,15 +48,7 @@ fun CustomExamplesScreen(navController: NavController) {
                 color = Color.White
             )
         }
-        Button(modifier = modo,
-            onClick = { navController.navigate(NavitemScreen.AdMobBannerScreen.route) }) {
-            Text(
-                text = stringResource(id = R.string.admobbannerscreen),
-                fontWeight = FontWeight.Bold,
-                fontSize = 24.sp,
-                color = Color.White
-            )
-        }
+
         Button(modifier = modo,
             onClick = { navController.navigate(NavitemScreen.CameraxScreen.route) }) {
             Text(

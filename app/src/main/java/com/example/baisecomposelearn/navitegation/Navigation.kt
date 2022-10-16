@@ -220,6 +220,9 @@ fun Navigation(
         composable(NavitemScreen.CollapsingToolbar.route){
             CollapsingToolbar()
         }
+        composable(NavitemScreen.SystemUiControllerAccompanistScreen.route){
+            SystemUiControllerAccompanistScreen(navController)
+        }
     }
 
 }

@@ -5,8 +5,8 @@ import androidx.navigation.compose.rememberNavController
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.example.baisecomposelearn.navitegation.HapticSamplerDestinations
-import com.example.baisecomposelearn.screens.customexamples.AdMobBannerScreen
 import com.example.baisecomposelearn.screens.customexamples.RatingBarScreen
+import com.example.baisecomposelearn.screens.customexamples.SystemUiControllerAccompanistScreen
 import com.example.baisecomposelearn.screens.vibration.bounce.BounceExampleScreen
 import com.example.baisecomposelearn.screens.vibration.expand.ExpandExampleScreen
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
@@ -21,7 +21,6 @@ import org.junit.runner.RunWith
 class ExampleInstrumentedTest {
     @get:Rule
     val composeTestRule = createComposeRule()
-
     @Test
     fun useAppContext() {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
@@ -75,11 +74,12 @@ class ExampleInstrumentedTest {
         }
     }
     @Test
-    fun testAdMobBannerScreen(){
+    fun testSystemUiControllerAccompanistScreen(){
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
-                AdMobBannerScreen()
+                SystemUiControllerAccompanistScreen(navController = rememberNavController())
             }
         }
     }
+
 }

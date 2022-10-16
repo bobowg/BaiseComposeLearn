@@ -63,4 +63,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object EmojiCompoatScreen:NavitemScreen("emojicompoatscreen",R.string.emojicompoat)
     object RatingBarScreen:NavitemScreen("ratingbarscreen",R.string.ratingbar)
     object CollapsingToolbar:NavitemScreen("collapsingtoolbar",R.string.collapsingtoolbar)
+    object SystemUiControllerAccompanistScreen:NavitemScreen("systemuicontrollerscreen",R.string.systemuicontrolleraccompanist)
 }

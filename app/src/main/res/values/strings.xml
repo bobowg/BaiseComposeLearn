@@ -129,4 +129,9 @@
     <string name="bounce_tap_to_reset">弹跳点击重置</string>
     <string name="ratingbar">评级</string>
     <string name="collapsingtoolbar">折叠工具栏</string>
+    <string name="systemuicontrolleraccompanist">系统 UI 控制器</string>
+    <string name="change_system_bar_colors">更改系统栏颜色</string>
+    <string name="restore_system_bar_colors">恢复系统栏颜色</string>
+    <string name="change_navigation_bar_colors">更改导航栏颜色</string>
+    <string name="restore_navigation_bar_colors">恢复导航栏颜色</string>
 </resources>

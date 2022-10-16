@@ -101,7 +101,7 @@ fun SystemUiControllerExample(
         }
         Button(
             onClick = {
-                systemUiController.setStatusBarColor(
+                systemUiController.setNavigationBarColor(
                     color = Color(colors.random()),
                     darkIcons = useDarkIcons
                 )
@@ -126,7 +126,12 @@ fun SystemUiControllerExample(
                 .fillMaxWidth()
                 .padding(16.dp)
         ) {
-            Text(text = stringResource(id = R.string.restore_navigation_bar_colors))
+            Text(
+                text = stringResource(id = R.string.restore_navigation_bar_colors),
+                fontWeight = FontWeight.Bold,
+                fontSize = 24.sp,
+                color = Color.White
+            )
         }
     }
 }

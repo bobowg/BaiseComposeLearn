@@ -2,7 +2,6 @@ package com.example.baisecomposelearn.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
 import android.widget.Toast
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas
@@ -40,12 +39,14 @@ import com.example.baisecomposelearn.theme.rwGreen
 import com.example.baisecomposelearn.theme.rwGreenDark
 import com.example.baisecomposelearn.theme.rwRed
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 
 /**
  * 首页列表加载 ---普通加载，没有下拉刷新，可加载下一页
  * */
 
+@OptIn(ExperimentalCoilApi::class)
 @Composable
 fun NormalVideoListScreen(
     viewModel: PlayViewModel,
@@ -96,7 +97,7 @@ fun ContentInfoList(
 
         // 加载下一页业务逻辑
         val appendState = collectAsLazyPagingIDataList.loadState.append
-        Log.d("xx---", " appendState :${appendState}")
+        Timber.tag("xx---").d(" appendState :%s", appendState)
 
         when (appendState) {
             is LoadState.NotLoading -> {

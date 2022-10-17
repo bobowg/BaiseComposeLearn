@@ -75,7 +75,7 @@ fun CoilLandscapistScreen(navController: NavController) {
                 tilt = 20f
             ),
             failure = {
-                Text(text = stringResource(id = R.string.coilimage))
+                Text(text = stringResource(id = R.string.coilimage,""))
             })
         goBack(navController = navController)
 

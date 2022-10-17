@@ -66,7 +66,11 @@ fun SwipeRefreshAccompanistScreen(navController: NavController) {
                         )
                     }
                 }
+                item{
+                    goBack(navController = navController)
+                }
             }
+
         }
-    goBack(navController = navController)
+
 }

@@ -2,7 +2,7 @@ package com.example.baisecomposelearn.screens.media
 
 import android.content.ContentValues.TAG
 import android.net.Uri
-import android.util.Log
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Divider
@@ -21,17 +21,20 @@ import coil.request.ImageRequest
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.screens.components.ScreenModel
 import com.example.baisecomposelearn.screens.components.randomSampleImageUrl
+import timber.log.Timber
 
 @Composable
 fun CoilImageScreen(navController: NavController) {
     ScreenModel(navController = navController, content = {
         val context = LocalContext.current
         AsyncImage(
+            modifier = Modifier.fillMaxWidth(),
             model = randomSampleImageUrl(),
             contentDescription = stringResource(id = R.string.coilimage,"")
         )
         Divider()
         AsyncImage(
+            modifier = Modifier.fillMaxWidth(),
             model = ImageRequest.Builder(context)
                 .data(randomSampleImageUrl())
                 .crossfade(true).build(),
@@ -41,14 +44,14 @@ fun CoilImageScreen(navController: NavController) {
             placeholder = painterResource(id = R.drawable.logo),
             error = painterResource(id = com.google.android.material.R.drawable.mtrl_ic_error),
             onSuccess = {
-                Log.d(TAG,"success")
+                Timber.tag(TAG).d("success")
             }
         )
         Divider()
         SubcomposeAsyncImage(
             model = Uri.parse(randomSampleImageUrl()),
             contentDescription = stringResource(R.string.coilimage,""),
-            modifier = Modifier.clip(CircleShape)
+            modifier = Modifier.fillMaxWidth().clip(CircleShape)
         ) {
             if (painter.state is AsyncImagePainter.State.Loading || painter.state is AsyncImagePainter.State.Error) {
                 CircularProgressIndicator()

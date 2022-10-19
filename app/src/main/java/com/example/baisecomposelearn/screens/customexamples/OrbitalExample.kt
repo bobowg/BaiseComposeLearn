@@ -28,58 +28,58 @@ import com.skydoves.orbital.rememberContentWithOrbitalScope
 fun OrbitalExampleScreen(navController: NavController) {
     ScreenModel(navController = navController, content = {
         FistEample()
-        OrbitalExample()
+//        OrbitalExample()
     })
 }
 
 private val imageUrl = randomSampleImageUrl()
 
-@Composable
-private fun OrbitalExample() {
-    val transformationSpec = SpringSpec<IntSize>(
-        dampingRatio = Spring.DampingRatioMediumBouncy,
-        stiffness = 200f
-    )
-
-    var isTransformed by rememberSaveable { mutableStateOf(false) }
-    val poster = rememberContentWithOrbitalScope {
-        GlideImage(
-            modifier = if (isTransformed) {
-                Modifier.size(300.dp, 620.dp)
-            } else {
-                Modifier.size(100.dp, 220.dp)
-            }.animateTransformation(this, transformationSpec),
-            imageModel = imageUrl,
-            contentScale = ContentScale.Fit
-        )
-    }
-
-    Orbital(
-        modifier = Modifier
-            .clickable { isTransformed = !isTransformed }
-    ) {
-        if (isTransformed) {
-            Column(
-                Modifier.fillMaxSize(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                poster()
-            }
-        } else {
-            Column(
-                Modifier
-                    .fillMaxSize()
-                    .padding(20.dp),
-                horizontalAlignment = Alignment.End,
-                verticalArrangement = Arrangement.Bottom
-            ) {
-                poster()
-            }
-        }
-
-    }
-}
+//@Composable
+//private fun OrbitalExample() {
+//    val transformationSpec = SpringSpec<IntSize>(
+//        dampingRatio = Spring.DampingRatioMediumBouncy,
+//        stiffness = 200f
+//    )
+//
+//    var isTransformed by rememberSaveable { mutableStateOf(false) }
+//    val poster = rememberContentWithOrbitalScope {
+//        GlideImage(
+//            modifier = if (isTransformed) {
+//                Modifier.size(300.dp, 620.dp)
+//            } else {
+//                Modifier.size(100.dp, 220.dp)
+//            }.animateTransformation(this, transformationSpec),
+//            imageModel = imageUrl,
+//            contentScale = ContentScale.Fit
+//        )
+//    }
+//
+//    Orbital(
+//        modifier = Modifier
+//            .clickable { isTransformed = !isTransformed }
+//    ) {
+//        if (isTransformed) {
+//            Column(
+//                Modifier.fillMaxSize(),
+//                horizontalAlignment = Alignment.CenterHorizontally,
+//                verticalArrangement = Arrangement.Center
+//            ) {
+//                poster()
+//            }
+//        } else {
+//            Column(
+//                Modifier
+//                    .fillMaxSize()
+//                    .padding(20.dp),
+//                horizontalAlignment = Alignment.End,
+//                verticalArrangement = Arrangement.Bottom
+//            ) {
+//                poster()
+//            }
+//        }
+//
+//    }
+//}
 
 @Composable
 private fun FistEample() {

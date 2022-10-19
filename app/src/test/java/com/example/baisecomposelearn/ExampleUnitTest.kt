@@ -1,5 +1,8 @@
 package com.example.baisecomposelearn
 
+import com.example.baisecomposelearn.screens.components.randomSampleImageUrl
+import com.google.gson.Gson
+import org.json.JSONObject
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -20,4 +23,6 @@ class ExampleUnitTest {
         val rdom = (1000000..9999999).random()
         assertTrue(rdom > 1000000)
     }
+
+
 }

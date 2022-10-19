@@ -11,6 +11,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Error
 import androidx.compose.material.icons.filled.Image
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
@@ -25,20 +26,22 @@ import com.skydoves.landscapist.glide.GlideImage
 @Composable
 fun GlideLandscapistScreen(navController: NavController) {
 
-    val listitem = listOf(
-        randomSampleImageUrl(),
-        randomSampleImageUrl(),
-        randomSampleImageUrl(),
-        randomSampleImageUrl(),
-        randomSampleImageUrl(),
-        randomSampleImageUrl(),
-        randomSampleImageUrl(),
-        randomSampleImageUrl(),
-        randomSampleImageUrl(),
-        randomSampleImageUrl(),
-        randomSampleImageUrl(),
-        randomSampleImageUrl(),
-    )
+    val listitem = rememberSaveable {
+        mutableListOf(
+            randomSampleImageUrl(),
+            randomSampleImageUrl(),
+            randomSampleImageUrl(),
+            randomSampleImageUrl(),
+            randomSampleImageUrl(),
+            randomSampleImageUrl(),
+            randomSampleImageUrl(),
+            randomSampleImageUrl(),
+            randomSampleImageUrl(),
+            randomSampleImageUrl(),
+            randomSampleImageUrl(),
+            randomSampleImageUrl(),
+        )
+    }
     Scaffold(
         topBar = {
             DefaultTopAppBar(
@@ -50,7 +53,7 @@ fun GlideLandscapistScreen(navController: NavController) {
             LazyVerticalGrid(columns = GridCells.Fixed(3)) {
                 items(listitem) { item ->
                     GlideImage(
-                        imageModel = item.let { it },
+                        imageModel = item,
                         modifier = Modifier
                             .padding(padding)
                             .size(150.dp),

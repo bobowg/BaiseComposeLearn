@@ -136,4 +136,6 @@
     <string name="restore_navigation_bar_colors">恢复导航栏颜色</string>
     <string name="orbitalexample">轨道示例</string>
     <string name="collapsingtoolscreen">折叠工具屏幕</string>
+    <string name="timesup">时间到了</string>
+    <string name="customshape">自定义形状</string>
 </resources>

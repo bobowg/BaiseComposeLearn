@@ -96,6 +96,15 @@ fun ConstraintLayoutScreen(navController: NavController) {
                 color = Color.White
             )
         }
+        Button(modifier = modo,
+            onClick = { navController.navigate(NavitemScreen.CustomShapeScreen.route) }) {
+            Text(
+                text = stringResource(id = R.string.customshape),
+                fontWeight = FontWeight.Bold,
+                fontSize = 24.sp,
+                color = Color.White
+            )
+        }
     })
 }
 

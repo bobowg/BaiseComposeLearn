@@ -229,6 +229,9 @@ fun Navigation(
         composable(NavitemScreen.CollapsingToolScreen.route){
             CollapsingToolScreen(navController = navController)
         }
+        composable(NavitemScreen.CustomShapeScreen.route){
+            CustomShape(navController)
+        }
     }
 
 }

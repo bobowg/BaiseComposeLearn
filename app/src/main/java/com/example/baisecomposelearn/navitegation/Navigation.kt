@@ -226,6 +226,9 @@ fun Navigation(
         composable(NavitemScreen.OrbitalExampleScreen.route){
             OrbitalExampleScreen(navController)
         }
+        composable(NavitemScreen.CollapsingToolScreen.route){
+            CollapsingToolScreen(navController = navController)
+        }
     }
 
 }

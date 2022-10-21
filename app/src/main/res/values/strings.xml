@@ -135,4 +135,5 @@
     <string name="change_navigation_bar_colors">更改导航栏颜色</string>
     <string name="restore_navigation_bar_colors">恢复导航栏颜色</string>
     <string name="orbitalexample">轨道示例</string>
+    <string name="collapsingtoolscreen">折叠工具屏幕</string>
 </resources>

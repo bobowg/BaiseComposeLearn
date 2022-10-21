@@ -1,10 +1,13 @@
 package com.example.baisecomposelearn.screens.customexamples
 
 import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -21,24 +24,31 @@ private const val MaxHeight = 168f
 @Composable
 fun CollapsingToolScreen(navController: NavController) {
     val scrollState = rememberScrollState(0)
-    val dynamicHeight = (MaxHeight - scrollState.value).coerceIn(MinHeight, MaxHeight)
-
     Scaffold(
         topBar = {
-            DefaultTopAppBar(
-                navController = navController,
-                title = stringResource(id = R.string.collapsingtoolscreen),
-                modifier = Modifier.heightIn(min = animateDpAsState(targetValue = dynamicHeight.dp).value),
+            TopScrollingContent(scrollState, navController)
+        }
+    ) { Padding ->
 
-                )
-        },
-        
-    ) {
-        Column(modifier = Modifier.padding(it)) {
-            repeat(5){
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(Padding)
+                .verticalScroll(scrollState)
+        ) {
+            repeat(5) {
                 Text(text = stringResource(id = R.string.content))
             }
         }
     }
+}
 
+@Composable
+private fun TopScrollingContent(scrollState: ScrollState, navController: NavController) {
+    val dynamicHeight = (MaxHeight - scrollState.value).coerceIn(MinHeight, MaxHeight)
+    DefaultTopAppBar(
+        navController = navController,
+        title = stringResource(id = R.string.collapsingtoolscreen),
+        modifier = Modifier.heightIn(min = animateDpAsState(targetValue = dynamicHeight.dp).value)
+    )
 }

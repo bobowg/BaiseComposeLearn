@@ -29,6 +29,7 @@ import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.screens.components.ScreenModel
 import com.example.baisecomposelearn.theme.darkTextColorSecondary
 import com.example.baisecomposelearn.theme.rwGreen
+import com.example.baisecomposelearn.theme.rwGreenDark
 import com.example.baisecomposelearn.theme.rwRed
 import com.example.baisecomposelearn.utils.TicketShape
 import com.example.baisecomposelearn.utils.drawTicketPath
@@ -73,12 +74,12 @@ fun TicketComposable(modifier: Modifier = Modifier) {
                 shape = TicketShape(24.dp.toPx())
                 clip = true
             }
-            .background(color = darkTextColorSecondary)
+            .background(color = rwRed)
             .drawBehind {
                 scale(scale = 0.9f) {
                     drawPath(
                         path = drawTicketPath(size = size, cornerRadius = 24.dp.toPx()),
-                        color = rwRed,
+                        color = rwGreenDark,
                         style = Stroke(
                             width = 2.dp.toPx(),
                             pathEffect = PathEffect.dashPathEffect(floatArrayOf(10f, 10f))
@@ -86,7 +87,7 @@ fun TicketComposable(modifier: Modifier = Modifier) {
                     )
                 }
             }
-            .padding(start = 12.dp, top = 64.dp, end = 12.dp, bottom = 64.dp)
+            .padding(start = 72.dp, top = 64.dp, end = 72.dp, bottom = 64.dp)
     )
 }
 

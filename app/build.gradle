@@ -15,7 +15,7 @@ android {
         minSdk 27
         targetSdk 33
         versionCode 1
-        versionName "1.004"
+        versionName "1.005"
         manifestPlaceholders = [ SCREEN_ORIENTATION: "portrait"]
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {

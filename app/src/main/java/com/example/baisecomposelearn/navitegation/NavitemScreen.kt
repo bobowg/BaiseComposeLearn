@@ -67,4 +67,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object OrbitalExampleScreen:NavitemScreen("orbitalexample",R.string.orbitalexample)
     object CollapsingToolScreen:NavitemScreen("collapsingtoolscreen",R.string.collapsingtoolscreen)
     object CustomShapeScreen:NavitemScreen("customshapescreen",R.string.customshape)
+    object WanandroidScreen:NavitemScreen("wanandroidscreen",R.string.wanandroidscreen)
 }

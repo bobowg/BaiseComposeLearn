@@ -232,6 +232,9 @@ fun Navigation(
         composable(NavitemScreen.CustomShapeScreen.route){
             CustomShape(navController)
         }
+        composable(NavitemScreen.WanandroidScreen.route){
+            WanandroidScreen()
+        }
     }
 
 }

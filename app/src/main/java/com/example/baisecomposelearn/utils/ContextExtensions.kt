@@ -67,3 +67,8 @@ fun Context.shortToast(
 ) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }
+
+fun Context.dp2px(dp: Float): Float {
+    val density = resources.displayMetrics.density
+    return dp * density + 0.5f
+}

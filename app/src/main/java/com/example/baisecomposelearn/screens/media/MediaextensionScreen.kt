@@ -19,6 +19,14 @@ fun MediaextensionScreen(navController: NavController) {
 
     ScreenModel(navController = navController, content = {
         Button(
+            onClick = { navController.navigate(NavitemScreen.WanandroidScreen.route) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+            Text(text = stringResource(id = R.string.wanandroidscreen), fontSize = 24.sp)
+        }
+        Button(
             onClick = { navController.navigate(NavitemScreen.Media3ExoplayerScreen.route) },
             modifier = Modifier
                 .fillMaxWidth()

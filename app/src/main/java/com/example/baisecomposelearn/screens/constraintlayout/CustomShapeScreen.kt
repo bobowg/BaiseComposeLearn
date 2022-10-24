@@ -27,7 +27,6 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.screens.components.ScreenModel
-import com.example.baisecomposelearn.theme.darkTextColorSecondary
 import com.example.baisecomposelearn.theme.rwGreen
 import com.example.baisecomposelearn.theme.rwGreenDark
 import com.example.baisecomposelearn.theme.rwRed

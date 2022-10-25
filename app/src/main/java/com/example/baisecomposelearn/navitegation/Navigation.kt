@@ -235,6 +235,9 @@ fun Navigation(
         composable(NavitemScreen.WanandroidScreen.route){
             WanandroidScreen()
         }
+        composable(NavitemScreen.WeatherScreen.route){
+            WeatherScreen()
+        }
     }
 
 }

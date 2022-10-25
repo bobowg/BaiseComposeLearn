@@ -71,7 +71,7 @@ fun ProjectItem(project: Project) {
                 Text(
                     text = project.title, style = MaterialTheme.typography.h6, fontFamily = best
                 )
-                TextButton(onClick = { HtmlLink(project.link, context) }) {
+                TextButton(onClick = { htmlLink(project.link, context) }) {
                     Text(
                         text = project.desc,
                         style = MaterialTheme.typography.body1,
@@ -79,7 +79,7 @@ fun ProjectItem(project: Project) {
                         modifier = Modifier.padding(top = 6.dp)
                     )
                 }
-                TextButton(onClick = { HtmlLink(project.projectLink, context) }) {
+                TextButton(onClick = { htmlLink(project.projectLink, context) }) {
                     Text(
                         text = "项目地址" + project.projectLink,
                         style = MaterialTheme.typography.body1,
@@ -117,7 +117,7 @@ fun ProjectItem(project: Project) {
     }
 }
 
-fun HtmlLink(text: String, context: Context) {
+fun htmlLink(text: String, context: Context) {
     try {
         val intent = Intent(Intent.ACTION_VIEW)
         intent.addCategory(Intent.CATEGORY_BROWSABLE)

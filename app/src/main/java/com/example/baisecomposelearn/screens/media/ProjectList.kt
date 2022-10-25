@@ -121,7 +121,7 @@ fun HtmlLink(text: String, context: Context) {
     try {
         val intent = Intent(Intent.ACTION_VIEW)
         intent.addCategory(Intent.CATEGORY_BROWSABLE)
-        intent.setData(Uri.parse(text))
+        intent.data = Uri.parse(text)
         startActivity(context, intent, null)
     } catch (e: Exception) {
         Toast.makeText(context, "没有安浏览器", Toast.LENGTH_SHORT).show()

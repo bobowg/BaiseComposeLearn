@@ -1,15 +1,15 @@
 package com.example.baisecomposelearn.screens.media
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
+import android.widget.Toast
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.Button
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Error
 import androidx.compose.material.icons.filled.Image
@@ -26,19 +26,20 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemsIndexed
+import com.example.baisecomposelearn.R
+import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
 import com.example.baisecomposelearn.theme.best
+import com.example.baisecomposelearn.theme.rwRed
+import com.example.baisecomposelearn.utils.dp2px
 import com.example.baisecomposelearn.wanandroid.Project
 import com.example.baisecomposelearn.wanandroid.WanandroidViewModel
 import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.coil.CoilImage
-import com.example.baisecomposelearn.R
-import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
-import com.example.baisecomposelearn.theme.rwRed
-import com.example.baisecomposelearn.utils.dp2px
 
 @Composable
 fun WanandroidScreen() {
@@ -59,6 +60,7 @@ fun WanandroidScreen() {
 
 @Composable
 fun ProjectItem(project: Project) {
+    val context = LocalContext.current
     Card(modifier = Modifier.padding(8.dp)) {
         Row(
             modifier = Modifier.padding(8.dp),
@@ -69,12 +71,22 @@ fun ProjectItem(project: Project) {
                 Text(
                     text = project.title, style = MaterialTheme.typography.h6, fontFamily = best
                 )
-                Text(
-                    text = project.desc,
-                    style = MaterialTheme.typography.body1,
-                    fontFamily = best,
-                    modifier = Modifier.padding(top = 6.dp)
-                )
+                TextButton(onClick = { HtmlLink(project.link, context) }) {
+                    Text(
+                        text = project.desc,
+                        style = MaterialTheme.typography.body1,
+                        fontFamily = best,
+                        modifier = Modifier.padding(top = 6.dp)
+                    )
+                }
+                TextButton(onClick = { HtmlLink(project.projectLink, context) }) {
+                    Text(
+                        text = "项目地址" + project.projectLink,
+                        style = MaterialTheme.typography.body1,
+                        fontFamily = best,
+                        modifier = Modifier.padding(top = 6.dp)
+                    )
+                }
                 Row(modifier = Modifier.padding(top = 6.dp)) {
                     Text(
                         text = project.author,
@@ -105,6 +117,17 @@ fun ProjectItem(project: Project) {
     }
 }
 
+fun HtmlLink(text: String, context: Context) {
+    try {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.addCategory(Intent.CATEGORY_BROWSABLE)
+        intent.setData(Uri.parse(text))
+        startActivity(context, intent, null)
+    } catch (e: Exception) {
+        Toast.makeText(context, "没有安浏览器", Toast.LENGTH_SHORT).show()
+    }
+}
+
 @Preview
 @Composable
 fun ProjectItemPreview() {
@@ -115,6 +138,8 @@ fun ProjectItemPreview() {
             "maihaoming",
             "2022-10-11",
             "注解表明该函数为构建UI的Compose函数，且函数首字母必须大写。",
+            "https://www.wanandroid.com/blog/show/3436",
+            "https://www.wanandroid.com/blog/show/3436"
         )
     )
 }
@@ -129,7 +154,10 @@ fun ErrorPage(onclick: () -> Unit = {}) {
         Image(
             painter = painterResource(id = R.drawable.no_signal),
             contentDescription = "没有信号输出",
-            contentScale = ContentScale.Crop
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 16.dp, end = 16.dp)
         )
         Button(onClick = onclick, modifier = Modifier.padding(8.dp)) {
             Text(text = "网络不佳，请重试!")

@@ -31,14 +31,11 @@ class MainActivity : ComponentActivity() {
                 StartApp()
             }
         }
-        if (Build.VERSION.SDK_INT > 9) {
-            val policy = ThreadPolicy.Builder().permitAll().build()
-            StrictMode.setThreadPolicy(policy)
-        }
+        val policy = ThreadPolicy.Builder().permitAll().build()
+        StrictMode.setThreadPolicy(policy)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     private fun createNotificationChannel() {
         val name = getString(R.string.app_name)
         val descriptionText = getString(R.string.content)

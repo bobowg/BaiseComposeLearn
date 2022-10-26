@@ -98,7 +98,7 @@ dependencies {
 
     // Room
     implementation "androidx.room:room-runtime:$room_version"
-    implementation 'com.google.firebase:firebase-functions:20.0.0'
+    implementation 'com.google.firebase:firebase-functions:20.0.2'
     implementation 'com.google.firebase:firebase-config:21.0.2'
     implementation 'androidx.startup:startup-runtime:1.1.1'
     kapt "androidx.room:room-compiler:$room_version"
@@ -119,6 +119,8 @@ dependencies {
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3"
 
     //okHttp
     implementation "com.squareup.okhttp3:okhttp:$okHttp_version"
@@ -126,7 +128,7 @@ dependencies {
 
     //Paging 3.0
     implementation 'androidx.paging:paging-compose:1.0.0-alpha14'
-    implementation "androidx.paging:paging-runtime-ktx:3.1.0-rc01"
+    implementation "androidx.paging:paging-runtime-ktx:3.1.1"
     implementation "com.google.accompanist:accompanist-swiperefresh:0.21.2-beta"
 
     //lottieVersion
@@ -155,6 +157,8 @@ dependencies {
     implementation 'com.github.a914-gowtham:compose-ratingbar:1.2.3'
     //Orbital
     implementation "com.github.skydoves:orbital:0.2.2"
+    // Location Services
+    implementation 'com.google.android.gms:play-services-location:20.0.0'
     //Test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

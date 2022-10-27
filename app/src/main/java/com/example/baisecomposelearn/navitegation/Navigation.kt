@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -234,6 +235,9 @@ fun Navigation(
         }
         composable(NavitemScreen.WanandroidScreen.route){
             WanandroidScreen()
+        }
+        composable(NavitemScreen.WeatherScreen.route){
+           WeatherScreen()
         }
     }
 

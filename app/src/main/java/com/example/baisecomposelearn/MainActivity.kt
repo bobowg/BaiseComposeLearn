@@ -14,8 +14,9 @@ import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
 import com.google.firebase.analytics.FirebaseAnalytics
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     private var mFirebaseAnalytics: FirebaseAnalytics? = null
@@ -31,21 +32,22 @@ class MainActivity : ComponentActivity() {
                 StartApp()
             }
         }
-        if (Build.VERSION.SDK_INT > 9) {
-            val policy = ThreadPolicy.Builder().permitAll().build()
-            StrictMode.setThreadPolicy(policy)
-        }
+        val policy = ThreadPolicy.Builder().permitAll().build()
+        StrictMode.setThreadPolicy(policy)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     private fun createNotificationChannel() {
         val name = getString(R.string.app_name)
         val descriptionText = getString(R.string.content)
         // 提醒式通知(横幅显示)，不过大部分需要手动授权
         val importance = NotificationManager.IMPORTANCE_HIGH
-        val channel = NotificationChannel("CHANNEL_ID", name, importance).apply {
-            description = descriptionText
+        val channel = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel("CHANNEL_ID", name, importance).apply {
+                description = descriptionText
+            }
+        } else {
+            TODO("VERSION.SDK_INT < O")
         }
         // 注册通道(频道)
         val notificationManager: NotificationManager =

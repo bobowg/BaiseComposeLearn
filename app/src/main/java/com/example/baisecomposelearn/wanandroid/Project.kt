@@ -6,14 +6,17 @@ data class ProjectResponse(
 )
 
 data class Data(
-    val curPage:Int,
-    val datas:List<Project>,
-    val pageCount:Int
+    val curPage: Int,
+    val datas: List<Project>,
+    val pageCount: Int
 )
+
 data class Project(
-    val author:String,
-    val envelopePic:String,
-    val title:String,
-    val niceDate:String,
-    val desc:String
+    val author: String,
+    val envelopePic: String,
+    val title: String,
+    val niceDate: String,
+    val desc: String,
+    val link: String,
+    val projectLink: String,
 )

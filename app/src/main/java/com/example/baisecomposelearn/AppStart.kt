@@ -26,14 +26,11 @@ import dagger.hilt.android.HiltAndroidApp
 @HiltAndroidApp
 class AppStart : Application() {
     lateinit var dependencyInjector: DependencyInjector
-
     companion object {
 
         private const val TAG = "EmojiCompatApplication"
-
         /** Change this to `false` when you want to use the downloadable Emoji font.  */
         private const val USE_BUNDLED_EMOJI = true
-
     }
 
     override fun onCreate() {

@@ -1,10 +1,10 @@
 package com.example.baisecomposelearn.screens.constraintlayout
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.material.MaterialTheme.typography
 import androidx.compose.material.Text
@@ -16,7 +16,6 @@ import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -25,19 +24,22 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.screens.components.ScreenModel
 import com.example.baisecomposelearn.theme.rwGreen
 import com.example.baisecomposelearn.theme.rwGreenDark
 import com.example.baisecomposelearn.theme.rwRed
 import com.example.baisecomposelearn.utils.TicketShape
 import com.example.baisecomposelearn.utils.drawTicketPath
+import java.time.LocalTime
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun CustomShape(navController: NavController) {
+    var time = LocalTime.now()
+    val shijian = time.hour.toString() + ":" + time.minute.toString() + ":" + time.second.toString()
     ScreenModel(navController = navController, content = {
         Text(
-            text = stringResource(id = R.string.timesup),
+            text = "时钟：$shijian",
             style = typography.h3.copy(color = rwRed),
             textAlign = TextAlign.Center,
             modifier = Modifier
@@ -53,6 +55,7 @@ fun CustomShape(navController: NavController) {
                 .padding(32.dp)
         )
         TicketComposable()
+        Spacer(modifier = Modifier.height(15.dp))
     })
 }
 
@@ -90,6 +93,7 @@ fun TicketComposable(modifier: Modifier = Modifier) {
     )
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Preview
 @Composable
 fun CustomShapePreview() {

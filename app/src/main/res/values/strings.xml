@@ -140,4 +140,5 @@
     <string name="customshape">自定义形状</string>
     <string name="wanandroidscreen">科技新闻</string>
     <string name="weatherscreen">天气预报</string>
+    <string name="customcountdowntimer">漂亮的倒计时</string>
 </resources>

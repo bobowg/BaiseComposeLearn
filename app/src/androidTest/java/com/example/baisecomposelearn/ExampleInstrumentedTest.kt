@@ -105,6 +105,8 @@ class ExampleInstrumentedTest {
                         "maihaoming",
                         "2022-10-11",
                         "注解表明该函数为构建UI的Compose函数，且函数首字母必须大写。",
+                        "注解表明该函数为构建UI的Compose函数，且函数首字母必须大写。",
+                        "注解表明该函数为构建UI的Compose函数，且函数首字母必须大写。"
                     )
                 )
             }

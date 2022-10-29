@@ -1,36 +1,19 @@
 package com.example.baisecomposelearn.screens.animate
 
-import androidx.compose.animation.core.LinearEasing
-import androidx.compose.animation.core.RepeatMode
-import androidx.compose.animation.core.animateFloat
-import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.animation.core.animateIntAsState
-import androidx.compose.animation.core.infiniteRepeatable
-import androidx.compose.animation.core.rememberInfiniteTransition
-import androidx.compose.animation.core.tween
+import android.content.Context
+import android.content.Intent
+import android.media.RingtoneManager
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxScope
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Cancel
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
@@ -41,6 +24,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -54,25 +38,26 @@ import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.screens.animate.HMSFontInfo.Companion.HMS
 import com.example.baisecomposelearn.screens.animate.HMSFontInfo.Companion.MS
 import com.example.baisecomposelearn.screens.animate.HMSFontInfo.Companion.S
+import com.example.baisecomposelearn.service.RingtonePlayingService
 import com.example.baisecomposelearn.theme.rwGreen
 import com.example.baisecomposelearn.theme.rwGreenDark
+
 
 @Composable
 fun CountdownScreen(
     timeInSec: Int,
     onCancel: () -> Unit
 ) {
-
     var trigger by remember { mutableStateOf(timeInSec) }
-
     val elapsed by animateIntAsState(
         targetValue = trigger * 1000,
         animationSpec = tween(timeInSec * 1000, easing = LinearEasing)
     )
-
+    val context = LocalContext.current
     DisposableEffect(Unit) {
         trigger = 0
-        onDispose { }
+        onDispose {
+        }
     }
 
     Column(
@@ -102,7 +87,10 @@ fun CountdownScreen(
                 .align(Alignment.CenterHorizontally)
                 .size(70.dp)
                 .shadow(30.dp, shape = CircleShape)
-                .clickable { onCancel() },
+                .clickable {
+                    playSound(context)
+                    onCancel()
+                },
             imageVector = Icons.Default.Cancel,
             contentDescription = null,
             colorFilter = ColorFilter.tint(MaterialTheme.colors.primary)
@@ -142,7 +130,6 @@ private fun BoxScope.AnimationElapsedTime(elapsed: Int) {
         min > 0 -> MS
         else -> S
     }
-
     Row(
         Modifier
             .align(Alignment.Center)
@@ -180,7 +167,7 @@ private fun BoxScope.AnimationElapsedTime(elapsed: Int) {
             .padding(bottom = 80.dp),
         fontSize = 30.sp,
         fontFamily = FontFamily.Cursive,
-        style =MaterialTheme.typography.subtitle1,
+        style = MaterialTheme.typography.subtitle1,
         color = MaterialTheme.colors.primary,
     )
 }
@@ -190,7 +177,7 @@ private fun BoxScope.AnimationCircleCanvas(durationMills: Int) {
     val transition = rememberInfiniteTransition()
     var trigger by remember { mutableStateOf(0f) }
     var isFinished by remember { mutableStateOf(false) }
-
+    val context = LocalContext.current
     val animateTween by animateFloatAsState(
         targetValue = trigger,
         animationSpec = tween(
@@ -199,6 +186,7 @@ private fun BoxScope.AnimationCircleCanvas(durationMills: Int) {
         ),
         finishedListener = {
             isFinished = true
+            playSound(context, isFinished)
         }
     )
 
@@ -267,12 +255,14 @@ private fun BoxScope.AnimationCircleCanvas(durationMills: Int) {
             style = Fill,
         )
     }
+
+
 }
 
 @Preview
 @Composable
 fun DisplayPreview() {
-    CountdownScreen(1000) {}
+    CountdownScreen(9) {}
 }
 
 private fun Int.formatTime() = String.format("%02d", this)
@@ -283,4 +273,19 @@ private data class HMSFontInfo(val fontSize: TextUnit, val labelSize: TextUnit, 
         val MS = HMSFontInfo(85.sp, 30.sp, 50.dp)
         val S = HMSFontInfo(150.sp, 50.sp, 55.dp)
     }
+}
+
+private fun playSound(context: Context, isOk: Boolean = false) {
+
+    if (isOk) {
+        val startIntent = Intent(context, RingtonePlayingService::class.java)
+        val ringUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALL).toString()
+        startIntent.putExtra("ringtone-uri", ringUri)
+        context.startService(startIntent)
+    } else {
+        val stopIntent = Intent(context, RingtonePlayingService::class.java)
+        context.stopService(stopIntent)
+    }
+
+
 }

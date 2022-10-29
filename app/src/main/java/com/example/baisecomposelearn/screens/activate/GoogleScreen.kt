@@ -1,7 +1,9 @@
 package com.example.baisecomposelearn.screens.activate
 
+import android.R.id
 import android.content.Intent
 import android.net.Uri
+import android.os.Bundle
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
@@ -22,10 +24,13 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.screens.components.goBack
+import com.example.baisecomposelearn.utils.shortToast
+import com.google.firebase.analytics.FirebaseAnalytics
+
 
 @Composable
-fun googleMap(navController: NavController) {
-    val Context = LocalContext.current
+fun GoogleMap(navController: NavController) {
+    val context = LocalContext.current
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -40,7 +45,12 @@ fun googleMap(navController: NavController) {
                 val gmmIntentUri = Uri.parse("google.streetview:cbll=46.414382,10.013988")
                 val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
                 mapIntent.setPackage("com.google.android.apps.maps")
-                startActivity(Context,mapIntent,null)
+                try {
+                    startActivity(context, mapIntent, null)
+                } catch (e: Exception) {
+                    context.shortToast("google地图没有安装!")
+                }
+
             },
             modifier = Modifier
                 .fillMaxWidth()
@@ -61,6 +71,6 @@ fun googleMap(navController: NavController) {
 
 @Preview
 @Composable
-fun googleMapPreview() {
-    googleMap(navController = rememberNavController())
+fun GoogleMapPreview() {
+    GoogleMap(navController = rememberNavController())
 }

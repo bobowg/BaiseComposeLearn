@@ -16,17 +16,17 @@ import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
 import com.google.firebase.analytics.FirebaseAnalytics
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     private var mFirebaseAnalytics: FirebaseAnalytics? = null
-
     @SuppressLint("MissingPermission")
     @RequiresApi(Build.VERSION_CODES.P)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         createNotificationChannel()
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
         setContent {
             BaiseComposeLearnTheme {
                 StartApp()
@@ -35,6 +35,7 @@ class MainActivity : ComponentActivity() {
         val policy = ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
     }
 
     private fun createNotificationChannel() {

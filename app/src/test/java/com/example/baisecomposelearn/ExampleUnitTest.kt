@@ -1,11 +1,10 @@
 package com.example.baisecomposelearn
 
-import com.example.baisecomposelearn.screens.components.randomSampleImageUrl
-import com.google.gson.Gson
-import org.json.JSONObject
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
+
+
 
 /**
  * Example local unit test, which will execute on the development machine (host).

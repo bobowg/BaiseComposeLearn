@@ -53,7 +53,7 @@ fun Navigation(
             LanunScreen2(navController)
         }
         composable(NavitemScreen.LanunScreen3.route) {
-            googleMap(navController)
+            GoogleMap(navController)
         }
         composable(NavitemScreen.AnimatedScreen.route) {
             AnimatedScreen(navController)

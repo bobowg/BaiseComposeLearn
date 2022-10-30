@@ -1,5 +1,6 @@
 package com.example.baisecomposelearn
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -11,6 +12,7 @@ import android.os.StrictMode.ThreadPolicy
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
 import com.google.firebase.analytics.FirebaseAnalytics

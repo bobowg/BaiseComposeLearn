@@ -20,6 +20,7 @@ import com.example.baisecomposelearn.appdrawer.Drawer
 import com.example.baisecomposelearn.appdrawer.TopAppBar
 import com.example.baisecomposelearn.dependencyinjector.DependencyInjector
 import com.example.baisecomposelearn.navitegation.Navigation
+import com.qweather.sdk.view.HeConfig
 import dagger.hilt.android.HiltAndroidApp
 
 
@@ -31,6 +32,10 @@ class AppStart : Application() {
         private const val TAG = "EmojiCompatApplication"
         /** Change this to `false` when you want to use the downloadable Emoji font.  */
         private const val USE_BUNDLED_EMOJI = true
+        /** 和风天气API ID */
+        private const val WEATHER_PUBLIC_ID = "HE2210291348531678"
+        private const val WEATHER_KEY = "2b8e36d439b8460b8c938ee6d6a596da"
+
     }
 
     override fun onCreate() {
@@ -65,6 +70,9 @@ class AppStart : Application() {
                 })
         }
         EmojiCompat.init(config)
+
+        HeConfig.init(WEATHER_PUBLIC_ID, WEATHER_KEY);
+        HeConfig.switchToDevService()
     }
 
     private fun initDependencyInjector() {

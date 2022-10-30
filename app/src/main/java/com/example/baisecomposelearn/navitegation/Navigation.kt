@@ -11,6 +11,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.baisecomposelearn.ResultActivity
+import com.example.baisecomposelearn.WeatherActivity
 import com.example.baisecomposelearn.screens.activate.*
 import com.example.baisecomposelearn.screens.animate.*
 import com.example.baisecomposelearn.screens.components.camerax.Route
@@ -236,7 +237,9 @@ fun Navigation(
             WanandroidScreen()
         }
         composable(NavitemScreen.WeatherScreen.route){
-           WeatherScreen()
+            val context = LocalContext.current
+            val sendIntent = Intent(context, WeatherActivity::class.java)
+            startActivity(context,sendIntent, Bundle.EMPTY)
         }
         composable(NavitemScreen.CustomCountDownTimer.route){
             CustomCountDownTimer()

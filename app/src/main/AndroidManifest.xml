@@ -37,19 +37,27 @@
         android:theme="@style/Theme.BaiseComposeLearn"
         android:usesCleartextTraffic="true"
         tools:targetApi="33">
+        <service
+            android:name=".location.CurrentLocationService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="location"/>
+
         <activity
             android:name=".WeatherActivity"
-            android:theme="@style/Theme.BaiseComposeLearn.NoActionBar"
+            android:exported="false"
             android:parentActivityName=".MainActivity"
-            android:exported="false">
+            android:theme="@style/Theme.BaiseComposeLearn.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <service
             android:name=".service.RingtonePlayingService"
             android:enabled="true"
             android:exported="false" />
+
         <activity
             android:name=".VibrationActivity"
             android:exported="false"

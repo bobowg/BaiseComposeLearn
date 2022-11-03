@@ -3,6 +3,7 @@ package com.example.baisecomposelearn
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.navigation.compose.rememberNavController
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.example.baisecomposelearn.screens.animate.CustomCountDownTimer
 import com.example.baisecomposelearn.screens.animate.ElevationAnimationScreen
 import com.example.baisecomposelearn.screens.animate.SingleValueFloatAnimationScreen
 import com.example.baisecomposelearn.screens.constraintlayout.BottomSheetScaffoldScreen
@@ -53,11 +54,21 @@ class SingleValueFloatAnimationScreenTest {
             }
         }
     }
+
     @Test
-    fun testCollapsingToolbar(){
+    fun testCollapsingToolbar() {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 CollapsingToolbar()
+            }
+        }
+    }
+
+    @Test
+    fun testCustomCountDownTimer() {
+        composeTestRule.setContent {
+            BaiseComposeLearnTheme {
+                CustomCountDownTimer()
             }
         }
     }

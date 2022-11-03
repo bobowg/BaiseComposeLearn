@@ -162,8 +162,6 @@ dependencies {
     implementation "com.github.skydoves:orbital:0.2.2"
     // Location Services
     implementation 'com.google.android.gms:play-services-location:20.0.0'
-    //和风天气
-    implementation files('libs/QWeather_Public_Android_V4.11.jar')
     //Test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

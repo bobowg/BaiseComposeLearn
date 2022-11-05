@@ -145,4 +145,5 @@
     <string name="preference_file_key">My_location_PREFERENCE_FILE_KEY</string>
     <string name="launch_activity">launch_activity</string>
     <string name="stop_location_updates_button_text">停止更新地理位置</string>
+    <string name="banner">Banner广告条</string>
 </resources>

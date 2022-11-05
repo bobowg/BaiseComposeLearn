@@ -69,4 +69,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object CustomShapeScreen:NavitemScreen("customshapescreen",R.string.customshape)
     object WanandroidScreen:NavitemScreen("wanandroidscreen",R.string.wanandroidscreen)
     object CustomCountDownTimer:NavitemScreen("customcountdowntimer",R.string.customcountdowntimer)
+    object BannerAd:NavitemScreen("banner",R.string.banner)
 }

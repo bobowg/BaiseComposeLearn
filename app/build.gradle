@@ -162,8 +162,10 @@ dependencies {
     implementation "com.github.skydoves:orbital:0.2.2"
     // Location Services
     implementation 'com.google.android.gms:play-services-location:20.0.0'
-    //
+    //Banner广告条
     implementation 'com.github.zhujiang521:Banner:2.4.0'
+    //图片放大
+    implementation 'com.github.re-ovo:ZoomableComposeImage:1.0.3'
     //Test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

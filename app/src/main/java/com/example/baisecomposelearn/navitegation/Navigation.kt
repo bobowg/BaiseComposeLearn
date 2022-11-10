@@ -241,6 +241,9 @@ fun Navigation(
         composable(NavitemScreen.BannerAd.route){
             Banner(navController)
         }
+        composable(NavitemScreen.ZoomAbleComposeImage.route){
+            ZoomableComposeImageExample()
+        }
     }
 
 }

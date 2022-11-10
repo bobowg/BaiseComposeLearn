@@ -152,6 +152,17 @@ fun CustomExamplesScreen(navController: NavController) {
                 color = Color.White
             )
         }
+        Button(modifier = modo,
+            onClick = {
+                navController.navigate(NavitemScreen.ZoomAbleComposeImage.route)
+            }) {
+            Text(
+                text = stringResource(id = R.string.zoomablecomposeimage),
+                fontWeight = FontWeight.Bold,
+                fontSize = 24.sp,
+                color = Color.White
+            )
+        }
     })
 }
 

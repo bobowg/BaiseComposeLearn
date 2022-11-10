@@ -1,5 +1,8 @@
 package com.example.baisecomposelearn
 
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.navigation.compose.rememberNavController
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -10,6 +13,7 @@ import com.example.baisecomposelearn.screens.constraintlayout.BottomSheetScaffol
 import com.example.baisecomposelearn.screens.customexamples.CollapsingToolbar
 import com.example.baisecomposelearn.screens.customexamples.EmojiCompoatScreen
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
+import me.rerere.zoomableimage.ZoomableImage
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -69,6 +73,14 @@ class SingleValueFloatAnimationScreenTest {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 CustomCountDownTimer()
+            }
+        }
+    }
+    @Test
+    fun testZoomableComposeImageExample() {
+        composeTestRule.setContent {
+            BaiseComposeLearnTheme {
+               ZoomableImage(painter = painterResource(id = R.drawable.poster), modifier = Modifier.fillMaxSize())
             }
         }
     }

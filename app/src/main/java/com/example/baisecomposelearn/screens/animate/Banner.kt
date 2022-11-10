@@ -2,7 +2,6 @@ package com.example.baisecomposelearn.screens.animate
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -44,15 +43,12 @@ fun Banner(navController: NavController) {
         }
         Spacer(modifier = Modifier.height(5.dp))
         BannerPager(
-            modifier = Modifier.padding(top = 10.dp),
             items = item2,
-//            indicator = CircleIndicator(gravity = BannerGravity.BottomLeft)
             indicatorGravity = Alignment.BottomEnd
         ) { item ->
             context.shortToast("item:$item")
         }
         Spacer(modifier = Modifier.height(5.dp))
-
         BannerPager(
             items = item3,
             indicatorGravity = Alignment.BottomStart,

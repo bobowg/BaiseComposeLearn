@@ -244,6 +244,9 @@ fun Navigation(
         composable(NavitemScreen.ZoomAbleComposeImage.route){
             ZoomableComposeImageExample()
         }
+        composable(NavitemScreen.CustomCalendarView.route){
+            CustomCalendarView(navController)
+        }
     }
 
 }

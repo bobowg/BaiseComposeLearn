@@ -71,4 +71,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object CustomCountDownTimer:NavitemScreen("customcountdowntimer",R.string.customcountdowntimer)
     object BannerAd:NavitemScreen("banner",R.string.banner)
     object ZoomAbleComposeImage:NavitemScreen("zoomableComposeimage",R.string.zoomablecomposeimage)
+    object CustomCalendarView:NavitemScreen("customcalendarview",R.string.customcalendarview)
 }

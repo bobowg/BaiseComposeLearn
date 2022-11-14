@@ -247,6 +247,9 @@ fun Navigation(
         composable(NavitemScreen.CustomCalendarView.route){
             CustomCalendarView(navController)
         }
+        composable(NavitemScreen.RotateAnimationScreen.route){
+            RotateAnimationScreen(navController)
+        }
     }
 
 }

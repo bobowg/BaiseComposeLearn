@@ -1,5 +1,6 @@
 package com.example.baisecomposelearn.screens.components.exoplayer
 
+import android.R
 import android.net.Uri
 import android.view.ViewGroup
 import android.widget.FrameLayout
@@ -88,7 +89,7 @@ fun VideoCardItem(
 
 @ExperimentalCoilApi
 @Composable
-fun ExoPlayerView(isFocused: Boolean, videoInfo: VideoInfo?, viewModel: PlayViewModel?) {
+fun  ExoPlayerView(isFocused: Boolean, videoInfo: VideoInfo?, viewModel: PlayViewModel?) {
 
     val context = LocalContext.current
     // 获取播放器实例
@@ -122,11 +123,11 @@ fun ExoPlayerView(isFocused: Boolean, videoInfo: VideoInfo?, viewModel: PlayView
         modifier = Modifier.aspectRatio(width.toFloat() / height),
         factory = { context ->
             val frameLayout = FrameLayout(context)
-            frameLayout.setBackgroundColor(context.getColor(android.R.color.holo_purple))
+            frameLayout.setBackgroundColor(context.getColor(R.color.holo_purple))
             frameLayout
         },
         update = { frameLayout ->
-            if (PlayerViewManager.playerViewMode == PlayViewModes.HALF_SCREEN) {
+            if (PlayerViewManager.playerViewMode == PlayViewModes.FULL_SCREEN) {
                 frameLayout.removeAllViews()
                 if (isFocused) {
                     playerView = PlayerViewManager.get(frameLayout.context)
@@ -141,7 +142,7 @@ fun ExoPlayerView(isFocused: Boolean, videoInfo: VideoInfo?, viewModel: PlayView
 
                     playerView?.apply {
                         hideController()
-                        useController = false
+                        useController = true
                         player?.playWhenReady = true
                     }
 

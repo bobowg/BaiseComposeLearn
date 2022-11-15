@@ -49,12 +49,11 @@ fun SnapperExample(navController: NavController) {
         verticalArrangement = Arrangement.spacedBy(4.dp),
         modifier = Modifier.fillMaxSize()
     ) {
-        items(20) { index ->
+        items(5) { index ->
             LazyItem(
                 text = "${index + 1}",
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .height(200.dp),
+                    .fillMaxWidth(),
             )
         }
 
@@ -68,7 +67,7 @@ fun LazyItem(text: String, modifier: Modifier) {
         Box {
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
-                    .data(randomSampleImageUrl()).crossfade(true).build(),
+                    .data(randomSampleImageUrl(width = 400)).crossfade(true).build(),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize()

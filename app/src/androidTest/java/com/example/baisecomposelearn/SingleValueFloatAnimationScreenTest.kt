@@ -13,7 +13,6 @@ import com.example.baisecomposelearn.screens.animate.SingleValueFloatAnimationSc
 import com.example.baisecomposelearn.screens.constraintlayout.BottomSheetScaffoldScreen
 import com.example.baisecomposelearn.screens.customexamples.CollapsingToolbar
 import com.example.baisecomposelearn.screens.customexamples.EmojiCompoatScreen
-import com.example.baisecomposelearn.screens.customexamples.SnapperScreen
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
 import me.rerere.zoomableimage.ZoomableImage
 import org.junit.Rule
@@ -91,14 +90,6 @@ class SingleValueFloatAnimationScreenTest {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 RotateAnimationScreen(navController = rememberNavController())
-            }
-        }
-    }
-    @Test
-    fun testSnapperScreen(){
-        composeTestRule.setContent {
-            BaiseComposeLearnTheme {
-                SnapperScreen(navController = rememberNavController())
             }
         }
     }

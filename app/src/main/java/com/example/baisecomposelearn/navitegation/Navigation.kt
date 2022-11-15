@@ -250,6 +250,9 @@ fun Navigation(
         composable(NavitemScreen.RotateAnimationScreen.route){
             RotateAnimationScreen(navController)
         }
+        composable(NavitemScreen.SnapperScreen.route){
+            SnapperScreen(navController)
+        }
     }
 
 }

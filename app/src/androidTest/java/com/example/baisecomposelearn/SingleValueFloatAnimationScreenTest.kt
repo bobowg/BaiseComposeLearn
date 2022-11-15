@@ -8,10 +8,12 @@ import androidx.navigation.compose.rememberNavController
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.baisecomposelearn.screens.animate.CustomCountDownTimer
 import com.example.baisecomposelearn.screens.animate.ElevationAnimationScreen
+import com.example.baisecomposelearn.screens.animate.RotateAnimationScreen
 import com.example.baisecomposelearn.screens.animate.SingleValueFloatAnimationScreen
 import com.example.baisecomposelearn.screens.constraintlayout.BottomSheetScaffoldScreen
 import com.example.baisecomposelearn.screens.customexamples.CollapsingToolbar
 import com.example.baisecomposelearn.screens.customexamples.EmojiCompoatScreen
+import com.example.baisecomposelearn.screens.customexamples.SnapperScreen
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
 import me.rerere.zoomableimage.ZoomableImage
 import org.junit.Rule
@@ -81,6 +83,22 @@ class SingleValueFloatAnimationScreenTest {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                ZoomableImage(painter = painterResource(id = R.drawable.poster), modifier = Modifier.fillMaxSize())
+            }
+        }
+    }
+    @Test
+    fun testRotateAnimationScreen() {
+        composeTestRule.setContent {
+            BaiseComposeLearnTheme {
+                RotateAnimationScreen(navController = rememberNavController())
+            }
+        }
+    }
+    @Test
+    fun testSnapperScreen(){
+        composeTestRule.setContent {
+            BaiseComposeLearnTheme {
+                SnapperScreen(navController = rememberNavController())
             }
         }
     }

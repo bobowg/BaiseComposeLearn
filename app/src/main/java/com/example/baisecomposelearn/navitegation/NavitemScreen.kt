@@ -73,4 +73,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object ZoomAbleComposeImage:NavitemScreen("zoomableComposeimage",R.string.zoomablecomposeimage)
     object CustomCalendarView:NavitemScreen("customcalendarview",R.string.customcalendarview)
     object RotateAnimationScreen:NavitemScreen("rotateanimationscreen",R.string.rotateanimation)
+    object SnapperScreen:NavitemScreen("snapperscreen",R.string.snapperscreen)
 }

@@ -149,4 +149,5 @@
     <string name="zoomablecomposeimage">缩放图片</string>
     <string name="customcalendarview">日历控件</string>
     <string name="rotateanimation">旋转动画</string>
+    <string name="snapperscreen">鲷鱼屏幕</string>
 </resources>

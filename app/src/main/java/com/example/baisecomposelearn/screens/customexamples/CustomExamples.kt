@@ -163,6 +163,17 @@ fun CustomExamplesScreen(navController: NavController) {
                 color = Color.White
             )
         }
+        Button(modifier = modo,
+            onClick = {
+                navController.navigate(NavitemScreen.SnapperScreen.route)
+            }) {
+            Text(
+                text = stringResource(id = R.string.snapperscreen),
+                fontWeight = FontWeight.Bold,
+                fontSize = 24.sp,
+                color = Color.White
+            )
+        }
     })
 }
 

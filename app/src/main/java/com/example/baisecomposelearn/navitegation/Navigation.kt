@@ -253,6 +253,9 @@ fun Navigation(
         composable(NavitemScreen.SnapperScreen.route){
             SnapperScreen(navController)
         }
+        composable(NavitemScreen.AnimatingFonts.route){
+            AnimatingFonts(navController)
+        }
     }
 
 }

@@ -74,4 +74,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object CustomCalendarView:NavitemScreen("customcalendarview",R.string.customcalendarview)
     object RotateAnimationScreen:NavitemScreen("rotateanimationscreen",R.string.rotateanimation)
     object SnapperScreen:NavitemScreen("snapperscreen",R.string.snapperscreen)
+    object AnimatingFonts:NavitemScreen("animatingfonts",R.string.animatingfonts)
 }

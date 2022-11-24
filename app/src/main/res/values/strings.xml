@@ -150,4 +150,5 @@
     <string name="customcalendarview">日历控件</string>
     <string name="rotateanimation">旋转动画</string>
     <string name="snapperscreen">鲷鱼屏幕</string>
+    <string name="animatingfonts">字体动画</string>
 </resources>

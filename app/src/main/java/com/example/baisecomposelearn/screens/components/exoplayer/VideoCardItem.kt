@@ -1,6 +1,7 @@
 package com.example.baisecomposelearn.screens.components.exoplayer
 
 import android.R
+import android.annotation.SuppressLint
 import android.net.Uri
 import android.view.ViewGroup
 import android.widget.FrameLayout
@@ -87,6 +88,7 @@ fun VideoCardItem(
     }
 }
 
+@SuppressLint("UnsafeOptInUsageError")
 @ExperimentalCoilApi
 @Composable
 fun  ExoPlayerView(isFocused: Boolean, videoInfo: VideoInfo?, viewModel: PlayViewModel?) {
@@ -127,7 +129,7 @@ fun  ExoPlayerView(isFocused: Boolean, videoInfo: VideoInfo?, viewModel: PlayVie
             frameLayout
         },
         update = { frameLayout ->
-            if (PlayerViewManager.playerViewMode == PlayViewModes.FULL_SCREEN) {
+            if (PlayerViewManager.playerViewMode == PlayViewModes.HALF_SCREEN) {
                 frameLayout.removeAllViews()
                 if (isFocused) {
                     playerView = PlayerViewManager.get(frameLayout.context)

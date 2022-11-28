@@ -75,4 +75,6 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object RotateAnimationScreen:NavitemScreen("rotateanimationscreen",R.string.rotateanimation)
     object SnapperScreen:NavitemScreen("snapperscreen",R.string.snapperscreen)
     object AnimatingFonts:NavitemScreen("animatingfonts",R.string.animatingfonts)
+    object BasicFoundation:NavitemScreen("basicfoundation",R.string.basicfoundation)
+    object TextFileAndButton:NavitemScreen("textfileandbutton",R.string.textfileandbutton)
 }

@@ -151,4 +151,6 @@
     <string name="rotateanimation">旋转动画</string>
     <string name="snapperscreen">鲷鱼屏幕</string>
     <string name="animatingfonts">字体动画</string>
+    <string name="basicfoundation">基础组件</string>
+    <string name="textfileandbutton">文本输入和按钮</string>
 </resources>

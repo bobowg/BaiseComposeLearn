@@ -101,6 +101,7 @@ fun Drawer(
     val items = listOf(
         NavitemScreen.Activate,
         NavitemScreen.ViewModelScreen,
+        NavitemScreen.BasicFoundation,
         NavitemScreen.ConstraintLayoutScreen,
         NavitemScreen.RoomDatabaseScreen,
         NavitemScreen.Animation,

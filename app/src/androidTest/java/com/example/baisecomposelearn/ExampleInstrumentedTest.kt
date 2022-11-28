@@ -5,6 +5,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.example.baisecomposelearn.navitegation.HapticSamplerDestinations
+import com.example.baisecomposelearn.screens.animate.AnimatingFonts
 import com.example.baisecomposelearn.screens.constraintlayout.CustomCalendarView
 import com.example.baisecomposelearn.screens.constraintlayout.CustomShape
 import com.example.baisecomposelearn.screens.customexamples.RatingBarScreen
@@ -26,6 +27,7 @@ import org.junit.runner.RunWith
 class ExampleInstrumentedTest {
     @get:Rule
     val composeTestRule = createComposeRule()
+
     @Test
     fun useAppContext() {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
@@ -70,24 +72,27 @@ class ExampleInstrumentedTest {
             }
         }
     }
+
     @Test
-    fun testRatingBarScreen(){
+    fun testRatingBarScreen() {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 RatingBarScreen(navController = rememberNavController())
             }
         }
     }
+
     @Test
-    fun testSystemUiControllerAccompanistScreen(){
+    fun testSystemUiControllerAccompanistScreen() {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 SystemUiControllerAccompanistScreen(navController = rememberNavController())
             }
         }
     }
+
     @Test
-    fun testCustomShapeScreen(){
+    fun testCustomShapeScreen() {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 CustomShape(navController = rememberNavController())
@@ -96,7 +101,7 @@ class ExampleInstrumentedTest {
     }
 
     @Test
-    fun testProjectlist(){
+    fun testProjectlist() {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 ProjectItem(
@@ -113,19 +118,30 @@ class ExampleInstrumentedTest {
             }
         }
     }
+
     @Test
-    fun testErrorPage(){
+    fun testErrorPage() {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 ErrorPage()
             }
         }
     }
+
     @Test
-    fun testCustomCalendarView(){
+    fun testCustomCalendarView() {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 CustomCalendarView(navController = rememberNavController())
+            }
+        }
+    }
+
+    @Test
+    fun testAnimatingFont(){
+        composeTestRule.setContent {
+            BaiseComposeLearnTheme {
+                AnimatingFonts(navController = rememberNavController())
             }
         }
     }

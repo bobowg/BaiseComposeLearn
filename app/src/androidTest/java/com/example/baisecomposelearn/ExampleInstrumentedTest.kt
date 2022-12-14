@@ -6,6 +6,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.example.baisecomposelearn.navitegation.HapticSamplerDestinations
 import com.example.baisecomposelearn.screens.animate.AnimatingFonts
+import com.example.baisecomposelearn.screens.animate.DraggableMusicKnob
 import com.example.baisecomposelearn.screens.constraintlayout.CustomCalendarView
 import com.example.baisecomposelearn.screens.constraintlayout.CustomShape
 import com.example.baisecomposelearn.screens.customexamples.RatingBarScreen
@@ -142,6 +143,15 @@ class ExampleInstrumentedTest {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 AnimatingFonts(navController = rememberNavController())
+            }
+        }
+    }
+
+    @Test
+    fun testDraggableMusicKnob(){
+        composeTestRule.setContent {
+            BaiseComposeLearnTheme {
+                DraggableMusicKnob(rememberNavController())
             }
         }
     }

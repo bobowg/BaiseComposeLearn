@@ -153,4 +153,5 @@
     <string name="animatingfonts">字体动画</string>
     <string name="basicfoundation">基础组件</string>
     <string name="textfileandbutton">文本输入和按钮</string>
+    <string name="draggablemusicknob">音乐调节按钮</string>
 </resources>

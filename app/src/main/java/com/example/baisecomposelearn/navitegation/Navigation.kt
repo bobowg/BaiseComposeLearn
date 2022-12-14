@@ -264,6 +264,9 @@ fun Navigation(
         composable(NavitemScreen.TextFileAndButton.route){
             TextFileAndButton(navController)
         }
+        composable(NavitemScreen.DraggableMusicKnob.route){
+            DraggableMusicKnob(navController)
+        }
     }
 
 }

@@ -77,4 +77,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object AnimatingFonts:NavitemScreen("animatingfonts",R.string.animatingfonts)
     object BasicFoundation:NavitemScreen("basicfoundation",R.string.basicfoundation)
     object TextFileAndButton:NavitemScreen("textfileandbutton",R.string.textfileandbutton)
+    object DraggableMusicKnob:NavitemScreen("draggablemusicknob",R.string.draggablemusicknob)
 }

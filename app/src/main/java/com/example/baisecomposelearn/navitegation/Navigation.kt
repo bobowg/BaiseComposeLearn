@@ -240,9 +240,6 @@ fun Navigation(
         composable(NavitemScreen.CustomCountDownTimer.route){
             CustomCountDownTimer()
         }
-        composable(NavitemScreen.BannerAd.route){
-            Banner(navController)
-        }
         composable(NavitemScreen.ZoomAbleComposeImage.route){
             ZoomableComposeImageExample()
         }

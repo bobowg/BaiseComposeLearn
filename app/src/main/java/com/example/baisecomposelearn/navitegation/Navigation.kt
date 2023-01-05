@@ -195,9 +195,7 @@ fun Navigation(
         composable(NavitemScreen.CircularProgressbar.route){
             CircularProgressbar(navController)
         }
-        composable(NavitemScreen.GetJsonScreen.route){
-            GetJsonScreen(navController)
-        }
+
         composable(NavitemScreen.FlashLightScreen.route){
             FlashLightScreen(navController)
         }
@@ -263,6 +261,9 @@ fun Navigation(
         }
         composable(NavitemScreen.DraggableMusicKnob.route){
             DraggableMusicKnob(navController)
+        }
+        composable(NavitemScreen.MotionLayoutCompose.route){
+            MotionLayoutCompose(navController)
         }
     }
 

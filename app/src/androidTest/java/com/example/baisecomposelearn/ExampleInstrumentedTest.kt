@@ -9,6 +9,7 @@ import com.example.baisecomposelearn.screens.animate.AnimatingFonts
 import com.example.baisecomposelearn.screens.animate.DraggableMusicKnob
 import com.example.baisecomposelearn.screens.constraintlayout.CustomCalendarView
 import com.example.baisecomposelearn.screens.constraintlayout.CustomShape
+import com.example.baisecomposelearn.screens.constraintlayout.MotionLayoutCompose
 import com.example.baisecomposelearn.screens.customexamples.RatingBarScreen
 import com.example.baisecomposelearn.screens.customexamples.SystemUiControllerAccompanistScreen
 import com.example.baisecomposelearn.screens.media.ErrorPage
@@ -152,6 +153,14 @@ class ExampleInstrumentedTest {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 DraggableMusicKnob(rememberNavController())
+            }
+        }
+    }
+    @Test
+    fun testMotionLayoutCompose(){
+        composeTestRule.setContent {
+            BaiseComposeLearnTheme {
+                MotionLayoutCompose(rememberNavController())
             }
         }
     }

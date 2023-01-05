@@ -68,15 +68,6 @@ fun CustomExamplesScreen(navController: NavController) {
             )
         }
         Button(modifier = modo,
-            onClick = { navController.navigate(NavitemScreen.GetJsonScreen.route) }) {
-            Text(
-                text = stringResource(id = R.string.getjson),
-                fontWeight = FontWeight.Bold,
-                fontSize = 24.sp,
-                color = Color.White
-            )
-        }
-        Button(modifier = modo,
             onClick = { navController.navigate(NavitemScreen.EmojiCompoatScreen.route) }) {
             Text(
                 text = stringResource(id = R.string.emojicompoat),

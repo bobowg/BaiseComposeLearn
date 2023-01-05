@@ -54,7 +54,6 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object PickDateScreen:NavitemScreen("pickdatescreen",R.string.pickdatascreen)
     object CameraxScreen:NavitemScreen("cameraxscreen",R.string.camerax)
     object CircularProgressbar:NavitemScreen("circularprogressbar",R.string.animate)
-    object GetJsonScreen:NavitemScreen("getjsonscreen",R.string.getjson)
     object FlashLightScreen:NavitemScreen("flashlight",R.string.flashlight)
     object AnimateColorComponent:NavitemScreen("animatecolorcomponent",R.string.animatecolorcomponent)
     object SingleValueFloatAnimationScreen:NavitemScreen("singlevaluefloatanimation",R.string.singlevaluefloatanimation)
@@ -77,4 +76,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object BasicFoundation:NavitemScreen("basicfoundation",R.string.basicfoundation)
     object TextFileAndButton:NavitemScreen("textfileandbutton",R.string.textfileandbutton)
     object DraggableMusicKnob:NavitemScreen("draggablemusicknob",R.string.draggablemusicknob)
+    object MotionLayoutCompose:NavitemScreen("motionlayoutcompose",R.string.motionlayoutcompose)
 }

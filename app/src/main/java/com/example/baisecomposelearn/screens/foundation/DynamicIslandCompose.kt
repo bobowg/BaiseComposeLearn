@@ -10,15 +10,18 @@ import androidx.compose.animation.core.spring
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavController
+import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.screens.components.goBack
 import com.example.baisecomposelearn.screens.components.island.IslandBubbleContent
 import com.example.baisecomposelearn.screens.components.island.IslandContent
@@ -30,32 +33,36 @@ import com.example.baisecomposelearn.theme.darkBackgroundColor
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
-@RequiresApi(Build.VERSION_CODES.TIRAMISU)
+
 @Composable
 fun DynamicIslandCompose(navController: NavController) {
     Column {
         var islandState: IslandState by remember { mutableStateOf(IslandState.DefaultState()) }
-        DynamicIsland(islandState = islandState)
-        RadioButtonRow(text="Default",selected = islandState is IslandState.DefaultState){
-            islandState = IslandState.DefaultState()
-        }
-        RadioButtonRow(text = "Call state", selected = islandState is IslandState.CallState) {
-            islandState = IslandState.CallState()
-        }
-        RadioButtonRow(
-            text = "Call Timer state",
-            selected = islandState is IslandState.CallTimerState
-        ) {
-            islandState = IslandState.CallTimerState()
-        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            DynamicIsland(islandState = islandState)
+            RadioButtonRow(text="Default",selected = islandState is IslandState.DefaultState){
+                islandState = IslandState.DefaultState()
+            }
+            RadioButtonRow(text = "Call state", selected = islandState is IslandState.CallState) {
+                islandState = IslandState.CallState()
+            }
+            RadioButtonRow(
+                text = "Call Timer state",
+                selected = islandState is IslandState.CallTimerState
+            ) {
+                islandState = IslandState.CallTimerState()
+            }
 
-        RadioButtonRow(
-            text = "Face unlock state",
-            selected = islandState is IslandState.FaceUnlockState
-        ) {
-            islandState = IslandState.FaceUnlockState()
+            RadioButtonRow(
+                text = "Face unlock state",
+                selected = islandState is IslandState.FaceUnlockState
+            ) {
+                islandState = IslandState.FaceUnlockState()
+            }
         }
-
+       else{
+          Text(text = stringResource(id =R.string.message_not_supported))
+        }
         goBack(navController = navController)
     }
 }

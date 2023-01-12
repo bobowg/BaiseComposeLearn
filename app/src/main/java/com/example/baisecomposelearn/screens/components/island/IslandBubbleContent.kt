@@ -47,7 +47,7 @@ fun IslandBubbleContent(
                 is IslandState.CallTimerState -> {
                     bubbleContent = {
                         Icon(
-                            painter = painterResource(id = R.drawable.ic_animation),
+                            painter = painterResource(id = R.drawable.ic_book),
                             contentDescription = null,
                             tint = rwOrgen
                         )

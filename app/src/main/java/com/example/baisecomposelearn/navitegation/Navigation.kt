@@ -280,6 +280,9 @@ fun Navigation(
                 DynamicIslandCompose(navController)
             }
         }
+        composable(NavitemScreen.PhotoPick.route){
+            PhotoPick(navController)
+        }
     }
 
 }

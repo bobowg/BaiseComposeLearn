@@ -77,5 +77,6 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object TextFileAndButton:NavitemScreen("textfileandbutton",R.string.textfileandbutton)
     object DraggableMusicKnob:NavitemScreen("draggablemusicknob",R.string.draggablemusicknob)
     object MotionLayoutCompose:NavitemScreen("motionlayoutcompose",R.string.motionlayoutcompose)
-    object DynamicIsland:NavitemScreen("DynamicIsland",R.string.dynamicisland)
+    object DynamicIsland:NavitemScreen("dynamicisland",R.string.dynamicisland)
+    object PhotoPick:NavitemScreen("photopick",R.string.photopick)
 }

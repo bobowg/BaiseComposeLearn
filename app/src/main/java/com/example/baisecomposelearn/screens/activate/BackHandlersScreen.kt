@@ -87,6 +87,17 @@ fun BackHandlersScreen(navController: NavController) {
                 color = Color.White
             )
         }
+        Button(
+            onClick = { navController.navigate(NavitemScreen.PhotoPick.route) },
+            modifier = Modifier.fillMaxWidth().padding(16.dp)
+        ) {
+            Text(
+                text = stringResource(id = R.string.photopick),
+                fontWeight = FontWeight.Bold,
+                fontSize = 24.sp,
+                color = Color.White
+            )
+        }
     }
     
 }

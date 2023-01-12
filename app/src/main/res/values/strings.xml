@@ -153,4 +153,5 @@
     <string name="textfileandbutton">文本输入和按钮</string>
     <string name="draggablemusicknob">音乐调节按钮</string>
     <string name="motionlayoutcompose">motion布局</string>
+    <string name="dynamicisland">动态岛</string>
 </resources>

@@ -41,6 +41,21 @@ fun BasicFoundation(navController: NavController) {
                 color = Color.White
             )
         }
+        Button(
+            onClick = {
+                navController.navigate(NavitemScreen.DynamicIsland.route)
+            }, modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+            Text(
+                text = stringResource(id = R.string.dynamicisland),
+                fontWeight = FontWeight.Bold,
+                fontSize = 25.sp,
+                color = Color.White
+            )
+        }
+
     }
 }
 

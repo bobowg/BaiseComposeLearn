@@ -19,6 +19,7 @@ import com.example.baisecomposelearn.screens.components.camerax.VideoPreviewScre
 import com.example.baisecomposelearn.screens.constraintlayout.*
 import com.example.baisecomposelearn.screens.customexamples.*
 import com.example.baisecomposelearn.screens.foundation.BasicFoundation
+import com.example.baisecomposelearn.screens.foundation.DynamicIslandCompose
 import com.example.baisecomposelearn.screens.foundation.TextFileAndButton
 import com.example.baisecomposelearn.screens.media.*
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelFlowScreen
@@ -27,7 +28,6 @@ import com.example.baisecomposelearn.screens.viewmodel.ViewModelScreen
 import com.example.baisecomposelearn.screens.viewmodel.WellnessScreen
 import com.example.baisecomposelearn.screens.widget.AppWidgetScreen
 
-@RequiresApi(Build.VERSION_CODES.P)
 @Composable
 fun Navigation(
     navController: NavHostController
@@ -97,7 +97,9 @@ fun Navigation(
             MotionLayoutScreen(navController)
         }
         composable(NavitemScreen.AuthenticationScreen.route){
-            AuthenticationScreen(navController)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                AuthenticationScreen(navController)
+            }
         }
         composable(NavitemScreen.ViewModelScreen.route){
             ViewModelScreen(navController)
@@ -174,7 +176,9 @@ fun Navigation(
             PlotScreen(navController)
         }
         composable(NavitemScreen.AppWidgetScreen.route){
-            AppWidgetScreen()
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                AppWidgetScreen()
+            }
         }
         composable(NavitemScreen.CustomExamplesScreen.route){
             CustomExamplesScreen(navController)
@@ -186,7 +190,9 @@ fun Navigation(
             PickDateScreen(navController)
         }
         composable(NavitemScreen.CameraxScreen.route){
-            CameraxScreen(navController)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                CameraxScreen(navController)
+            }
         }
         composable(Route.VIDEO_PREVIEW_FULL_ROUTE) {
             val uri = it.arguments?.getString(VIDEO_PREVIEW_ARG) ?: ""
@@ -230,7 +236,9 @@ fun Navigation(
             CollapsingToolScreen(navController)
         }
         composable(NavitemScreen.CustomShapeScreen.route){
-            CustomShape(navController)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                CustomShape(navController)
+            }
         }
         composable(NavitemScreen.WanandroidScreen.route){
             WanandroidScreen()
@@ -242,7 +250,9 @@ fun Navigation(
             ZoomableComposeImageExample()
         }
         composable(NavitemScreen.CustomCalendarView.route){
-            CustomCalendarView(navController)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                CustomCalendarView(navController)
+            }
         }
         composable(NavitemScreen.RotateAnimationScreen.route){
             RotateAnimationScreen(navController)
@@ -264,6 +274,11 @@ fun Navigation(
         }
         composable(NavitemScreen.MotionLayoutCompose.route){
             MotionLayoutCompose(navController)
+        }
+        composable(NavitemScreen.DynamicIsland.route){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                DynamicIslandCompose(navController)
+            }
         }
     }
 

@@ -14,7 +14,6 @@ buildscript {
         accompanistPermissionsVersion = '0.23.1'
         google_webview = '0.25.1'
         emoji2_version = '1.2.0'
-        kotlin_version = '1.7.0'
     }
     dependencies {
         classpath 'com.google.gms:google-services:4.3.13'

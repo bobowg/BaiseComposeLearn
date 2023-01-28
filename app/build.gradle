@@ -63,9 +63,7 @@ dependencies {
     implementation 'androidx.activity:activity-compose:1.6.1'
     implementation "androidx.compose.ui:ui-text-google-fonts:$google_graphics"
     implementation "androidx.compose.animation:animation-graphics:$google_graphics"
-    implementation "androidx.compose.ui:ui-text-google-fonts:$google_graphics"
     implementation "androidx.compose.material:material-icons-extended:$google_graphics"
-    implementation 'com.google.android.material:material:1.6.1'
     implementation "com.google.accompanist:accompanist-pager:0.25.0"
     // Pager
     implementation "com.google.accompanist:accompanist-pager-indicators:0.25.0"
@@ -98,8 +96,6 @@ dependencies {
     // Room
     implementation "androidx.room:room-runtime:$room_version"
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
-    implementation 'androidx.core:core-ktx:+'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
 
@@ -125,7 +121,6 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
-    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3"
 
     //okHttp
     implementation "com.squareup.okhttp3:okhttp:$okHttp_version"

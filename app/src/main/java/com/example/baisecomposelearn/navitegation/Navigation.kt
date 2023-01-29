@@ -3,7 +3,6 @@ package com.example.baisecomposelearn.navitegation
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.content.ContextCompat.startActivity
@@ -20,6 +19,7 @@ import com.example.baisecomposelearn.screens.constraintlayout.*
 import com.example.baisecomposelearn.screens.customexamples.*
 import com.example.baisecomposelearn.screens.foundation.BasicFoundation
 import com.example.baisecomposelearn.screens.foundation.DynamicIslandCompose
+import com.example.baisecomposelearn.screens.foundation.Paginationcomponent
 import com.example.baisecomposelearn.screens.foundation.TextFileAndButton
 import com.example.baisecomposelearn.screens.media.*
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelFlowScreen
@@ -63,84 +63,82 @@ fun Navigation(
         composable(NavitemScreen.AnimationContentSizeScreen.route) {
             AnimationContentSizeScreen(navController)
         }
-        composable(NavitemScreen.CrossFadeScreen.route){
+        composable(NavitemScreen.CrossFadeScreen.route) {
             CrossFadeScreen(navController)
         }
-        composable(NavitemScreen.UpdateTransition.route){
+        composable(NavitemScreen.UpdateTransition.route) {
             UpdateTransition(navController)
         }
-        composable(NavitemScreen.AnimationSpecScreen.route){
+        composable(NavitemScreen.AnimationSpecScreen.route) {
             AnimationSpecScreen(navController)
         }
-        composable(NavitemScreen.AnimatedVectorDrawableScreen.route){
+        composable(NavitemScreen.AnimatedVectorDrawableScreen.route) {
             AnimatedVectorDrawableScreen(navController)
         }
-        composable(NavitemScreen.AnimatePlacementScreen.route){
+        composable(NavitemScreen.AnimatePlacementScreen.route) {
             AnimatePlacementScreen(navController)
         }
-        composable(NavitemScreen.ConstraintLayoutScreen.route){
+        composable(NavitemScreen.ConstraintLayoutScreen.route) {
             ConstraintLayoutScreen(navController)
         }
-        composable(NavitemScreen.BarrierScreen.route){
+        composable(NavitemScreen.BarrierScreen.route) {
             BrrierScreen(navController)
         }
-        composable(NavitemScreen.DecoupledScreen.route){
+        composable(NavitemScreen.DecoupledScreen.route) {
             DecoupledScreen(navController)
         }
-        composable(NavitemScreen.CircularScreen.route){
+        composable(NavitemScreen.CircularScreen.route) {
             CircularScreen(navController)
         }
-        composable(NavitemScreen.JsonConstraintScreen.route){
+        composable(NavitemScreen.JsonConstraintScreen.route) {
             JsonConstraintScreen(navController)
         }
-        composable(NavitemScreen.MotionLayoutScreen.route){
+        composable(NavitemScreen.MotionLayoutScreen.route) {
             MotionLayoutScreen(navController)
         }
-        composable(NavitemScreen.AuthenticationScreen.route){
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                AuthenticationScreen(navController)
-            }
+        composable(NavitemScreen.AuthenticationScreen.route) {
+            AuthenticationScreen(navController)
         }
-        composable(NavitemScreen.ViewModelScreen.route){
+        composable(NavitemScreen.ViewModelScreen.route) {
             ViewModelScreen(navController)
         }
-        composable(NavitemScreen.WellnessScreen.route){
+        composable(NavitemScreen.WellnessScreen.route) {
             WellnessScreen(navController)
         }
-        composable(NavitemScreen.ViewModelFlowScreen.route){
+        composable(NavitemScreen.ViewModelFlowScreen.route) {
             ViewModelFlowScreen(navController)
         }
-        composable(NavitemScreen.ViewModelLiveDataScreen.route){
+        composable(NavitemScreen.ViewModelLiveDataScreen.route) {
             ViewModelLiveDataScreen(navController)
         }
-        composable(NavitemScreen.MediaextensionScreen.route){
+        composable(NavitemScreen.MediaextensionScreen.route) {
             MediaextensionScreen(navController)
         }
-        composable(NavitemScreen.Media3ExoplayerScreen.route){
+        composable(NavitemScreen.Media3ExoplayerScreen.route) {
             Media3ExoplayerScreen()
         }
-        composable(NavitemScreen.CoilImageScreen.route){
+        composable(NavitemScreen.CoilImageScreen.route) {
             CoilImageScreen(navController)
         }
-        composable(NavitemScreen.CoilLandscapistScreen.route){
+        composable(NavitemScreen.CoilLandscapistScreen.route) {
             CoilLandscapistScreen(navController)
         }
-        composable(NavitemScreen.QrcodeScreen.route){
+        composable(NavitemScreen.QrcodeScreen.route) {
             QrcodeScreen(navController)
         }
-        composable(NavitemScreen.DownFontScreen.route){
+        composable(NavitemScreen.DownFontScreen.route) {
             DownFontScreen(navController)
         }
-        composable(NavitemScreen.TabsScreen.route){
+        composable(NavitemScreen.TabsScreen.route) {
             TabsScreen(navController)
         }
-        composable(NavitemScreen.CurtainEffectScreen.route){
+        composable(NavitemScreen.CurtainEffectScreen.route) {
             CurtainEffectScreen(navController)
         }
-        composable(NavitemScreen.LineChartScreen.route){
+        composable(NavitemScreen.LineChartScreen.route) {
             LineChartScreen(navController)
         }
-        composable(NavitemScreen.ComposeParticleScreen.route){
+        composable(NavitemScreen.ComposeParticleScreen.route) {
             ComposeParticleScreen(navController)
         }
         composable(NavitemScreen.DocumentScreen.route) {
@@ -158,38 +156,36 @@ fun Navigation(
         composable(NavitemScreen.RoomDatabaseScreen.route) {
             val context = LocalContext.current
             val sendIntent = Intent(context, ResultActivity::class.java)
-            startActivity(context,sendIntent, Bundle.EMPTY)
+            startActivity(context, sendIntent, Bundle.EMPTY)
         }
-        composable(NavitemScreen.GlideLandscapistScreen.route){
+        composable(NavitemScreen.GlideLandscapistScreen.route) {
             GlideLandscapistScreen(navController)
         }
-        composable(NavitemScreen.LottieScreen.route){
+        composable(NavitemScreen.LottieScreen.route) {
             LottieScreen(navController)
         }
-        composable(NavitemScreen.WebViewScreen.route){
+        composable(NavitemScreen.WebViewScreen.route) {
             WebViewScreen(navController)
         }
-        composable(NavitemScreen.SwipeRefreshAccompanistScreen.route){
+        composable(NavitemScreen.SwipeRefreshAccompanistScreen.route) {
             SwipeRefreshAccompanistScreen(navController)
         }
-        composable(NavitemScreen.PlotScreen.route){
+        composable(NavitemScreen.PlotScreen.route) {
             PlotScreen(navController)
         }
-        composable(NavitemScreen.AppWidgetScreen.route){
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                AppWidgetScreen()
-            }
+        composable(NavitemScreen.AppWidgetScreen.route) {
+            AppWidgetScreen()
         }
-        composable(NavitemScreen.CustomExamplesScreen.route){
+        composable(NavitemScreen.CustomExamplesScreen.route) {
             CustomExamplesScreen(navController)
         }
-        composable(NavitemScreen.AnimatableDeleteScreen.route){
+        composable(NavitemScreen.AnimatableDeleteScreen.route) {
             AnimatableDeleteScreen(navController)
         }
-        composable(NavitemScreen.PickDateScreen.route){
+        composable(NavitemScreen.PickDateScreen.route) {
             PickDateScreen(navController)
         }
-        composable(NavitemScreen.CameraxScreen.route){
+        composable(NavitemScreen.CameraxScreen.route) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                 CameraxScreen(navController)
             }
@@ -198,90 +194,92 @@ fun Navigation(
             val uri = it.arguments?.getString(VIDEO_PREVIEW_ARG) ?: ""
             VideoPreviewScreen(uri = uri)
         }
-        composable(NavitemScreen.CircularProgressbar.route){
+        composable(NavitemScreen.CircularProgressbar.route) {
             CircularProgressbar(navController)
         }
 
-        composable(NavitemScreen.FlashLightScreen.route){
+        composable(NavitemScreen.FlashLightScreen.route) {
             FlashLightScreen(navController)
         }
-        composable(NavitemScreen.AnimateColorComponent.route){
+        composable(NavitemScreen.AnimateColorComponent.route) {
             AnimateColorComponent()
         }
-        composable(NavitemScreen.SingleValueFloatAnimationScreen.route){
+        composable(NavitemScreen.SingleValueFloatAnimationScreen.route) {
             SingleValueFloatAnimationScreen(navController)
         }
-        composable(NavitemScreen.ElevationAnimationScreen.route){
+        composable(NavitemScreen.ElevationAnimationScreen.route) {
             ElevationAnimationScreen(navController)
         }
-        composable(NavitemScreen.BottomSheetScaffoldScreen.route){
+        composable(NavitemScreen.BottomSheetScaffoldScreen.route) {
             BottomSheetScaffoldScreen(navController)
         }
-        composable(NavitemScreen.EmojiCompoatScreen.route){
+        composable(NavitemScreen.EmojiCompoatScreen.route) {
             EmojiCompoatScreen(navController)
         }
-        composable(NavitemScreen.RatingBarScreen.route){
+        composable(NavitemScreen.RatingBarScreen.route) {
             RatingBarScreen(navController)
         }
-        composable(NavitemScreen.CollapsingToolbar.route){
+        composable(NavitemScreen.CollapsingToolbar.route) {
             CollapsingToolbar()
         }
-        composable(NavitemScreen.SystemUiControllerAccompanistScreen.route){
+        composable(NavitemScreen.SystemUiControllerAccompanistScreen.route) {
             SystemUiControllerAccompanistScreen(navController)
         }
-        composable(NavitemScreen.OrbitalExampleScreen.route){
+        composable(NavitemScreen.OrbitalExampleScreen.route) {
             OrbitalExampleScreen(navController)
         }
-        composable(NavitemScreen.CollapsingToolScreen.route){
+        composable(NavitemScreen.CollapsingToolScreen.route) {
             CollapsingToolScreen(navController)
         }
-        composable(NavitemScreen.CustomShapeScreen.route){
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                CustomShape(navController)
-            }
+        composable(NavitemScreen.CustomShapeScreen.route) {
+
+            CustomShape(navController)
+
         }
-        composable(NavitemScreen.WanandroidScreen.route){
+        composable(NavitemScreen.WanandroidScreen.route) {
             WanandroidScreen()
         }
-        composable(NavitemScreen.CustomCountDownTimer.route){
+        composable(NavitemScreen.CustomCountDownTimer.route) {
             CustomCountDownTimer()
         }
-        composable(NavitemScreen.ZoomAbleComposeImage.route){
+        composable(NavitemScreen.ZoomAbleComposeImage.route) {
             ZoomableComposeImageExample()
         }
-        composable(NavitemScreen.CustomCalendarView.route){
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                CustomCalendarView(navController)
-            }
+        composable(NavitemScreen.CustomCalendarView.route) {
+
+            CustomCalendarView(navController)
         }
-        composable(NavitemScreen.RotateAnimationScreen.route){
+        composable(NavitemScreen.RotateAnimationScreen.route) {
             RotateAnimationScreen(navController)
         }
-        composable(NavitemScreen.SnapperScreen.route){
+        composable(NavitemScreen.SnapperScreen.route) {
             SnapperScreen(navController)
         }
-        composable(NavitemScreen.AnimatingFonts.route){
+        composable(NavitemScreen.AnimatingFonts.route) {
             AnimatingFonts(navController)
         }
-        composable(NavitemScreen.BasicFoundation.route){
+        composable(NavitemScreen.BasicFoundation.route) {
             BasicFoundation(navController)
         }
-        composable(NavitemScreen.TextFileAndButton.route){
+        composable(NavitemScreen.TextFileAndButton.route) {
             TextFileAndButton(navController)
         }
-        composable(NavitemScreen.DraggableMusicKnob.route){
+        composable(NavitemScreen.DraggableMusicKnob.route) {
             DraggableMusicKnob(navController)
         }
-        composable(NavitemScreen.MotionLayoutCompose.route){
+        composable(NavitemScreen.MotionLayoutCompose.route) {
             MotionLayoutCompose(navController)
         }
-        composable(NavitemScreen.DynamicIsland.route){
+        composable(NavitemScreen.DynamicIsland.route) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 DynamicIslandCompose(navController)
             }
         }
-        composable(NavitemScreen.PhotoPick.route){
+        composable(NavitemScreen.PhotoPick.route) {
             PhotoPick(navController)
+        }
+        composable(NavitemScreen.Paginationcomponent.route) {
+            Paginationcomponent(navController)
         }
     }
 

@@ -79,4 +79,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object MotionLayoutCompose:NavitemScreen("motionlayoutcompose",R.string.motionlayoutcompose)
     object DynamicIsland:NavitemScreen("dynamicisland",R.string.dynamicisland)
     object PhotoPick:NavitemScreen("photopick",R.string.photopick)
+    object Paginationcomponent:NavitemScreen("paginationcomponent",R.string.paginationcomponent)
 }

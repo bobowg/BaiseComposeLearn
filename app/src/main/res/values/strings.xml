@@ -157,4 +157,5 @@
     <string name="singlephotopick">选择单项</string>
     <string name="multiplephotopick">选择多项</string>
     <string name="photopick">图片选择</string>
+    <string name="paginationcomponent">基本分页</string>
 </resources>

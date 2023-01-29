@@ -55,6 +55,20 @@ fun BasicFoundation(navController: NavController) {
                 color = Color.White
             )
         }
+        Button(
+            onClick = {
+                navController.navigate(NavitemScreen.Paginationcomponent.route)
+            }, modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+            Text(
+                text = stringResource(id = R.string.paginationcomponent),
+                fontWeight = FontWeight.Bold,
+                fontSize = 25.sp,
+                color = Color.White
+            )
+        }
 
     }
 }

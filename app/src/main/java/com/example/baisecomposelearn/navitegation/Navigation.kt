@@ -17,10 +17,7 @@ import com.example.baisecomposelearn.screens.components.camerax.Route.VIDEO_PREV
 import com.example.baisecomposelearn.screens.components.camerax.VideoPreviewScreen
 import com.example.baisecomposelearn.screens.constraintlayout.*
 import com.example.baisecomposelearn.screens.customexamples.*
-import com.example.baisecomposelearn.screens.foundation.BasicFoundation
-import com.example.baisecomposelearn.screens.foundation.DynamicIslandCompose
-import com.example.baisecomposelearn.screens.foundation.Paginationcomponent
-import com.example.baisecomposelearn.screens.foundation.TextFileAndButton
+import com.example.baisecomposelearn.screens.foundation.*
 import com.example.baisecomposelearn.screens.media.*
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelFlowScreen
 import com.example.baisecomposelearn.screens.viewmodel.ViewModelLiveDataScreen
@@ -281,6 +278,8 @@ fun Navigation(
         composable(NavitemScreen.Paginationcomponent.route) {
             Paginationcomponent(navController)
         }
+        composable(NavitemScreen.Multi_Layer_Parallax.route){
+            MultiLayerPrallax(navController)
+        }
     }
-
 }

@@ -14,7 +14,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.baisecomposelearn.screens.components.goBack
 import com.example.baisecomposelearn.screens.foundation.data.PaginatorViewModell
 import com.example.baisecomposelearn.theme.best
-import com.example.baisecomposelearn.theme.darkTextColorPrimary
+import com.example.baisecomposelearn.theme.surfaceColor
 
 @Composable
 fun Paginationcomponent(navController: NavController) {
@@ -31,9 +31,9 @@ fun Paginationcomponent(navController: NavController) {
                     .fillMaxWidth()
                     .padding(16.dp)
             ) {
-                Text(text = item.title, fontFamily = best, color = darkTextColorPrimary)
+                Text(text = item.title, fontFamily = best, color = surfaceColor)
                 Spacer(modifier = Modifier.height(8.dp))
-                Text(text = item.description, fontFamily = best, color = darkTextColorPrimary)
+                Text(text = item.description, fontFamily = best, color = surfaceColor )
             }
         }
         item {

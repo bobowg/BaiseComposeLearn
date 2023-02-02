@@ -69,6 +69,20 @@ fun BasicFoundation(navController: NavController) {
                 color = Color.White
             )
         }
+        Button(
+            onClick = {
+                navController.navigate(NavitemScreen.Multi_Layer_Parallax.route)
+            }, modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+            Text(
+                text = stringResource(id = R.string.multi_layer_parallax),
+                fontWeight = FontWeight.Bold,
+                fontSize = 25.sp,
+                color = Color.White
+            )
+        }
 
     }
 }

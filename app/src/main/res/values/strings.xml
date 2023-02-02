@@ -158,4 +158,5 @@
     <string name="multiplephotopick">选择多项</string>
     <string name="photopick">图片选择</string>
     <string name="paginationcomponent">基本分页</string>
+    <string name="multi_layer_parallax">多层视差</string>
 </resources>

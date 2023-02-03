@@ -83,6 +83,20 @@ fun BasicFoundation(navController: NavController) {
                 color = Color.White
             )
         }
+        Button(
+            onClick = {
+                navController.navigate(NavitemScreen.GuideToLazy.route)
+            }, modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+            Text(
+                text = stringResource(id = R.string.guidtolayz),
+                fontWeight = FontWeight.Bold,
+                fontSize = 25.sp,
+                color = Color.White
+            )
+        }
 
     }
 }

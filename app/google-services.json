@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "995447011978",
-    "project_id": "first-project-eea32",
-    "storage_bucket": "first-project-eea32.appspot.com"
+    "project_number": "818616022290",
+    "project_id": "unified-hull-362802",
+    "storage_bucket": "unified-hull-362802.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:995447011978:android:183a3cd413a534f8d6cb73",
+        "mobilesdk_app_id": "1:818616022290:android:a9eaae6392a01bb84aafcb",
         "android_client_info": {
           "package_name": "com.example.baisecomposelearn"
         }
       },
       "oauth_client": [
         {
-          "client_id": "995447011978-i4q1kbenlcv0klhsih3cml76knrqad1l.apps.googleusercontent.com",
+          "client_id": "818616022290-k9ccnihvba9an05q06ec66j3tlslfjqd.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBz7AVXgMp4Yk2-D1dOLeZcQ-cN3hHw0wU"
+          "current_key": "AIzaSyDKu6cB1DtsJmdrfS1T7LuMduGOBraEhHk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "995447011978-i4q1kbenlcv0klhsih3cml76knrqad1l.apps.googleusercontent.com",
+              "client_id": "818616022290-k9ccnihvba9an05q06ec66j3tlslfjqd.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

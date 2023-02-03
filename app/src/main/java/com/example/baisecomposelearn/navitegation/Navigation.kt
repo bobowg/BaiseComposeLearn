@@ -281,5 +281,8 @@ fun Navigation(
         composable(NavitemScreen.Multi_Layer_Parallax.route){
             MultiLayerPrallax(navController)
         }
+        composable(NavitemScreen.GuideToLazy.route){
+            GuidetoLazy(navController)
+        }
     }
 }

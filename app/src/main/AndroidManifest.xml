@@ -18,6 +18,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
 
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -35,6 +36,7 @@
         android:theme="@style/Theme.BaiseComposeLearn"
         android:usesCleartextTraffic="true"
         tools:targetApi="33">
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
         <service
             android:name=".service.RingtonePlayingService"
             android:enabled="true"
@@ -103,6 +105,9 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/app_widget_buttons_glance" />
         </receiver>
+        <meta-data
+            android:name="firebase_performance_logcat_enabled"
+            android:value="true" />
     </application>
 
 </manifest>

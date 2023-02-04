@@ -191,6 +191,20 @@ fun AnimationScreen(navController: NavController) {
                     color = Color.White
                 )
             }
+            Button(
+                onClick = {
+                    navController.navigate(NavitemScreen.CounterText.route)
+                }, modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp)
+            ) {
+                Text(
+                    text = stringResource(id = R.string.countertext),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 25.sp,
+                    color = Color.White
+                )
+            }
         }
     )
 }

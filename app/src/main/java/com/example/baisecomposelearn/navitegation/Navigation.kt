@@ -284,5 +284,8 @@ fun Navigation(
         composable(NavitemScreen.GuideToLazy.route){
             GuidetoLazy(navController)
         }
+        composable(NavitemScreen.CounterText.route){
+            CounterText(navController)
+        }
     }
 }

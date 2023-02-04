@@ -159,4 +159,5 @@
     <string name="paginationcomponent">基本分页</string>
     <string name="multi_layer_parallax">多层视差</string>
     <string name="guidtolayz">网格滚动</string>
+    <string name="countertext">计数器</string>
 </resources>

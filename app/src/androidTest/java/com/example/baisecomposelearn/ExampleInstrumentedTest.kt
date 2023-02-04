@@ -12,6 +12,7 @@ import com.example.baisecomposelearn.screens.constraintlayout.CustomShape
 import com.example.baisecomposelearn.screens.constraintlayout.MotionLayoutCompose
 import com.example.baisecomposelearn.screens.customexamples.RatingBarScreen
 import com.example.baisecomposelearn.screens.customexamples.SystemUiControllerAccompanistScreen
+import com.example.baisecomposelearn.screens.foundation.MultiLayerPrallax
 import com.example.baisecomposelearn.screens.media.ErrorPage
 import com.example.baisecomposelearn.screens.media.ProjectItem
 import com.example.baisecomposelearn.screens.vibration.bounce.BounceExampleScreen
@@ -161,6 +162,14 @@ class ExampleInstrumentedTest {
         composeTestRule.setContent {
             BaiseComposeLearnTheme {
                 MotionLayoutCompose(rememberNavController())
+            }
+        }
+    }
+    @Test
+    fun testMultiLayerPrallax(){
+        composeTestRule.setContent {
+            BaiseComposeLearnTheme {
+                MultiLayerPrallax(navController = rememberNavController())
             }
         }
     }

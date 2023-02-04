@@ -41,18 +41,6 @@
             android:name=".service.RingtonePlayingService"
             android:enabled="true"
             android:exported="false" />
-
-        <activity
-            android:name=".VibrationActivity"
-            android:exported="false"
-            android:hardwareAccelerated="false"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.BaiseComposeLearn.NoActionBar">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="${applicationId}.androidx-startup"

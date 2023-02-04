@@ -1,7 +1,5 @@
 package com.example.baisecomposelearn.screens.customexamples
 
-import android.content.Intent
-import android.os.Bundle
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
@@ -15,11 +13,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.baisecomposelearn.R
-import com.example.baisecomposelearn.VibrationActivity
 import com.example.baisecomposelearn.navitegation.NavitemScreen
 import com.example.baisecomposelearn.screens.components.ScreenModel
 
@@ -71,18 +67,6 @@ fun CustomExamplesScreen(navController: NavController) {
             onClick = { navController.navigate(NavitemScreen.EmojiCompoatScreen.route) }) {
             Text(
                 text = stringResource(id = R.string.emojicompoat),
-                fontWeight = FontWeight.Bold,
-                fontSize = 24.sp,
-                color = Color.White
-            )
-        }
-        Button(modifier = modo,
-            onClick = {
-                val sendIntent = Intent(context, VibrationActivity::class.java)
-                ContextCompat.startActivity(context, sendIntent, Bundle.EMPTY)
-            }) {
-            Text(
-                text = stringResource(id = R.string.vibration),
                 fontWeight = FontWeight.Bold,
                 fontSize = 24.sp,
                 color = Color.White

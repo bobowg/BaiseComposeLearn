@@ -160,4 +160,5 @@
     <string name="multi_layer_parallax">多层视差</string>
     <string name="guidtolayz">网格滚动</string>
     <string name="countertext">计数器</string>
+    <string name="backgroundscreen">背景素材屏幕</string>
 </resources>

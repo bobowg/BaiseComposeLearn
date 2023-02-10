@@ -287,5 +287,8 @@ fun Navigation(
         composable(NavitemScreen.CounterText.route){
             CounterText(navController)
         }
+        composable(NavitemScreen.BackgroundScreen.route){
+            BackgroundScreen(navController)
+        }
     }
 }

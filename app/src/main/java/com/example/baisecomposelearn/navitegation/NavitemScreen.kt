@@ -84,4 +84,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object GuideToLazy:NavitemScreen("guid2lazy",R.string.guidtolayz)
     object CounterText:NavitemScreen("countertext",R.string.countertext)
     object BackgroundScreen:NavitemScreen("backgroundscreen",R.string.backgroundscreen)
+    object AnimatableScreen:NavitemScreen("animatablescreen",R.string.animatablescreen)
 }

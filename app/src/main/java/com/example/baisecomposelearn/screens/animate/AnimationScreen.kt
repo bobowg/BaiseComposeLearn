@@ -205,6 +205,20 @@ fun AnimationScreen(navController: NavController) {
                     color = Color.White
                 )
             }
+            Button(
+                onClick = {
+                    navController.navigate(NavitemScreen.AnimatableScreen.route)
+                }, modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp)
+            ) {
+                Text(
+                    text = stringResource(id = R.string.animatablescreen),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 25.sp,
+                    color = Color.White
+                )
+            }
         }
     )
 }

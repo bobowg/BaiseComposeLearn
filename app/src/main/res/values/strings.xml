@@ -161,4 +161,5 @@
     <string name="guidtolayz">网格滚动</string>
     <string name="countertext">计数器</string>
     <string name="backgroundscreen">背景素材屏幕</string>
+    <string name="animatablescreen">手指动画</string>
 </resources>

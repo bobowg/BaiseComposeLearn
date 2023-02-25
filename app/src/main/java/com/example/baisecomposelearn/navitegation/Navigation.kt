@@ -290,5 +290,8 @@ fun Navigation(
         composable(NavitemScreen.BackgroundScreen.route){
             BackgroundScreen(navController)
         }
+        composable(NavitemScreen.AnimatableScreen.route){
+            AnimatableScreen(navController)
+        }
     }
 }

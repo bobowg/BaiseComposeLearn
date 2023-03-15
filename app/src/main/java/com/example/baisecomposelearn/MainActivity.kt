@@ -50,7 +50,7 @@ class MainActivity : ComponentActivity() {
         }
         // 注册通道(频道)
         val notificationManager: NotificationManager =
-            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.createNotificationChannel(channel)
     }
 }

@@ -293,5 +293,8 @@ fun Navigation(
         composable(NavitemScreen.AnimatableScreen.route){
             AnimatableScreen(navController)
         }
+        composable(NavitemScreen.RecordScreen.route){
+            RecordScreen(navController)
+        }
     }
 }

@@ -162,4 +162,7 @@
     <string name="countertext">计数器</string>
     <string name="backgroundscreen">背景素材屏幕</string>
     <string name="animatablescreen">手指动画</string>
+    <string name="recordscreen">录音机</string>
+    <string name="beginrecord">开始录音</string>
+    <string name="stoprecord">停止录音</string>
 </resources>

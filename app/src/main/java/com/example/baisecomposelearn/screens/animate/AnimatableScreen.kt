@@ -1,6 +1,5 @@
 package com.example.baisecomposelearn.screens.animate
 
-
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.VectorConverter

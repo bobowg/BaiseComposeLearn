@@ -155,6 +155,14 @@ fun MediaextensionScreen(navController: NavController) {
         ) {
             Text(text = stringResource(id = R.string.plotscreen,""), fontSize = 24.sp)
         }
+        Button(
+            onClick = { navController.navigate(NavitemScreen.RecordScreen.route) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+            Text(text = stringResource(id = R.string.recordscreen,""), fontSize = 24.sp)
+        }
 
     }, isGoBack = false)
 }

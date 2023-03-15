@@ -3,7 +3,6 @@ package com.example.baisecomposelearn
 import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.os.StrictMode
@@ -50,7 +49,7 @@ class MainActivity : ComponentActivity() {
         }
         // 注册通道(频道)
         val notificationManager: NotificationManager =
-            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.createNotificationChannel(channel)
     }
 }

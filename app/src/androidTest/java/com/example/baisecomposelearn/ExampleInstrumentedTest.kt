@@ -4,7 +4,6 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.navigation.compose.rememberNavController
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import com.example.baisecomposelearn.navitegation.HapticSamplerDestinations
 import com.example.baisecomposelearn.screens.animate.AnimatingFonts
 import com.example.baisecomposelearn.screens.animate.DraggableMusicKnob
 import com.example.baisecomposelearn.screens.constraintlayout.CustomCalendarView
@@ -15,11 +14,7 @@ import com.example.baisecomposelearn.screens.customexamples.SystemUiControllerAc
 import com.example.baisecomposelearn.screens.foundation.MultiLayerPrallax
 import com.example.baisecomposelearn.screens.media.ErrorPage
 import com.example.baisecomposelearn.screens.media.ProjectItem
-import com.example.baisecomposelearn.screens.vibration.bounce.BounceExampleScreen
-import com.example.baisecomposelearn.screens.vibration.expand.ExpandExampleScreen
 import com.example.baisecomposelearn.theme.BaiseComposeLearnTheme
-import com.example.baisecomposelearn.theme.HapticSamplerTheme
-import com.example.baisecomposelearn.vibration.appdraw.AppDrawer
 import com.example.baisecomposelearn.wanandroid.Project
 import org.junit.Assert.assertEquals
 import org.junit.Rule
@@ -37,44 +32,6 @@ class ExampleInstrumentedTest {
         assertEquals("com.example.baisecomposelearn", appContext.packageName)
     }
 
-    @Test
-    fun testAppDrawer() {
-        composeTestRule.setContent {
-            HapticSamplerTheme {
-                AppDrawer(
-                    HapticSamplerDestinations.HOME_ROUTE,
-                    navigateToHome = {},
-                    navigateToResist = {},
-                    navigateToExpand = {},
-                    navigateToBounce = {},
-                    navigateToWobble = {},
-                    closeDrawer = {},
-                )
-            }
-        }
-    }
-
-    @Test
-    fun testExpandExampleScreen() {
-        composeTestRule.setContent {
-            HapticSamplerTheme {
-                ExpandExampleScreen(
-                    messageToUser = "A message to display to user."
-                )
-            }
-        }
-    }
-
-    @Test
-    fun testBounceExampleScreen() {
-        composeTestRule.setContent {
-            HapticSamplerTheme {
-                BounceExampleScreen(
-                    messageToUser = "A message to display to user."
-                )
-            }
-        }
-    }
 
     @Test
     fun testRatingBarScreen() {

@@ -39,7 +39,7 @@ fun RecordScreen(navController: NavController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Button(onClick = {
-                    File(context.cacheDir,"audio.mp3").also {
+                    File(context.cacheDir, "audio.mp3").also {
                         recorder.start(it)
                         audioFile = it
                     }
@@ -51,6 +51,17 @@ fun RecordScreen(navController: NavController) {
                 }) {
                     Text(text = stringResource(id = R.string.stoprecord))
                 }
+                Button(onClick = {
+                    player.playFile(audioFile?:return@Button)
+                }) {
+                    Text(text = stringResource(id = R.string.play))
+                }
+                Button(onClick = {
+                    player.stop()
+                }) {
+                    Text(text = stringResource(id = R.string.stopplay))
+                }
+
             }
 
         },

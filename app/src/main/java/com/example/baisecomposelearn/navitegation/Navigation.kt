@@ -296,5 +296,8 @@ fun Navigation(
         composable(NavitemScreen.RecordScreen.route){
             RecordScreen(navController)
         }
+        composable(NavitemScreen.LoginUserScreen.route){
+            LoginScreen(navController)
+        }
     }
 }

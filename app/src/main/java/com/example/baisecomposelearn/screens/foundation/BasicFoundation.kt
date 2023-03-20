@@ -111,6 +111,20 @@ fun BasicFoundation(navController: NavController) {
                 color = Color.White
             )
         }
+        Button(
+            onClick = {
+                navController.navigate(NavitemScreen.LoginUserScreen.route)
+            }, modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+            Text(
+                text = stringResource(id = R.string.userlogin),
+                fontWeight = FontWeight.Bold,
+                fontSize = 25.sp,
+                color = Color.White
+            )
+        }
        
 
     }

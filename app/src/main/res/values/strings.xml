@@ -165,4 +165,7 @@
     <string name="recordscreen">录音机</string>
     <string name="beginrecord">开始录音</string>
     <string name="stoprecord">停止录音</string>
+    <string name="play">播放</string>
+    <string name="stopplay">停止播放</string>
+    <string name="userlogin">用户登陆</string>
 </resources>

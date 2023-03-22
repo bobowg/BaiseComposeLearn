@@ -87,4 +87,5 @@ sealed class NavitemScreen(val route:String,val title:Int){
     object AnimatableScreen:NavitemScreen("animatablescreen",R.string.animatablescreen)
     object RecordScreen:NavitemScreen("recordscreen",R.string.recordscreen)
     object LoginUserScreen:NavitemScreen("loginUser",R.string.userlogin)
+    object CacheDirScreen:NavitemScreen("cachedir",R.string.cachedir)
 }

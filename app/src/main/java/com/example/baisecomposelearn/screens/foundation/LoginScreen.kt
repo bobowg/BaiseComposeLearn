@@ -10,7 +10,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.baisecomposelearn.screens.components.goBack
+import com.example.baisecomposelearn.theme.darkBackgroundColor
+import com.example.baisecomposelearn.theme.rwGreen
+import com.example.baisecomposelearn.theme.rwOrgen
 
 @Composable
 fun LoginScreen(navController: NavController) {
@@ -18,14 +20,14 @@ fun LoginScreen(navController: NavController) {
         topBar = {
             TopAppBar(
                 title = { Text("登 陆") },
-                backgroundColor = Color.White,
+                backgroundColor = rwGreen,
                 elevation = 0.dp,
                 contentColor = Color.Black
             )
         },
         content = {
             Surface(
-                color = Color.White,
+                color = darkBackgroundColor,
                 modifier = Modifier
                     .padding(it)
                     .fillMaxSize()
@@ -43,7 +45,7 @@ fun LoginScreen(navController: NavController) {
                     OutlinedTextField(
                         value = email,
                         onValueChange = { email = it },
-                        label = { Text("Email") },
+                        label = { Text("电子邮件") },
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(vertical = 4.dp)
@@ -52,7 +54,7 @@ fun LoginScreen(navController: NavController) {
                     OutlinedTextField(
                         value = password,
                         onValueChange = { password = it },
-                        label = { Text("Password") },
+                        label = { Text("密码") },
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(vertical = 4.dp)
@@ -66,7 +68,7 @@ fun LoginScreen(navController: NavController) {
                             .fillMaxWidth()
                             .padding(vertical = 16.dp)
                     ) {
-                        Text("Log In")
+                        Text("登 陆")
                     }
                 }
             }

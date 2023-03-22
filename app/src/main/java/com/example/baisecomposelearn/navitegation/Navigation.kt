@@ -299,5 +299,8 @@ fun Navigation(
         composable(NavitemScreen.LoginUserScreen.route){
             LoginScreen(navController)
         }
+        composable(NavitemScreen.CacheDirScreen.route){
+            CacheDirScreen(navController)
+        }
     }
 }

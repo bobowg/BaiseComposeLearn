@@ -1,5 +1,7 @@
 package com.example.baisecomposelearn.screens.activate
 
+import android.content.Intent
+import android.os.Bundle
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
@@ -8,19 +10,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.baisecomposelearn.BluetoothActivity
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.navitegation.NavitemScreen
 
 @Composable
 fun BackHandlersScreen(navController: NavController) {
+    val context = LocalContext.current
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -56,7 +62,9 @@ fun BackHandlersScreen(navController: NavController) {
         }
         Button(
             onClick = { navController.navigate(NavitemScreen.LanunScreen2.route) },
-            modifier = Modifier.fillMaxWidth().padding(16.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
         ) {
             Text(
                 text = stringResource(id = R.string.launch2),
@@ -67,7 +75,9 @@ fun BackHandlersScreen(navController: NavController) {
         }
         Button(
             onClick = { navController.navigate(NavitemScreen.LanunScreen3.route) },
-            modifier = Modifier.fillMaxWidth().padding(16.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
         ) {
             Text(
                 text = stringResource(id = R.string.googlemap),
@@ -78,7 +88,9 @@ fun BackHandlersScreen(navController: NavController) {
         }
         Button(
             onClick = { navController.navigate(NavitemScreen.FlashLightScreen.route) },
-            modifier = Modifier.fillMaxWidth().padding(16.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
         ) {
             Text(
                 text = stringResource(id = R.string.flashlight),
@@ -87,19 +99,25 @@ fun BackHandlersScreen(navController: NavController) {
                 color = Color.White
             )
         }
+
         Button(
-            onClick = { navController.navigate(NavitemScreen.PhotoPick.route) },
-            modifier = Modifier.fillMaxWidth().padding(16.dp)
+            onClick = {
+                val sendIntent = Intent(context, BluetoothActivity::class.java)
+                ContextCompat.startActivity(context, sendIntent, Bundle.EMPTY)
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
         ) {
             Text(
-                text = stringResource(id = R.string.photopick),
+                text = stringResource(id = R.string.bluetooth),
                 fontWeight = FontWeight.Bold,
                 fontSize = 24.sp,
                 color = Color.White
             )
         }
     }
-    
+
 }
 
 @Preview

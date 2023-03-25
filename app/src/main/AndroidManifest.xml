@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -17,7 +18,6 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
-
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -35,17 +35,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BaiseComposeLearn"
         android:usesCleartextTraffic="true"
-        tools:targetApi="33">
-        <uses-library android:name="org.apache.http.legacy" android:required="false" />
+        tools:targetApi="33" >
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
         <service
             android:name=".service.RingtonePlayingService"
             android:enabled="true"
             android:exported="false" />
+
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="${applicationId}.androidx-startup"
             android:exported="false"
-            tools:node="merge">
+            tools:node="merge" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"
                 tools:node="remove" />
@@ -62,17 +67,24 @@
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="${SCREEN_ORIENTATION}"
-            android:theme="@style/Theme.BaiseComposeLearn.NoActionBar">
+            android:theme="@style/Theme.BaiseComposeLearn.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".BluetoothActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:hardwareAccelerated="false"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.BaiseComposeLearn.NoActionBar" />
 
         <receiver
             android:name=".widget.SimpleGlanceAppWidgetReceiver"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -84,7 +96,7 @@
         <receiver
             android:name=".widget.ButtonsGlanceWidgetReceiver"
             android:enabled="@bool/glance_appwidget_available"
-            android:exported="false">
+            android:exported="false" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -93,6 +105,7 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/app_widget_buttons_glance" />
         </receiver>
+
         <meta-data
             android:name="firebase_performance_logcat_enabled"
             android:value="true" />

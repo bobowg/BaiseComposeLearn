@@ -302,5 +302,8 @@ fun Navigation(
         composable(NavitemScreen.CacheDirScreen.route){
             CacheDirScreen(navController)
         }
+        composable(NavitemScreen.Auto_Image_Slider.route){
+            AutoImageSlider(navController)
+        }
     }
 }

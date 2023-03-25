@@ -169,4 +169,5 @@
     <string name="stopplay">停止播放</string>
     <string name="userlogin">用户登陆</string>
     <string name="cachedir">清理垃圾</string>
+    <string name="autoimageslider">图片轮换</string>
 </resources>

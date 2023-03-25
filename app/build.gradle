@@ -16,7 +16,7 @@ android {
         minSdk 26
         targetSdk 33
         versionCode 1
-        versionName "1.013"
+        versionName "1.014"
         manifestPlaceholders = [ SCREEN_ORIENTATION: "portrait"]
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -94,6 +94,9 @@ dependencies {
     implementation "com.halilibo.compose-richtext:printing:${richtext_version}"
     implementation "com.github.skydoves:landscapist-fresco:1.6.1"
     implementation "com.github.Gurupreet:FontAwesomeCompose:1.0.0"
+
+    // Accompanist’s pager
+    implementation 'com.google.accompanist:accompanist-pager:0.22.0-rc'
 
     // Room
     implementation "androidx.room:room-runtime:$room_version"

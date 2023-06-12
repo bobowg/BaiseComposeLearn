@@ -26,7 +26,7 @@ import com.example.baisecomposelearn.navitegation.NavitemScreen
 
 @Composable
 fun BackHandlersScreen(navController: NavController) {
-    val context = LocalContext.current
+//    val context = LocalContext.current
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -100,22 +100,22 @@ fun BackHandlersScreen(navController: NavController) {
             )
         }
 
-        Button(
-            onClick = {
-                val sendIntent = Intent(context, BluetoothActivity::class.java)
-                ContextCompat.startActivity(context, sendIntent, Bundle.EMPTY)
-            },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp)
-        ) {
-            Text(
-                text = stringResource(id = R.string.bluetooth),
-                fontWeight = FontWeight.Bold,
-                fontSize = 24.sp,
-                color = Color.White
-            )
-        }
+//        Button(
+//            onClick = {
+//                val sendIntent = Intent(context, BluetoothActivity::class.java)
+//                ContextCompat.startActivity(context, sendIntent, Bundle.EMPTY)
+//            },
+//            modifier = Modifier
+//                .fillMaxWidth()
+//                .padding(16.dp)
+//        ) {
+//            Text(
+//                text = stringResource(id = R.string.bluetooth),
+//                fontWeight = FontWeight.Bold,
+//                fontSize = 24.sp,
+//                color = Color.White
+//            )
+//        }
     }
 
 }

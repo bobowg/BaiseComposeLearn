@@ -1,11 +1,14 @@
 package com.example.baisecomposelearn.screens.activate
 
-import android.R.id
 import android.content.Intent
 import android.net.Uri
-import android.os.Bundle
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -25,7 +28,6 @@ import androidx.navigation.compose.rememberNavController
 import com.example.baisecomposelearn.R
 import com.example.baisecomposelearn.screens.components.goBack
 import com.example.baisecomposelearn.utils.shortToast
-import com.google.firebase.analytics.FirebaseAnalytics
 
 
 @Composable
